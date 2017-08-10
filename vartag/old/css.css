@@ -1,0 +1,190 @@
+/* GENERAL */
+html, body {
+	font-family: Verdana, sans-serif;
+	font-size: 11pt;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+#reset {
+	color: red;
+}
+
+/* CONTROLS */
+
+#controls {
+	order: 2;
+	flex: 0 0 3in;
+	box-sizing: border-box;
+	padding: 1rem;
+	padding-left: 0;
+}
+
+#currently-editing {
+	background-color: #EEF;
+	padding: 2px 0.5em;
+}
+
+label {
+	font-family: Courier, monospace;
+	display: block;
+	font-size: 10pt;
+	margin-top: 1em;
+}
+
+ul, li {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slider {
+	display: grid;
+	grid-template-columns: auto min-content 3em;
+	grid-template-rows: repeat(2, auto);
+	grid-gap: 0.25em;
+	align-items: end;
+}
+
+.slider > * {
+	padding-bottom: 2px;
+}
+
+.slider label ~ label::after {
+	content: ":";
+}
+
+.slider input[type=number] {
+	width: 100%;
+	height: 1em;
+	border: none;
+	padding-left: 3px;
+	border-bottom: 1px solid #999;
+}
+
+input[type=range] {
+	position: relative;
+	vertical-align: middle;
+	grid-column: 1/4;
+	grid-row: 2;
+	width: calc(100% - 6em);
+	margin: 0 3em;
+}
+
+input[type=range]::before {
+	display: block;
+	position: absolute;
+	right: 105%;
+	content: attr(min);
+}
+
+input[type=range]::after {
+	display: block;
+	position: absolute;
+	left: 105%;
+	content: attr(max);
+}
+
+input[type=range][disabled] {
+	opacity: 0.5;
+}
+
+
+
+/* STYLES LAYOUT */
+
+article {
+	order: 1;
+	flex: 1 1 auto;
+	box-sizing: border-box;
+	height: 100vh;
+	overflow: scroll;
+/*
+	margin: 1rem;
+	border: 1px solid black;
+*/
+	padding: 1rem;
+}
+
+article:focus, input:focus {
+	outline: none;
+}
+
+article > .current {
+	background-color: #EEF;
+}
+
+article > .reversed.current {
+	background-color: #003;
+}
+
+article > * {
+	position: relative;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	font-stretch: inherit;
+	font-variation-settings: inherit;
+	margin: 2rem 0;
+	padding: 0 4px;
+}
+
+article > *::before {
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	color: #09f;
+	font-size: 0.75rem;
+	content: attr(data-el) ": size " attr(data-size) ", " attr(data-axes);
+	font-family: Verdana;
+	font-weight: normal;
+	font-style: normal;
+	font-feature-settings: normal;
+}
+
+article > p::before, article > aside::before {
+	padding-bottom: 0.5em;
+}
+
+article h1 cite {
+	font-style: inherit;
+	font-weight: inherit;
+	text-transform: uppercase;
+}
+
+article p, article aside {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0.75rem calc(1.5rem - 4px) 0.75rem 4px;
+	margin: 1rem 1.5rem 1rem 0;
+	width: calc(50% - 1rem);
+	vertical-align: top;
+	line-height: 1.3;
+}
+
+article p {
+	font-size: 100%;
+	font-variation-settings: inherit;
+}
+
+article aside {
+	margin-top: 2rem;
+}
+
+article .reversed {
+	color: white;
+	background-color: black;
+	padding: 0.75rem;
+	margin-right: 0;
+}
+

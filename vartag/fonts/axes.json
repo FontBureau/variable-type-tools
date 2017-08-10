@@ -1,0 +1,551 @@
+{
+  "Decovar-VF": {
+    "order": [
+      "INLN", 
+      "SINL", 
+      "SSTR", 
+      "SWRM", 
+      "TBIF", 
+      "TFLR", 
+      "TINL", 
+      "TOIL", 
+      "TRND", 
+      "TRSB", 
+      "TSHR", 
+      "TSLB", 
+      "TWRM", 
+      "WORM", 
+      "wght"
+    ], 
+    "INLN": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Inline", 
+      "min": 0.0
+    }, 
+    "TSHR": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Sheared", 
+      "min": 0.0
+    }, 
+    "TRSB": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Rounded Slab", 
+      "min": 0.0
+    }, 
+    "SSTR": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Stripes", 
+      "min": 0.0
+    }, 
+    "TWRM": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm Terminal", 
+      "min": 0.0
+    }, 
+    "SINL": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Inline Skeleton", 
+      "min": 0.0
+    }, 
+    "TOIL": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Open Inline Terminal", 
+      "min": 0.0
+    }, 
+    "TINL": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Inline Terminal", 
+      "min": 0.0
+    }, 
+    "WORM": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm", 
+      "min": 0.0
+    }, 
+    "wght": {
+      "default": 400.0, 
+      "max": 1000.0, 
+      "name": "Weight", 
+      "min": 400.0
+    }, 
+    "TFLR": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Flared", 
+      "min": 0.0
+    }, 
+    "TRND": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Rounded", 
+      "min": 0.0
+    }, 
+    "SWRM": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm Skeleton", 
+      "min": 0.0
+    }, 
+    "TSLB": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Slab", 
+      "min": 0.0
+    }, 
+    "TBIF": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Bifurcated", 
+      "min": 0.0
+    }
+  }, 
+  "AmstelvarAlpha-VF": {
+    "order": [
+      "wght", 
+      "wdth", 
+      "opsz", 
+      "XOPQ", 
+      "XTRA", 
+      "YOPQ", 
+      "YTLC", 
+      "YTSE", 
+      "GRAD", 
+      "XTCH", 
+      "YTCH", 
+      "YTAS", 
+      "YTDE", 
+      "YTUC", 
+      "YTRA"
+    ], 
+    "wght": {
+      "default": 88.0, 
+      "max": 250.0, 
+      "name": "Weight", 
+      "min": 38.0
+    }, 
+    "wdth": {
+      "default": 402.0, 
+      "max": 402.0, 
+      "name": "Width", 
+      "min": 60.0
+    }, 
+    "opsz": {
+      "default": 14.0, 
+      "max": 72.0, 
+      "name": "Optical Size", 
+      "min": 10.0
+    }, 
+    "XOPQ": {
+      "default": 88.0, 
+      "max": 500.0, 
+      "name": "x opaque", 
+      "min": 5.0
+    }, 
+    "XTRA": {
+      "default": 402.0, 
+      "max": 402.0, 
+      "name": "x transparent", 
+      "min": 42.0
+    }, 
+    "YOPQ": {
+      "default": 50.0, 
+      "max": 85.0, 
+      "name": "y opaque", 
+      "min": 4.0
+    }, 
+    "YTLC": {
+      "default": 500.0, 
+      "max": 600.0, 
+      "name": "lc y transparent", 
+      "min": 445.0
+    }, 
+    "YTSE": {
+      "default": 18.0, 
+      "max": 48.0, 
+      "name": "Serif height", 
+      "min": 0.0
+    }, 
+    "GRAD": {
+      "default": 88.0, 
+      "max": 150.0, 
+      "name": "Grade", 
+      "min": 88.0
+    }, 
+    "XTCH": {
+      "default": 1000.0, 
+      "max": 1200.0, 
+      "name": "x transparent Chinese", 
+      "min": 800.0
+    }, 
+    "YTCH": {
+      "default": 1000.0, 
+      "max": 1200.0, 
+      "name": "y transparent Chinese", 
+      "min": 800.0
+    }, 
+    "YTAS": {
+      "default": 750.0, 
+      "max": 850.0, 
+      "name": "y transparent ascender", 
+      "min": 650.0
+    }, 
+    "YTDE": {
+      "default": 250.0, 
+      "max": 350.0, 
+      "name": "y transparent descender", 
+      "min": 150.0
+    }, 
+    "YTUC": {
+      "default": 750.0, 
+      "max": 950.0, 
+      "name": "y transparent uppercase", 
+      "min": 650.0
+    }, 
+    "YTRA": {
+      "default": 1000.0, 
+      "max": 1200.0, 
+      "name": "y transparent", 
+      "min": 800.0
+    }
+  }, 
+  "Roboto-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 100.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 75.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 12.0, 
+      "name": "Slant", 
+      "min": 0.0
+    }
+  }, 
+  "Gimlet_Romans-VF": {
+    "wght": {
+      "default": 300.0, 
+      "max": 800.0, 
+      "name": "Weight", 
+      "min": 300.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 64.0
+    }, 
+    "opsz": {
+      "default": 48.0, 
+      "max": 48.0, 
+      "name": "Optical Size", 
+      "min": 8.0
+    }
+  }, 
+  "BentonSansV14-VF": {
+    "xopq": {
+      "default": 0.0, 
+      "max": 1.0, 
+      "name": "xopq", 
+      "min": -1.0
+    }, 
+    "xtra": {
+      "default": 0.0, 
+      "max": 1.0, 
+      "name": "xtra", 
+      "min": -1.0
+    }, 
+    "ylct": {
+      "default": 0.0, 
+      "max": 1.0, 
+      "name": "ylct", 
+      "min": 0.0
+    }, 
+    "yopq": {
+      "default": 0.0, 
+      "max": 1.0, 
+      "name": "yopq", 
+      "min": -1.0
+    }, 
+    "ytra": {
+      "default": 0.0, 
+      "max": 1.0, 
+      "name": "ytra", 
+      "min": -1.0
+    }
+  }, 
+  "Roboto-min-VF": {
+    "wght": {
+      "default": -0.1, 
+      "max": 1.125, 
+      "name": "Weight", 
+      "min": -1.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 75.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 12.0, 
+      "name": "Slant", 
+      "min": 0.0
+    }
+  }, 
+  "Output_Sans-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 0.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Height", 
+      "min": 0.0
+    }
+  }, 
+  "Agency FB-VF": {
+    "xtra": {
+      "default": 368.0, 
+      "max": 1168.0, 
+      "name": "x transparent", 
+      "min": 138.0
+    }, 
+    "xopq": {
+      "default": 136.0, 
+      "max": 680.0, 
+      "name": "x opaque", 
+      "min": 30.0
+    }, 
+    "yopq": {
+      "default": 121.0, 
+      "max": 521.0, 
+      "name": "y opaque", 
+      "min": 30.0
+    }, 
+    "YUCW": {
+      "default": 735.0, 
+      "max": 1035.0, 
+      "name": "y uppercase waist", 
+      "min": 335.0
+    }, 
+    "UCSL": {
+      "default": 496.0, 
+      "max": 696.0, 
+      "name": "uppercase serif length", 
+      "min": 120.0
+    }, 
+    "UCRS": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "uppercase roundness", 
+      "min": 0.0
+    }, 
+    "XTBU": {
+      "default": 500.0, 
+      "max": 1000.0, 
+      "name": "x terminal burst", 
+      "min": 0.0
+    }, 
+    "XSDA": {
+      "default": 500.0, 
+      "max": 1000.0, 
+      "name": "x stem diagonal angle", 
+      "min": 0.0
+    }, 
+    "YSDA": {
+      "default": 500.0, 
+      "max": 1000.0, 
+      "name": "y stem diagonal angle", 
+      "min": 0.0
+    }, 
+    "YSDT": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "y stem diagonal terminal", 
+      "min": 0.0
+    }, 
+    "UCRI": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "uppercase radius inside", 
+      "min": 0.0
+    }, 
+    "UCRO": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "uppercase radius outside", 
+      "min": 0.0
+    }
+  }, 
+  "Input_Mono-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 1000.0, 
+      "name": "Weight", 
+      "min": 0.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 8.0, 
+      "name": "Height", 
+      "min": 0.0
+    }, 
+    "wdth": {
+      "default": 500.0, 
+      "max": 500.0, 
+      "name": "Width", 
+      "min": 100.0
+    }
+  }, 
+  "MomentumSans-VF": {
+    "wght": {
+      "default": 115.0, 
+      "max": 220.0, 
+      "name": "Weight", 
+      "min": 10.0
+    }, 
+    "wdth": {
+      "default": 769.0, 
+      "max": 769.0, 
+      "name": "Width", 
+      "min": 533.0
+    }, 
+    "opsz": {
+      "default": 12.0, 
+      "max": 72.0, 
+      "name": "Optical Size", 
+      "min": 12.0
+    }
+  }, 
+  "Fit-VF": {
+    "order": [
+      "wdth"
+    ], 
+    "wdth": {
+      "default": 110.0, 
+      "max": 1000.0, 
+      "name": "Width", 
+      "min": 0.0
+    }
+  }, 
+  "Gimlet_Italics-VF": {
+    "wght": {
+      "default": 300.0, 
+      "max": 800.0, 
+      "name": "Weight", 
+      "min": 300.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 64.0
+    }, 
+    "opsz": {
+      "default": 48.0, 
+      "max": 48.0, 
+      "name": "Optical Size", 
+      "min": 8.0
+    }
+  }, 
+  "Segoe-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 100.0
+    }
+  }, 
+  "LabDJR-VF": {
+    "order": [
+      "BEVL", 
+      "OVAL", 
+      "QUAD", 
+      "SIZE"
+    ], 
+    "BEVL": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Bevel", 
+      "min": 0.0
+    }, 
+    "OVAL": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Oval", 
+      "min": 0.0
+    }, 
+    "QUAD": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Quad", 
+      "min": 0.0
+    }, 
+    "SIZE": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Size", 
+      "min": 0.0
+    }
+  }, 
+  "Escrowvar-VF": {
+    "wght": {
+      "default": 111.0, 
+      "max": 191.0, 
+      "name": "Weight", 
+      "min": 87.0
+    }, 
+    "wdth": {
+      "default": 796.0, 
+      "max": 796.0, 
+      "name": "Width", 
+      "min": 583.0
+    }, 
+    "opsz": {
+      "default": 24.0, 
+      "max": 72.0, 
+      "name": "Optical Size", 
+      "min": 12.0
+    }
+  }, 
+  "Dunbar-VF": {
+    "wght": {
+      "default": 500.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 100.0
+    }, 
+    "xhgt": {
+      "default": 500.0, 
+      "max": 574.0, 
+      "name": "xheight", 
+      "min": 353.0
+    }, 
+    "opsz": {
+      "default": 36.0, 
+      "max": 36.0, 
+      "name": "optical", 
+      "min": 10.0
+    }
+  }
+}
