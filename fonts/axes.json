@@ -109,23 +109,6 @@
     }
   }, 
   "AmstelvarAlpha-VF": {
-    "order": [
-      "wght", 
-      "wdth", 
-      "opsz", 
-      "XOPQ", 
-      "XTRA", 
-      "YOPQ", 
-      "YTLC", 
-      "YTSE", 
-      "GRAD", 
-      "XTCH", 
-      "YTCH", 
-      "YTAS", 
-      "YTDE", 
-      "YTUC", 
-      "YTRA"
-    ], 
     "wght": {
       "default": 88.0, 
       "max": 250.0, 
