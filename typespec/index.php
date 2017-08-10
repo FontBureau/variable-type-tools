@@ -1,4 +1,6 @@
 <?php
+namespace TypeNetwork\TypeTools;
+
 /*
 	if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] !== 'SND' || $_SERVER['PHP_AUTH_PW'] !== 'Charlotte') {
 		header('HTTP/1.1 401 Unauthorized');
@@ -8,7 +10,7 @@
 	}	
 */
 	
-	$fontinfo = json_decode(file_get_contents("fonts/axes.json"));
+	$fontinfo = json_decode(file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/fonts/axes.json"));
 	$fontinfo = get_object_vars($fontinfo);
 	ksort($fontinfo);
 		
@@ -109,19 +111,19 @@
 <?php foreach ($fontinfo as $filebase => $info): ?>
 			@font-face {
 				font-family: "<?= $info->name ?> Demo";
-				src: url("fonts/<?= $filebase ?>.woff") format("woff");
+				src: url("/fonts/<?= $filebase ?>.woff") format("woff");
 			}
 <?php endforeach; ?>
 		</style>
 		<script>
 			var fontInfo = <?= json_encode($fontinfo) ?>;
 		</script>
-		<link rel="stylesheet" href="css.css">
+		<link rel="stylesheet" href="typespec.css">
 		<style id='demo-style'></style>
-		<script src="js.js"></script>
+		<script src="typespec.js"></script>
 	</head>
 	<body>
-		<h1><img src="typenetwork-logo.svg" alt="Type Network"></h1>
+		<h1><img src="/images/typenetwork-logo.svg" alt="Type Network"></h1>
 		<form id='controls'>
 			<label for="select-font">Font</label>
 			<select name="font" id='select-font'>
