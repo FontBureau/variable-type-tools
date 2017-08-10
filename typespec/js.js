@@ -279,7 +279,8 @@ $(function() {
 				}
 				v = parseFloat(temp[2]);
 				axes[k] = v;
-				axisDeltas[k] = { k: v - axisDefaults[k].default };
+				axisDeltas[k] = {};
+				axisDeltas[k][k] = v - axisDefaults[k].default;
 			}
 		});
 
