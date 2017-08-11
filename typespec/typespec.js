@@ -1,10 +1,6 @@
 $(function() {
 	"use strict";
 
-	function clone(obj) {
-		return JSON.parse(JSON.stringify(obj));
-	}
-	
 	var temp; //general use
 	
 	var style2class = {
@@ -16,7 +12,6 @@ $(function() {
 	};
 	
 	var pageLoaded = false;
-	var showAxes = ['wdth', 'wght', 'grad', 'GRAD', 'opsz'];
 	var controls = $('#controls');
 	var styleElements = $('article > .row');
 	var activeStyle = 'H1';
@@ -413,7 +408,7 @@ $(function() {
 			var li = document.createElement('li');
 			li.className = 'slider ' + axis;
 			
-			if (showAxes.indexOf(axis) < 0) {
+			if (!TNTools.isRegisteredAxis(axis)) {
 				li.className += ' hidden-by-default';
 				if (show !== 'everything') {
 					li.style.display = 'none';
