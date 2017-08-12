@@ -17,6 +17,10 @@ $(function() {
 	var activeStyle = 'H1';
 	var show = "";
 	
+	if ($('#style-article').length === 0) {
+		$('head').append("<style id='style-article'></style>");
+	}
+	
 	var articleStyles = {
 		'font-family': '',
 		'font-size': '',
@@ -132,79 +136,20 @@ $(function() {
 		$('#style-article').text(css);
 	}
 
-	function updateCSSOutput() {
-		//update CSS output
-		var styletext = "";
-		$('head style[id^="style-"]').each(function() { 
-			styletext += $(this).text();
-		});
-		$('#css-output').text(styletext.trim());
-	}
-
 	function slidersToElement() {
-//		updateURL();
-		
-		var rules = [];
-
-/*
-		var font = controls.find('select[name=font]').val();
-		if (activeStyle === 'T2') {
-			$('#style-article').text('\narticle {\n\tfont-family: "' + fontInfo[font].name + ' Demo";\n}\n');
-		} else {
-			rules['font-family'] = '"' + fontInfo[font].name + ' Demo"';
-		}
-*/
-
-		rules.push("font-size: " + $('#input-size').val() + 'px');
-		rules.push("line-height: " + $('#input-leading').val() + 'px');
-		rules.push("text-align: " + $('input[name=alignment]:checked').val() || 'left');
-
-		//turn sliders into font-variation-settings
-		var fvs = {};
-		//fvs['opsz'] = $('#input-size').val();
-		$.each(axisSliders, function() {
-			if (this.name in composites) {
-				//composite axes get left at default, but let's but in a fake helper string to remember the value
-				fvs[this.name.toUpperCase()] = this.value; //axisDefaults[this.name].default;
-			} else if (this.name in axisDeltas) {
-				var sum = 0;
-				$.each(axisDeltas[this.name], function(caxis, cdelta) {
-					sum += cdelta;
-				});
-				fvs[this.name] = axisDefaults[this.name].default + sum;
-				$('input[name="' + this.name + '"]').val(fvs[this.name]);
-			} else {
-				//if it's already been added by a composite, only override if value is not default
-				if (!(this.name in fvs) || this.value !== axisDefaults[this.name].default) {
-					fvs[this.name] = this.value;
-				}
-			}
-		});
-		var fvsa = [];
-		$.each(fvs, function(k,v) {
-			fvsa.push('"' + k + '" ' + v);
-		})		
-		var fvss = fvsa.join(', ');
-		rules.push('font-variation-settings: ' + fvss);
-
 		var rows = $('article .row.' + activeStyle);
-		
-		// update the actual CSS
-		$('#style-' + activeStyle).text('\narticle ' + style2class[activeStyle] + ' {\n\t' + rules.join(';\n\t') + ';\n}\n');
-
-		// update colophon output
 		var contentcell = rows.find(style2class[activeStyle]);
 		if (contentcell.parent('.container').length) {
 			contentcell = contentcell.parent('.container');
 		}
-		
-		contentcell.attr({
-			'data-style': activeStyle,
-			'data-size-leading': parseInt($('#input-size').val()) + '/' + parseInt($('#input-leading').val()),
-			'data-axes': fvss.replace(/"\s+/g, ' ').replace(/"/g, '')
+
+		TNTools.slidersToElement({
+			'selector': 'article ' + style2class[activeStyle],
+			'styleElement': $('#style-' + activeStyle),
+			'paramsElement': contentcell,
+			'composites': composites,
+			'deltas': axisDeltas
 		});
-		
-		updateCSSOutput();
 	}
 
 	//add stylesheets for the various styles
@@ -261,6 +206,7 @@ $(function() {
 		}
 				
 		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size')));
+		$('#input-size').data('oldval', parseInt(testEl.css('font-size')));
 		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 
@@ -288,61 +234,37 @@ $(function() {
 
 	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
-
-		//make sure manually entered numbers stay within okay range
-		if (constrained !== this.value) {
-			$(this).on('blur', function() {
-				this.value = constrained;
-				$(this).off('blur');
-			});
-		}
-
-		//match up sliders with text inputs
-		$(this).siblings('input[name="' + this.name + '"]').val(this.value);
-		
-		switch (this.name) {
-		case 'size':
-			if (evt.type === 'input') {
-				//auto-match leading
+		if (activeStyle === 'T2') {
+			if (this.type === 'range' && this.name === 'size') {
 				var leading = parseFloat($('#input-leading').val());
-				var oldval = parseFloat($('#input-size').data('oldval'));
-				if (activeStyle === 'T2') {
-					$('input[name="column-width"]').val(parseFloat(articleStyles['max-width'])*oldval/constrained).trigger(evt.type);
-				}
-				$('input[name="leading"]').val(leading + constrained - oldval).trigger(evt.type);
+				var oldval = parseFloat($(this).data('oldval'));
+				$('input[name="column-width"]').val(parseFloat(articleStyles['max-width'])*oldval/constrained).trigger(evt.type);
 			}
-			
-			$('#input-size').data('oldval', constrained);
-			
-			//auto-match optical size
-			$('input[name="opsz"]').val(this.value).trigger(evt.type);
-
-			if (activeStyle === 'T2') {
+			if (this.name === 'size') {
 				updateArticleStyle('font-size', constrained + 'px');
 			}
+		}
 
-			break;
-		case 'column-width':
-			updateArticleStyle('max-width', this.value + 'em');
-			var lh = Math.max(1.3, Math.min(2.0, this.value/27.0));
+		if (this.name === 'column-width') {
+			updateArticleStyle('max-width', constrained + 'em');
+			var lh = Math.max(1.3, Math.min(2.0, constrained/27.0));
 			$('#style-T1').text($('#style-T1').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 			$('#style-T2').text($('#style-T2').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 			if (activeStyle === 'T1' || activeStyle === 'T2') {
 				$('input[name=leading]').val(lh * $('#input-size').val());
 			}
-			updateCSSOutput();
-			break;
-		
-		default:
-			//calculate composite axes into their individual parameters
-			if (this.name in composites) {
-				compositeToParametric(this.name, this.value);
-			} else if (this.name in axisDeltas) {
-				axisDeltas[this.name] = {};
-				axisDeltas[this.name][this.name] = this.value - axisDefaults[this.name].default;
-			}
-			slidersToElement();
 		}
+		
+		//calculate composite axes into their individual parameters
+		if (this.name in composites) {
+			compositeToParametric(this.name, constrained);
+		} else if (this.name in axisDeltas) {
+			axisDeltas[this.name] = {};
+			axisDeltas[this.name][this.name] = constrained - axisDefaults[this.name].default;
+		}
+
+		TNTools.handleSliderChange(evt);
+		slidersToElement();
 	});
 	
 	$("input[type=radio]").on('change', slidersToElement);
@@ -370,10 +292,6 @@ $(function() {
 	$('#select-font').on('change', function() {
 		var font = $(this).val();
 
-		if ($('#style-article').length === 0) {
-			$('head').append("<style id='style-article'></style>");
-		}
-		
 		$('head style[id^="style-"]').empty();
 		$('input[type=checkbox]').prop('checked',false).trigger('change');
 		$('#align-left').prop('checked',true);
@@ -434,6 +352,7 @@ $(function() {
 			editvalue.max = slider.max = values.max;
 			editvalue.step = slider.step = values.max-values.min > 50 ? 1 : (values.max-values.min)/100;
 			editvalue.value = slider.value = values.default;
+			slider.setAttribute('data-default', values.default);
 
 			li.appendChild(label);
 			li.appendChild(editlabel);

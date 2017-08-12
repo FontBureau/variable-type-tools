@@ -57,7 +57,7 @@ print $tools->pageHead('Type Specification Demo')
 			<div class="T1 row">
 				<label>T1</label>
 				<p class="lede" contenteditable>
-					Intro text which leads reader into the article by the nose, with grace and dignity and a little pithy charm. Typeface has changed to the appropriate optical size by the miracle of modern typography.
+					Intro text leads reader into the article by the nose, with grace and dignity and a little pithy charm. Typeface has changed to the appropriate optical size by the miracle of modern typography.
 				</p>
 			</div>
 			<div class="T2 row">
