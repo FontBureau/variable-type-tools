@@ -320,46 +320,7 @@ $(function() {
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
 		
-		$.each(fontInfo[font].axisOrder, function(i, axis) {
-			var values = fontInfo[font].axes[axis];
-
-			var li = document.createElement('li');
-			li.className = 'slider ' + axis;
-			
-			if (!TNTools.isRegisteredAxis(axis)) {
-				li.className += ' hidden-by-default';
-				if (show !== 'everything') {
-					li.style.display = 'none';
-				}
-			}
-
-			var label = document.createElement('label');
-			var slider = document.createElement('input');
-			var editlabel = document.createElement('label');
-			var editvalue = document.createElement('input');
-			
-			label.for = slider.id = "input-" + axis;				
-			label.textContent = values.name || axis;
-
-			editlabel.for = editvalue.id = "edit-" + axis;
-			editlabel.textContent = axis;
-			
-			editvalue.type = 'number';
-			slider.type = 'range';
-
-			editvalue.name = slider.name = axis;
-			editvalue.min = slider.min = values.min;
-			editvalue.max = slider.max = values.max;
-			editvalue.step = slider.step = values.max-values.min > 50 ? 1 : (values.max-values.min)/100;
-			editvalue.value = slider.value = values.default;
-			slider.setAttribute('data-default', values.default);
-
-			li.appendChild(label);
-			li.appendChild(editlabel);
-			li.appendChild(editvalue);
-			li.appendChild(slider);
-			axisInputs.append(li);
-		});
+		TNTools.populateAxisSliders();
 
 		axisSliders = axisInputs.find('input[type=range]');
 

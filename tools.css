@@ -31,6 +31,21 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
+h1 {
+	font-weight: 700;
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+h3 {
+	font-weight: 100;
+	font-size: 2rem;
+}
+
 hr {
 	display: block;
 	margin-top: 1em;
@@ -55,7 +70,7 @@ ul, li {
 
 /* HEADER */
 
-body > h1 {
+body > h1:first-of-type {
 	box-sizing: content-box;
 	position: fixed;
 	z-index: 10;
@@ -228,8 +243,7 @@ input[type=range][disabled] {
 /* CSS OUTPUT */
 
 #css-output {
-/* 	background-color: black; */
-/* 	color: #0f0; */
+	margin-top: 1rem;
 	padding: 1rem;
 	white-space: pre;
 	-moz-tab-size: 2;
@@ -268,6 +282,6 @@ input[type=range][disabled] {
 	text-align: right;
 }
 
-.show-parameters *[data-axes]::after {
+.show-parameters *[data-axes]::after, .show-parameters[data-axes]::after {
 	display: block;
 }
