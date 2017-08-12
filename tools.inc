@@ -5,9 +5,11 @@ class TypeTools {
 	public $fontinfo;
 	private $slidercount = 0;
 	
+	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt');
+	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum');
+	
 	private $customSettings = array(
 		'Amstelvar' => array(
-			'order' => array('opsz', 'wght', 'wdth', 'GRAD', 'XOPQ', 'XTRA', 'YOPQ', 'YTLC', 'YTSE'),
 			'composites' => array(
 				'opsz' => array(
 					'10' => array(
@@ -73,7 +75,7 @@ class TypeTools {
 					unset($this->fontinfo[$filebase]);
 					continue;
 				}
-			} else if (!preg_match('/^(Amstelvar|Escrow|Gimlet|Dunbar|Decovar|Input|Momentum)/', $filebase)) {
+			} else if (!preg_match('/^(' . implode('|', $this->includeFonts) . ')/', $filebase)) {
 				unset($this->fontinfo[$filebase]);
 				continue;
 			}
@@ -93,18 +95,37 @@ class TypeTools {
 
 			//figure out axis order
 			$order = array();
+			
+/* //ignore custom orders for now
 			if (isset($this->customSettings[$fontname]['order'])) {
 				$order = $this->customSettings[$fontname]['order'];
 			}
 			if (isset($axes->order)) {
 				if (!$order) {
 					$order = $axes->order;
-					sort($order);
 				}
-				unset($axes->order);
+				@unset($axes->order);
 			}
+*/
+
 			if (!$order) {
+				unset($axes->order);
 				$order = array_keys(get_object_vars($axes));
+				usort($order, function($a, $b) {
+					//registered, then lowercase, then alphabetic
+					// i.e. wght, wdth, opsz, XOPQ, XTRA, YOPQ, YTRA
+					$aRegistered = in_array($a, $this->registeredAxes);
+					$bRegistered = in_array($b, $this->registeredAxes);
+					$aLower = preg_match('/[a-z]/', $a);
+					$bLower = preg_match('/[a-z]/', $b);
+					if ($aRegistered and !$bRegistered) return -1;
+					if ($bRegistered and !$aRegistered) return 1;
+					if ($aLower and !$bLower) return -1;
+					if ($bLower and !$aLower) return 1;
+					if ($a < $b) -1;
+					if ($a > $b) 1;
+					return 0;
+				});
 			}
 
 
