@@ -108,6 +108,26 @@
       "min": 0.0
     }
   }, 
+  "Louvette-VF": {
+    "wght": {
+      "default": 300.0, 
+      "max": 1000.0, 
+      "name": "Weight", 
+      "min": 300.0
+    }, 
+    "yopq": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Hairline", 
+      "min": 14.0
+    }, 
+    "ytde": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Descender", 
+      "min": 14.0
+    }
+  }, 
   "AmstelvarAlpha-VF": {
     "wght": {
       "default": 88.0, 
@@ -272,40 +292,6 @@
       "min": -1.0
     }
   }, 
-  "Roboto-min-VF": {
-    "wght": {
-      "default": -0.1, 
-      "max": 1.125, 
-      "name": "Weight", 
-      "min": -1.0
-    }, 
-    "wdth": {
-      "default": 100.0, 
-      "max": 100.0, 
-      "name": "Width", 
-      "min": 75.0
-    }, 
-    "slnt": {
-      "default": 0.0, 
-      "max": 12.0, 
-      "name": "Slant", 
-      "min": 0.0
-    }
-  }, 
-  "Output_Sans-VF": {
-    "wght": {
-      "default": 400.0, 
-      "max": 900.0, 
-      "name": "Weight", 
-      "min": 0.0
-    }, 
-    "slnt": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Height", 
-      "min": 0.0
-    }
-  }, 
   "Agency FB-VF": {
     "xtra": {
       "default": 368.0, 
@@ -377,6 +363,40 @@
       "default": 0.0, 
       "max": 1000.0, 
       "name": "uppercase radius outside", 
+      "min": 0.0
+    }
+  }, 
+  "Output_Sans-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 0.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Height", 
+      "min": 0.0
+    }
+  }, 
+  "Roboto-min-VF": {
+    "wght": {
+      "default": -0.1, 
+      "max": 1.125, 
+      "name": "Weight", 
+      "min": -1.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 75.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 12.0, 
+      "name": "Slant", 
       "min": 0.0
     }
   }, 
