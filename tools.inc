@@ -5,7 +5,7 @@ class TypeTools {
 	public $fontinfo;
 	private $slidercount = 0;
 	
-	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt');
+	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
 	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum');
 	
 	private $customSettings = array(

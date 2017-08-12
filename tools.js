@@ -3,7 +3,7 @@
 
 	var temp;
 	
-	var registeredAxes = ['opsz', 'wght', 'wdth', 'ital', 'slnt'];
+	var registeredAxes = ['opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD'];
 	
 	function updateCSSOutput() {
 		//update CSS output
@@ -14,8 +14,50 @@
 		$('#css-output').text(styletext.trim());
 	}
 
-	function axesToFontVariationSettings(axes) {
-		
+	function populateAxisSliders(font, registeredOnly) {
+		var axisInputs = $('#axis-inputs');
+		$.each(fontInfo[font].axisOrder, function(i, axis) {
+			if (registeredOnly === false && !TNTools.isRegisteredAxis(axis)) {
+				return;
+			}
+			
+			var values = fontInfo[font].axes[axis];
+
+			var li = document.createElement('li');
+			li.className = 'slider ' + axis;
+			
+			if (!TNTools.isRegisteredAxis(axis)) {
+				li.className += ' hidden-by-default';
+				li.style.display = 'none';
+			}
+
+			var label = document.createElement('label');
+			var slider = document.createElement('input');
+			var editlabel = document.createElement('label');
+			var editvalue = document.createElement('input');
+			
+			label.for = slider.id = "input-" + axis;				
+			label.textContent = values.name || axis;
+
+			editlabel.for = editvalue.id = "edit-" + axis;
+			editlabel.textContent = axis;
+			
+			editvalue.type = 'number';
+			slider.type = 'range';
+
+			editvalue.name = slider.name = axis;
+			editvalue.min = slider.min = values.min;
+			editvalue.max = slider.max = values.max;
+			editvalue.step = slider.step = values.max-values.min > 50 ? 1 : (values.max-values.min)/100;
+			editvalue.value = slider.value = values.default;
+			slider.setAttribute('data-default', values.default);
+
+			li.appendChild(label);
+			li.appendChild(editlabel);
+			li.appendChild(editvalue);
+			li.appendChild(slider);
+			axisInputs.append(li);
+		});
 	}
 
 	function handleSlider(evt) {
@@ -65,6 +107,8 @@
 		var size = parseInt($('#input-size').val());
 		var leading = parseInt($('#input-leading').val());
 		
+		rules.push('font-family: "' + fontInfo[$('#select-font').val()].name + ' Demo"');
+		
 		if (size) {
 			rules.push("font-size: " + size + 'px');
 		}
@@ -100,12 +144,16 @@
 				}
 			}
 		});
+
 		var fvsa = [];
 		$.each(fvs, function(k,v) {
 			fvsa.push('"' + k + '" ' + v);
 		})		
 		var fvss = fvsa.join(', ');
-		rules.push('font-variation-settings: ' + fvss);
+		
+		if (fvsa.length) {
+			rules.push('font-variation-settings: ' + fvss);
+		}
 
 		// update the actual CSS
 		if (options.styleElement) {
@@ -128,6 +176,7 @@
 		return {
 			'clone': function(obj) { return JSON.parse(JSON.stringify(obj)); },
 			'isRegisteredAxis': function(axis) { return registeredAxes.indexOf(axis) >= 0; },
+			'populateAxisSliders': populateAxisSliders,
 			'slidersToElement': slidersToElement,
 			'updateCSSOutput': updateCSSOutput,
 			'handleSliderChange': handleSlider
