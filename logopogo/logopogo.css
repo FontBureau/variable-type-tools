@@ -1,0 +1,12 @@
+
+#logopogo *[data-axes]::after {
+	text-align: left;
+}
+
+#logopogo figure {
+	margin-top: 1rem;
+}
+
+#save-buttons {
+	margin-top: 1em;
+}
