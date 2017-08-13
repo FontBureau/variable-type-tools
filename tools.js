@@ -148,7 +148,6 @@
 			editvalue.max = slider.max = values.max;
 			editvalue.step = slider.step = values.max-values.min > 50 ? 1 : (values.max-values.min)/100;
 			editvalue.value = slider.value = values.default;
-			slider.setAttribute('data-default', values.default);
 
 			li.appendChild(label);
 			li.appendChild(editlabel);
@@ -280,6 +279,10 @@
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
 		
+		$('head style[id^="style-"]').empty();
+		$('input[type=checkbox]').prop('checked',false).trigger('change');
+		$('#align-left').prop('checked',true);
+
 		TNTools.populateAxisSliders(font);
 
 		axisSliders = axisInputs.find('input[type=range]');
@@ -313,7 +316,7 @@
 		});
 		
 		$('#show-parameters').on('change', function() {
-			$('article')[this.checked ? 'addClass' : 'removeClass']('show-parameters');
+			$('html')[this.checked ? 'addClass' : 'removeClass']('show-parameters');
 		}).trigger('change');
 	
 		$('#show-css').on('change', function() {

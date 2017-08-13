@@ -30,27 +30,10 @@ $(function() {
 	
 	$("input[type=radio]").on('change', slidersToElement);
 	
-	$('#show-parameters').on('change', function() {
-		logopogo[this.checked ? 'addClass' : 'removeClass']('show-parameters');
-	}).trigger('change');
-
-	$('#show-css').on('change', function() {
-		$('#css-output')[this.checked ? 'show' : 'hide']();
-	}).trigger('change');
-
 	//font change triggers a lot of updates
 	$('#select-font').on('change', function() {
 		var font = $(this).val();
-
-		$('head style[id^="style-"]').empty();
-		$('input[type=checkbox]').prop('checked',false).trigger('change');
-		$('#align-left').prop('checked',true);
-
-		//populate axis sliders with font defaults
-		$('#axis-inputs').empty();
-
-		TNTools.populateAxisSliders(font, false);
-		
+		TNTools.handleFontChange(font);
 		$('#input-size').trigger('change');
 		slidersToElement();
 	}).trigger('change');
