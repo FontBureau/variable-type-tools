@@ -53,7 +53,8 @@ $(function() {
 				var xmlns = "http://www.w3.org/2000/svg";
 
 				try {
-					window.font = font = font.getVariation(TNTools.fvsToAxes(logopogo.css('font-variation-settings')));
+					var axes = TNTools.fvsToAxes(logopogo.css('font-variation-settings'));
+					window.font = font = font.getVariation(axes);
 				} catch (e) {
 					alert(e);
 					return;
