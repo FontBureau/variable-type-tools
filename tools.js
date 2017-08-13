@@ -114,10 +114,6 @@
 			var k, v;
 			if (temp = setting.match(/["']\[?(\w{4})\]?['"]\s+([\-\d\.]+)/)) {
 				k = temp[1];
-				if (k.toLowerCase() in composites) {
-					//this is a faked composite slider value stored in CAPS
-					k = k.toLowerCase();
-				}
 				v = parseFloat(temp[2]);
 				axes[k] = v;
 				delete axisDeltas[k];
@@ -128,6 +124,13 @@
 
 	function fvsToSliders(fvs) {
 		var axes = fvsToAxes(fvs);
+		//convert fake CAPS values into their real versions
+		$.each(axes, function(k, v) {
+			var klc=k.toLowerCase();
+			if (klc in axisDefaults && !(k in axisDefaults)) {
+				axes[klc] = axes[k];
+			}
+		});
 		$.each(axisDefaults, function(k, v) {
 			controls.find('input[name="' + k + '"]').val(k in axes ? axes[k] : v.default);
 		});
