@@ -5,6 +5,27 @@
 	
 	var registeredAxes = ['opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD'];
 
+	window.loadFontkit = function() {
+		// thanks Adam! https://github.com/devongovett/fontkit/issues/41
+		window.fontkit.openURL = function(url, callback) {
+			var font = null;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+			xhr.responseType = 'arraybuffer';
+			xhr.onreadystatechange = function () { if (this.readyState === 4) {
+				var buffer;
+				if (this.status == 200) {
+					buffer = new Buffer(this.response);
+					font = fontkit.create(buffer);
+					callback(null, font);
+				} else {
+					callback(this.status + ' ' + this.statusText, null);
+				}
+			}};
+			xhr.send();
+		}
+	};
+
 	//these get updated whenever the font changes
 	var composites = {};
 	var axisDeltas = {};
@@ -81,8 +102,13 @@
 		return result;
 	}
 
-	function fvsToSliders(fvs) {
-		fvs = fvs.split(/, */);
+	function fvsToAxes(fvs) {
+		if (!fvs) {
+			return {};
+		}
+		if (typeof fvs === 'string') {
+			fvs = fvs.split(/, */);
+		}
 		var axes = {};
 		$.each(fvs, function(i, setting) {
 			var k, v;
@@ -97,6 +123,11 @@
 				delete axisDeltas[k];
 			}
 		});
+		return axes;
+	}
+
+	function fvsToSliders(fvs) {
+		var axes = fvsToAxes(fvs);
 		$.each(axisDefaults, function(k, v) {
 			controls.find('input[name="' + k + '"]').val(k in axes ? axes[k] : v.default);
 		});
@@ -297,6 +328,7 @@
 			'updateCSSOutput': updateCSSOutput,
 			'handleSliderChange': handleSlider,
 			'handleFontChange': handleFontChange,
+			'fvsToAxes': fvsToAxes,
 			'fvsToSliders': fvsToSliders,
 			'compositeToParametric': compositeToParametric
 		};

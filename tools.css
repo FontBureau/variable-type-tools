@@ -104,7 +104,7 @@ body {
 	padding-top: 64px;
 }
 
-body > * {
+body > #controls ~ * {
 	margin-left: 3in;
 }
 
