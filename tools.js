@@ -4,7 +4,105 @@
 	var temp;
 	
 	var registeredAxes = ['opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD'];
+
+	//these get updated whenever the font changes
+	var composites = {};
+	var axisDeltas = {};
+	var axisDefaults = {};
 	
+	var controls, axisInputs, axisSliders;
+	
+	//composite axis and value
+	window.c2p = compositeToParametric;
+	function compositeToParametric(caxis, cvalue) {
+		cvalue = parseFloat(cvalue);
+		
+		if (!(caxis in composites)) {
+			var temp = {};
+			temp[caxis] = cvalue;
+			return temp;
+		}
+	
+		//maintain a list of all axes mentioned in the composite, so we can reset them all
+		var allAxes = {};	
+		
+		var lowerPivot, upperPivot;
+		var lowerAxes, upperAxes;
+		//pivot value and axes
+		$.each(composites[caxis], function(pivot, paxes) {
+			pivot = parseFloat(pivot);
+			
+			//add any new axes to the list
+			$.each(paxes, function(paxis, pval) {
+				if (!(paxis in allAxes)) {
+					allAxes[paxis] = axisDefaults[paxis].default;
+				}
+			});
+			
+			if (pivot >= cvalue) {
+				//first time this happens we can stop
+				if (!upperPivot) {
+					upperPivot = pivot;
+					upperAxes = paxes;
+				}
+			}
+			
+			if (!lowerPivot || !upperPivot) {
+				//first runthru OR we still haven't found the top of the range
+				lowerPivot = pivot;
+				lowerAxes = paxes;
+			}
+		});
+	
+		var result = {};
+		if (!upperPivot) {
+			upperPivot = lowerPivot;
+			upperAxes = lowerAxes;
+		} else if (!lowerPivot) {
+			lowerPivot = upperPivot;
+			lowerAxes = upperAxes;
+		}
+		$.each(allAxes, function(axis, dflt) {
+			var u = axis in upperAxes ? upperAxes[axis] : dflt;
+			var l = axis in lowerAxes ? lowerAxes[axis] : dflt;
+			var r = upperPivot === lowerPivot ? 0.0 : (cvalue-lowerPivot)/(upperPivot-lowerPivot);
+			result[axis] = l + r*(u-l);
+			if (axisDefaults[axis].max - axisDefaults[axis].min > 50) {
+				result[axis] = Math.round(result[axis]);
+				if (!(axis in axisDeltas)) {
+					axisDeltas[axis] = {};
+				}
+				axisDeltas[axis][caxis] = result[axis] - dflt;
+				//and zero out any manual axis adjustments that may have been made
+				axisDeltas[axis][axis] = 0;
+			}
+		});
+
+		return result;
+	}
+
+	function fvsToSliders(fvs) {
+		fvs = fvs.split(/, */);
+		var axes = {};
+		$.each(fvs, function(i, setting) {
+			var k, v;
+			if (temp = setting.match(/["']\[?(\w{4})\]?['"]\s+([\-\d\.]+)/)) {
+				k = temp[1];
+				if (k.toLowerCase() in composites) {
+					//this is a faked composite slider value stored in CAPS
+					k = k.toLowerCase();
+				}
+				v = parseFloat(temp[2]);
+				axes[k] = v;
+				delete axisDeltas[k];
+			}
+		});
+		$.each(axisDefaults, function(k, v) {
+			controls.find('input[name="' + k + '"]').val(k in axes ? axes[k] : v.default);
+		});
+	}
+		
+
 	function updateCSSOutput() {
 		//update CSS output
 		var styletext = "";
@@ -85,9 +183,16 @@
 			}
 			
 			$('#input-size').data('oldval', constrained);
-			
+
 			//auto-match optical size
 			$('input[name="opsz"]').val(el.value).trigger(evt.type);
+		}
+
+		//calculate composite axes into their individual parameters
+		if (el.name in composites) {
+			TNTools.compositeToParametric(el.name, constrained);
+		} else if (el.name in axisDeltas) {
+			delete axisDeltas[el.name];
 		}
 	}
 
@@ -96,8 +201,6 @@
 			-selector: the actual CSS selector to apply the styles to
 			-styleElement: <style> to add CSS text to
 			-paramsElement: element that will show colophon output
-			-composites: composite axes info
-			-deltas: parametric axis deltas
 		*/
 			
 //		updateURL();
@@ -125,21 +228,18 @@
 		var fvs = {};
 		//fvs['opsz'] = $('#input-size').val();
 		$.each($('#axis-inputs input[type=range]'), function() {
-			var defaultVal = this.getAttribute('data-default');
-			defaultVal = window[defaultVal.indexOf('.') >= 0 ? 'parseFloat' : 'parseInt'](defaultVal);
-
-			if (options.composites && this.name in options.composites) {
+			if (this.name in composites) {
 				//composite axes get left at default, but let's but in a fake helper string to remember the value
 				fvs[this.name.toUpperCase()] = this.value; //axisDefaults[this.name].default;
-			} else if (options.deltas && this.name in options.deltas) {
+			} else if (this.name in axisDeltas) {
 				var sum = 0;
-				$.each(options.deltas[this.name], function(caxis, cdelta) {
+				$.each(axisDeltas[this.name], function(caxis, cdelta) {
 					sum += cdelta;
 				});
-				fvs[this.name] = defaultVal + sum;
+				fvs[this.name] = axisDefaults[this.name].default + sum;
 				$('input[name="' + this.name + '"]').val(fvs[this.name]);
 			} else {
-				if (!(this.name in fvs) && this.value != defaultVal) {
+				if (!(this.name in fvs) && this.value != axisDefaults[this.name].default) {
 					fvs[this.name] = this.value;
 				}
 			}
@@ -171,6 +271,19 @@
 		
 		updateCSSOutput();
 	}
+	
+	function handleFontChange(font) {
+		//populate axis sliders with font defaults
+		axisInputs.empty();
+
+		composites = fontInfo[font].composites;
+		axisDefaults = fontInfo[font].axes;
+		axisDeltas = {};
+		
+		TNTools.populateAxisSliders(font);
+
+		axisSliders = axisInputs.find('input[type=range]');
+	}
 
 	function tnTypeTools() {
 		return {
@@ -179,9 +292,39 @@
 			'populateAxisSliders': populateAxisSliders,
 			'slidersToElement': slidersToElement,
 			'updateCSSOutput': updateCSSOutput,
-			'handleSliderChange': handleSlider
+			'handleSliderChange': handleSlider,
+			'handleFontChange': handleFontChange,
+			'fvsToSliders': fvsToSliders,
+			'compositeToParametric': compositeToParametric
 		};
 	}
+	
+	$(function() {
+		controls = $('#controls');
+		axisInputs = $('#axis-inputs');
+		axisSliders = axisInputs.find('input[type=range]');
+
+		$('#everybox').on('change', function () {
+			if (this.checked) {
+				$('#axis-inputs .hidden-by-default').show();
+			} else {
+				$('#axis-inputs .hidden-by-default').hide();
+			}
+		});
+		
+		$('#show-parameters').on('change', function() {
+			$('article')[this.checked ? 'addClass' : 'removeClass']('show-parameters');
+		}).trigger('change');
+	
+		$('#show-css').on('change', function() {
+			$('#css-output')[this.checked ? 'show' : 'hide']();
+		}).trigger('change');
+	
+		$('#reset').on('click', function() {
+			$('#select-font').trigger('change');
+			return false;
+		});
+	});
 	
 	window.TNTools = tnTypeTools();
 })();

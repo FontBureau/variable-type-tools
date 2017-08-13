@@ -27,14 +27,6 @@ $(function() {
 		'max-width': ''
 	};
 	
-	//these get updated whenever the font changes
-	var composites = {};
-	var axisDeltas = {};
-	var axisDefaults = {};
-	
-	var axisInputs = $('#axis-inputs');
-	var axisSliders = axisInputs.find('input[type=range]');
-	
 	if (temp=window.location.search.match(/show=([^&]+)/)) {
 		show = decodeURIComponent(temp[1]);
 		$('input[name=show][value="' +show+ '"]').prop('checked', true);
@@ -56,75 +48,6 @@ $(function() {
 	}
 */
 
-	//composite axis and value
-	window.c2p = compositeToParametric;
-	function compositeToParametric(caxis, cvalue) {
-		cvalue = parseFloat(cvalue);
-		
-		if (!(caxis in composites)) {
-			var temp = {};
-			temp[caxis] = cvalue;
-			return temp;
-		}
-	
-		//maintain a list of all axes mentioned in the composite, so we can reset them all
-		var allAxes = {};	
-		
-		var lowerPivot, upperPivot;
-		var lowerAxes, upperAxes;
-		//pivot value and axes
-		$.each(composites[caxis], function(pivot, paxes) {
-			pivot = parseFloat(pivot);
-			
-			//add any new axes to the list
-			$.each(paxes, function(paxis, pval) {
-				if (!(paxis in allAxes)) {
-					allAxes[paxis] = axisDefaults[paxis].default;
-				}
-			});
-			
-			if (pivot >= cvalue) {
-				//first time this happens we can stop
-				if (!upperPivot) {
-					upperPivot = pivot;
-					upperAxes = paxes;
-				}
-			}
-			
-			if (!lowerPivot || !upperPivot) {
-				//first runthru OR we still haven't found the top of the range
-				lowerPivot = pivot;
-				lowerAxes = paxes;
-			}
-		});
-	
-		var result = {};
-		if (!upperPivot) {
-			upperPivot = lowerPivot;
-			upperAxes = lowerAxes;
-		} else if (!lowerPivot) {
-			lowerPivot = upperPivot;
-			lowerAxes = upperAxes;
-		}
-		$.each(allAxes, function(axis, dflt) {
-			var u = axis in upperAxes ? upperAxes[axis] : dflt;
-			var l = axis in lowerAxes ? lowerAxes[axis] : dflt;
-			var r = upperPivot === lowerPivot ? 0.0 : (cvalue-lowerPivot)/(upperPivot-lowerPivot);
-			result[axis] = l + r*(u-l);
-			if (axisDefaults[axis].max - axisDefaults[axis].min > 50) {
-				result[axis] = Math.round(result[axis]);
-				if (!(axis in axisDeltas)) {
-					axisDeltas[axis] = {};
-				}
-				axisDeltas[axis][caxis] = result[axis] - dflt;
-				//and zero out any manual axis adjustments that may have been made
-				axisDeltas[axis][axis] = 0;
-			}
-		});
-
-		return result;
-	}
-
 	function updateArticleStyle(name, value) {
 		articleStyles[name] = value;
 		var css = "\narticle {";
@@ -143,12 +66,11 @@ $(function() {
 			contentcell = contentcell.parent('.container');
 		}
 
+		contentcell.attr('data-style', activeStyle);
 		TNTools.slidersToElement({
 			'selector': 'article ' + style2class[activeStyle],
 			'styleElement': $('#style-' + activeStyle),
-			'paramsElement': contentcell,
-			'composites': composites,
-			'deltas': axisDeltas
+			'paramsElement': contentcell
 		});
 	}
 
@@ -183,7 +105,6 @@ $(function() {
 		}
 
 		var axes = {};
-		var fvs = (testEl.css('font-variation-settings') || '').split(/, */);
 		
 		var align;
 		
@@ -210,25 +131,8 @@ $(function() {
 		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 
-		$.each(fvs, function(i, setting) {
-			var k, v;
-			if (temp = setting.match(/["']\[?(\w{4})\]?['"]\s+([\-\d\.]+)/)) {
-				k = temp[1];
-				if (k.toLowerCase() in composites) {
-					//this is a faked composite slider value stored in CAPS
-					k = k.toLowerCase();
-				}
-				v = parseFloat(temp[2]);
-				axes[k] = v;
-				axisDeltas[k] = {};
-				axisDeltas[k][k] = v - axisDefaults[k].default;
-			}
-		});
+		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '');
 
-		$.each(axisDefaults, function(k, v) {
-			controls.find('input[name="' + k + '"]').val(k in axes ? axes[k] : v.default);
-		});
-		
 		$('#input-size').trigger('change'); // does optical size magic
 	}
 
@@ -255,53 +159,27 @@ $(function() {
 			}
 		}
 		
-		//calculate composite axes into their individual parameters
-		if (this.name in composites) {
-			compositeToParametric(this.name, constrained);
-		} else if (this.name in axisDeltas) {
-			axisDeltas[this.name] = {};
-			axisDeltas[this.name][this.name] = constrained - axisDefaults[this.name].default;
-		}
-
 		TNTools.handleSliderChange(evt);
 		slidersToElement();
 	});
 	
 	$("input[type=radio]").on('change', slidersToElement);
 	
-	$('#everybox').on('change', function () {
-		if (this.checked) {
-			show = this.value;
-			$('#axis-inputs .hidden-by-default').show();
-		} else {
-			show = '';
-			$('#axis-inputs .hidden-by-default').hide();
-		}
-		slidersToElement();
-	});
-	
-	$('#show-parameters').on('change', function() {
-		$('article')[this.checked ? 'addClass' : 'removeClass']('show-parameters');
-	}).trigger('change');
-
-	$('#show-css').on('change', function() {
-		$('#css-output')[this.checked ? 'show' : 'hide']();
-	}).trigger('change');
-
 	//font change triggers a lot of updates
 	$('#select-font').on('change', function() {
 		var font = $(this).val();
 
+		TNTools.handleFontChange(font);
+
 		$('head style[id^="style-"]').empty();
 		$('input[type=checkbox]').prop('checked',false).trigger('change');
 		$('#align-left').prop('checked',true);
-
+		
 /*
 		$('#input-size').trigger('change');
 		$('#input-column-width').val($('#input-column-width').data('original-value')).trigger('change');
 		$('#input-leading').val($('#input-leading').data('original-value')).trigger('change');
 */
-
 
 		var realColumnWidth = parseInt($('article').css('max-width'));
 		var realFontSize = parseInt($('article ' + style2class.T2).css('font-size'));
@@ -312,17 +190,6 @@ $(function() {
 		updateArticleStyle('max-width', cwEm + 'em');
 
 		$('input[name="column-width"]').val(cwEm);
-
-		//populate axis sliders with font defaults
-		axisInputs.empty();
-
-		composites = fontInfo[font].composites;
-		axisDefaults = fontInfo[font].axes;
-		axisDeltas = {};
-		
-		TNTools.populateAxisSliders();
-
-		axisSliders = axisInputs.find('input[type=range]');
 
 		if (pageLoaded) {
 			$.each(style2class, function(k, v) {
@@ -339,16 +206,6 @@ $(function() {
 		}
 	}).trigger('change');
 
-	$('#screen-size').on('change', function() {
-		var wh = $(this).val().split('x');
-		$('#fake-screen').width(wh[0]).height(wh[1]);
-	}).trigger('change');
-
-	$('#reset').on('click', function() {
-		$('#select-font').trigger('change');
-		return false;
-	});
-	
 	var toSlidersAndBack = function() {
 		selectElement(this);
 		elementToSliders(this);
