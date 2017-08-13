@@ -29,6 +29,7 @@ label {
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 0.25em;
 }
 
 h1 {
@@ -43,7 +44,7 @@ h2 {
 
 h3 {
 	font-weight: 100;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 hr {

@@ -115,10 +115,10 @@
       "name": "Weight", 
       "min": 300.0
     }, 
-    "yopq": {
+    "opsz": {
       "default": 100.0, 
       "max": 100.0, 
-      "name": "Hairline", 
+      "name": "Hairline Opsz", 
       "min": 14.0
     }, 
     "ytde": {
