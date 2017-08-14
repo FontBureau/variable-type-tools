@@ -1,0 +1,1 @@
+global.jsPDF = require('jspdf')
