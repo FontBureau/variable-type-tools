@@ -5,27 +5,6 @@
 	
 	var registeredAxes = ['opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD'];
 
-	window.loadFontkit = function() {
-		// thanks Adam! https://github.com/devongovett/fontkit/issues/41
-		window.fontkit.openURL = function(url, callback) {
-			var font = null;
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', url, true);
-			xhr.responseType = 'arraybuffer';
-			xhr.onreadystatechange = function () { if (this.readyState === 4) {
-				var buffer;
-				if (this.status == 200) {
-					buffer = new Buffer(this.response);
-					font = fontkit.create(buffer);
-					callback(null, font);
-				} else {
-					callback(this.status + ' ' + this.statusText, null);
-				}
-			}};
-			xhr.send();
-		}
-	};
-
 	//these get updated whenever the font changes
 	var composites = {};
 	var axisDeltas = {};

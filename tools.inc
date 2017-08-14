@@ -162,7 +162,6 @@ class TypeTools {
 		<script>
 			var fontInfo = <?= json_encode($this->fontinfo) ?>;
 		</script>
-		<script src="/fontkit.js" async onload="loadFontkit();"></script>
 		<script src="/tools.js"></script>
 		<script src="<?= $whichtool ?>.js"></script>
 	</head>
