@@ -10324,7 +10324,7 @@ function _applyDecoratedDescriptor$1(target, property, decorators, descriptor, c
 }
 try {
     var iconv = function () {
-            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/tn-var-booth/node_modules/fontkit\'');
+            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/varfonts-web-demos/node_modules/fontkit\'');
         }();
 } catch (err) {
 }
@@ -37150,7 +37150,7 @@ if (hadRuntime) {
     var DecodeStream, iconv;
     try {
         iconv = function () {
-            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/tn-var-booth/node_modules/restructure/src\'');
+            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/varfonts-web-demos/node_modules/restructure/src\'');
         }();
     } catch (_error) {
     }
@@ -37257,7 +37257,7 @@ if (hadRuntime) {
     DecodeStream = require('./DecodeStream');
     try {
         iconv = function () {
-            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/tn-var-booth/node_modules/restructure/src\'');
+            throw new Error('Cannot find module \'iconv-lite\' from \'/Users/clewis/dev/varfonts-web-demos/node_modules/restructure/src\'');
         }();
     } catch (_error) {
     }
