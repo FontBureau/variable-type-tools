@@ -1,111 +1,66 @@
 {
-  "Decovar-VF": {
+  "LabDJR-VF": {
     "order": [
-      "INLN", 
-      "SINL", 
-      "SSTR", 
-      "SWRM", 
-      "TBIF", 
-      "TFLR", 
-      "TINL", 
-      "TOIL", 
-      "TRND", 
-      "TRSB", 
-      "TSHR", 
-      "TSLB", 
-      "TWRM", 
-      "WORM", 
-      "wght"
+      "BEVL", 
+      "OVAL", 
+      "QUAD", 
+      "SIZE"
     ], 
-    "INLN": {
+    "BEVL": {
       "default": 0.0, 
       "max": 1000.0, 
-      "name": "Inline", 
+      "name": "Bevel", 
       "min": 0.0
     }, 
-    "TSHR": {
+    "OVAL": {
       "default": 0.0, 
       "max": 1000.0, 
-      "name": "Sheared", 
+      "name": "Oval", 
       "min": 0.0
     }, 
-    "TRSB": {
+    "QUAD": {
       "default": 0.0, 
       "max": 1000.0, 
-      "name": "Rounded Slab", 
+      "name": "Quad", 
       "min": 0.0
     }, 
-    "SSTR": {
+    "SIZE": {
       "default": 0.0, 
       "max": 1000.0, 
-      "name": "Stripes", 
+      "name": "Size", 
       "min": 0.0
-    }, 
-    "TWRM": {
+    }
+  }, 
+  "BentonSansV14-VF": {
+    "xopq": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Worm Terminal", 
-      "min": 0.0
+      "max": 1.0, 
+      "name": "xopq", 
+      "min": -1.0
     }, 
-    "SINL": {
+    "xtra": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Inline Skeleton", 
-      "min": 0.0
+      "max": 1.0, 
+      "name": "xtra", 
+      "min": -1.0
     }, 
-    "TOIL": {
+    "ylct": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Open Inline Terminal", 
+      "max": 1.0, 
+      "name": "ylct", 
       "min": 0.0
     }, 
-    "TINL": {
+    "yopq": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Inline Terminal", 
-      "min": 0.0
+      "max": 1.0, 
+      "name": "yopq", 
+      "min": -1.0
     }, 
-    "WORM": {
+    "ytra": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Worm", 
-      "min": 0.0
-    }, 
-    "wght": {
-      "default": 400.0, 
-      "max": 1000.0, 
-      "name": "Weight", 
-      "min": 400.0
-    }, 
-    "TFLR": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Flared", 
-      "min": 0.0
-    }, 
-    "TRND": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Rounded", 
-      "min": 0.0
-    }, 
-    "SWRM": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Worm Skeleton", 
-      "min": 0.0
-    }, 
-    "TSLB": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Slab", 
-      "min": 0.0
-    }, 
-    "TBIF": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Bifurcated", 
-      "min": 0.0
+      "max": 1.0, 
+      "name": "ytra", 
+      "min": -1.0
     }
   }, 
   "Louvette-VF": {
@@ -260,36 +215,127 @@
       "min": 8.0
     }
   }, 
-  "BentonSansV14-VF": {
-    "xopq": {
+  "DecovarAlpha-VF": {
+    "order": [
+      "INLN", 
+      "SINL", 
+      "SSTR", 
+      "SWRM", 
+      "TBIF", 
+      "TFLR", 
+      "TINL", 
+      "TOIL", 
+      "TRND", 
+      "TRSB", 
+      "TSHR", 
+      "TSLB", 
+      "TWRM", 
+      "WORM", 
+      "wght"
+    ], 
+    "BLDA": {
       "default": 0.0, 
-      "max": 1.0, 
-      "name": "xopq", 
-      "min": -1.0
-    }, 
-    "xtra": {
-      "default": 0.0, 
-      "max": 1.0, 
-      "name": "xtra", 
-      "min": -1.0
-    }, 
-    "ylct": {
-      "default": 0.0, 
-      "max": 1.0, 
-      "name": "ylct", 
+      "max": 1000.0, 
+      "name": "Inline", 
       "min": 0.0
     }, 
-    "yopq": {
+    "TRMD": {
       "default": 0.0, 
-      "max": 1.0, 
-      "name": "yopq", 
-      "min": -1.0
+      "max": 1000.0, 
+      "name": "Shearded", 
+      "min": 0.0
     }, 
-    "ytra": {
+    "TRMC": {
       "default": 0.0, 
-      "max": 1.0, 
-      "name": "ytra", 
-      "min": -1.0
+      "max": 1000.0, 
+      "name": "Rounded Slab", 
+      "min": 0.0
+    }, 
+    "SKLD": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Stripes", 
+      "min": 0.0
+    }, 
+    "TRML": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm Terminal", 
+      "min": 0.0
+    }, 
+    "SKLA": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Inline Skeleton", 
+      "min": 0.0
+    }, 
+    "TRMF": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Open Inline Terminal", 
+      "min": 0.0
+    }, 
+    "TRMK": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Inline Terminal", 
+      "min": 0.0
+    }, 
+    "BLDB": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm", 
+      "min": 0.0
+    }, 
+    "WMX2": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Weight", 
+      "min": 0.0
+    }, 
+    "TRMB": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Flared", 
+      "min": 0.0
+    }, 
+    "TRMA": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Rounded", 
+      "min": 0.0
+    }, 
+    "SKLB": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Worm Skeleton", 
+      "min": 0.0
+    }, 
+    "TRMG": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Slab", 
+      "min": 0.0
+    }, 
+    "TRME": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Bifurcated", 
+      "min": 0.0
+    }
+  }, 
+  "Output_Sans-VF": {
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 0.0
+    }, 
+    "slnt": {
+      "default": 0.0, 
+      "max": 1000.0, 
+      "name": "Height", 
+      "min": 0.0
     }
   }, 
   "Agency FB-VF": {
@@ -366,38 +412,24 @@
       "min": 0.0
     }
   }, 
-  "Output_Sans-VF": {
+  "Louvette_Italic-VF": {
     "wght": {
-      "default": 400.0, 
-      "max": 900.0, 
-      "name": "Weight", 
-      "min": 0.0
-    }, 
-    "slnt": {
-      "default": 0.0, 
+      "default": 300.0, 
       "max": 1000.0, 
-      "name": "Height", 
-      "min": 0.0
-    }
-  }, 
-  "Roboto-min-VF": {
-    "wght": {
-      "default": -0.1, 
-      "max": 1.125, 
       "name": "Weight", 
-      "min": -1.0
+      "min": 300.0
     }, 
-    "wdth": {
+    "opsz": {
       "default": 100.0, 
       "max": 100.0, 
-      "name": "Width", 
-      "min": 75.0
+      "name": "Hairline Opsz", 
+      "min": 14.0
     }, 
-    "slnt": {
-      "default": 0.0, 
-      "max": 12.0, 
-      "name": "Slant", 
-      "min": 0.0
+    "ytde": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Descender", 
+      "min": 14.0
     }
   }, 
   "Input_Mono-VF": {
@@ -479,35 +511,23 @@
       "min": 100.0
     }
   }, 
-  "LabDJR-VF": {
-    "order": [
-      "BEVL", 
-      "OVAL", 
-      "QUAD", 
-      "SIZE"
-    ], 
-    "BEVL": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Bevel", 
-      "min": 0.0
+  "Roboto-min-VF": {
+    "wght": {
+      "default": -0.1, 
+      "max": 1.125, 
+      "name": "Weight", 
+      "min": -1.0
     }, 
-    "OVAL": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Oval", 
-      "min": 0.0
+    "wdth": {
+      "default": 100.0, 
+      "max": 100.0, 
+      "name": "Width", 
+      "min": 75.0
     }, 
-    "QUAD": {
+    "slnt": {
       "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Quad", 
-      "min": 0.0
-    }, 
-    "SIZE": {
-      "default": 0.0, 
-      "max": 1000.0, 
-      "name": "Size", 
+      "max": 12.0, 
+      "name": "Slant", 
       "min": 0.0
     }
   }, 
@@ -532,6 +552,9 @@
     }
   }, 
   "Dunbar-VF": {
+    "order": [
+      "wght"
+    ], 
     "wght": {
       "default": 500.0, 
       "max": 900.0, 
