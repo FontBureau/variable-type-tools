@@ -19,6 +19,7 @@ print $tools->pageHead('Logo Pogo')
 			<ul id='axis-inputs'>
 			</ul>
 			<p><label><input id="everybox" type="checkbox" name="show" value="everything"> Show all axes</label></p>
+			<p><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></p>
 			<p><label><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Show <span style="color:#09f">parameters</span></label></p>
 			<p><label><input id="show-css" type="checkbox" name="show-css" value="1"> Show CSS ouptut</label></p>
 <!-- 			<p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
