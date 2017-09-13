@@ -152,10 +152,12 @@ $(function() {
 		if (this.name === 'column-width') {
 			updateArticleStyle('max-width', constrained + 'em');
 			var lh = Math.max(1.3, Math.min(2.0, constrained/27.0));
-			$('#style-T1').text($('#style-T1').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
-			$('#style-T2').text($('#style-T2').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
-			if (activeStyle === 'T1' || activeStyle === 'T2') {
-				$('input[name=leading]').val(lh * $('#input-size').val());
+			if (evt.originalEvent) {
+				$('#style-T1').text($('#style-T1').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
+				$('#style-T2').text($('#style-T2').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
+				if (activeStyle === 'T1' || activeStyle === 'T2') {
+					$('input[name=leading]').val(lh * $('#input-size').val());
+				}
 			}
 		}
 		
