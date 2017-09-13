@@ -98,20 +98,22 @@
 				delete axisDeltas[k];
 			}
 		});
+		$.each(axisDefaults, function(axis, dv) {
+			if (!(axis in axes)) {
+				axes[axis] = dv.default;
+			}
+		});
 		return axes;
 	}
 
-	function fvsToSliders(fvs) {
+	function fvsToSliders(fvs, styleEl) {
 		var axes = fvsToAxes(fvs);
 		//convert fake CAPS values into their real versions
 		$.each(axes, function(k, v) {
-			var klc=k.toLowerCase();
-			if (klc in axisDefaults && !(k in axisDefaults)) {
-				axes[klc] = axes[k];
-			}
-		});
-		$.each(axisDefaults, function(k, v) {
-			controls.find('input[name="' + k + '"]').val(k in axes ? axes[k] : v.default);
+			var override = parseFloat(styleEl.data(k));
+			var val = isNaN(override) ? v : override;
+			controls.find('input[name="' + k + '"]').val(val);
+			compositeToParametric(k, val);
 		});
 	}
 		
@@ -208,16 +210,28 @@
 		}
 	}
 
+	function updateParameters(el) {
+		el = $(el);
+		var size = parseInt($('#input-size').val());
+		var leading = parseInt($('#input-leading').val());
+		var fvs = el.css('font-variation-settings') || '';
+
+		el.attr('data-axes', fvs.replace(/['"]\s+/g, ' ').replace(/['"]/g, ''));
+		el.attr('data-size-leading', size + '/' + leading);
+	}
+
 	function slidersToElement(options) {
 		/* options: only selector is required
 			-selector: the actual CSS selector to apply the styles to
 			-styleElement: <style> to add CSS text to
-			-paramsElement: element that will show colophon output
 		*/
 			
 //		updateURL();
 		
+		var styleEl = $(options.styleElement);
+		
 		var rules = [];
+		var vrules = [];
 		
 		var size = parseInt($('#input-size').val());
 		var leading = parseInt($('#input-leading').val());
@@ -238,21 +252,32 @@
 
 		//turn sliders into font-variation-settings
 		var fvs = {};
+		var fvsv = {};
+
 		//fvs['opsz'] = $('#input-size').val();
 		$.each($('#axis-inputs input[type=range]'), function() {
 			if (this.name in composites) {
 				//composite axes get left at default, but let's but in a fake helper string to remember the value
-				fvs[this.name.toUpperCase()] = this.value; //axisDefaults[this.name].default;
+				styleEl.data(this.name, this.value); //axisDefaults[this.name].default;
+				fvsv[this.name] = axisDefaults[this.name].default;
 			} else if (this.name in axisDeltas) {
 				var sum = 0;
 				$.each(axisDeltas[this.name], function(caxis, cdelta) {
 					sum += cdelta;
 				});
-				fvs[this.name] = axisDefaults[this.name].default + sum;
+				if (sum != 0) {
+					fvs[this.name] = axisDefaults[this.name].default + sum;
+				}
+				fvsv[this.name] = axisDefaults[this.name].default + sum;
 				$('input[name="' + this.name + '"]').val(fvs[this.name]);
 			} else {
-				if (!(this.name in fvs) && this.value != axisDefaults[this.name].default) {
-					fvs[this.name] = this.value;
+				// iOS 11 Safari has a bug that treats unspecified axes as the minimum instead of the default
+				// so always specify everything
+				if (!(this.name in fvs)) { 
+					fvsv[this.name] = this.value;
+					if (this.value != axisDefaults[this.name].default) {
+						fvs[this.name] = this.value;
+					}
 				}
 			}
 		});
@@ -262,25 +287,29 @@
 			fvsa.push('"' + k + '" ' + v);
 		})		
 		var fvss = fvsa.join(', ');
+
+		var fvsva = [];
+		$.each(fvsv, function(k,v) {
+			fvsva.push('"' + k + '" ' + v);
+		})		
+		var fvsvs = fvsva.join(', ');
 		
 		if (fvsa.length) {
 			rules.push('font-variation-settings: ' + fvss);
 		}
 
-		// update the actual CSS
-		if (options.styleElement) {
-			$(options.styleElement).text('\n' + options.selector + ' {\n\t' + rules.join(';\n\t') + ';\n}\n');
+		if (fvsva.length) {
+			vrules.push('font-variation-settings: ' + fvsvs);
 		}
 
+		// update the actual CSS
+		styleEl.text('\n' 
+			+ options.selector + ' {\n\t' + rules.join(';\n\t') + ';\n}\n'
+			+ '\n.verbose-fvs ' + options.selector + ' {\n\t' + vrules.join(';\n\t') + ';\n}\n'
+		);
+
 		// update colophon output
-		if (options.paramsElement) {
-			$(options.paramsElement).attr('data-axes', fvss.replace(/"\s+/g, ' ').replace(/"/g, ''));
-	
-			if (size && leading) {
-				$(options.paramsElement).attr('data-size-leading', size + '/' + leading);
-			}
-		}
-		
+		updateParameters(options.paramsElement);
 		updateCSSOutput();
 	}
 	
@@ -292,8 +321,11 @@
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
 		
-		$('head style[id^="style-"]').empty();
-		$('input[type=checkbox]').prop('checked',false).trigger('change');
+		$('head style[id^="style-"]').empty().removeData();
+		$('input[type=checkbox]').each(function() {
+			this.checked = this.hasAttribute('checked');
+			$(this).trigger('change');
+		});
 		$('#align-left').prop('checked',true);
 
 		TNTools.populateAxisSliders(font);
@@ -307,6 +339,7 @@
 			'isRegisteredAxis': function(axis) { return registeredAxes.indexOf(axis) >= 0; },
 			'populateAxisSliders': populateAxisSliders,
 			'slidersToElement': slidersToElement,
+			'updateParameters': updateParameters,
 			'updateCSSOutput': updateCSSOutput,
 			'handleSliderChange': handleSlider,
 			'handleFontChange': handleFontChange,
@@ -332,6 +365,13 @@
 		$('#show-parameters').on('change', function() {
 			$('html')[this.checked ? 'addClass' : 'removeClass']('show-parameters');
 		}).trigger('change');
+	
+		$('#verbose-fvs').on('change', function() {
+			$('html')[this.checked ? 'addClass' : 'removeClass']('verbose-fvs');
+			$('*[data-axes]').each(function() {
+				TNTools.updateParameters(this);
+			});
+		});
 	
 		$('#show-css').on('change', function() {
 			$('#css-output')[this.checked ? 'show' : 'hide']();

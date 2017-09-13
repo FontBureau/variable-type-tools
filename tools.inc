@@ -68,6 +68,10 @@ class TypeTools {
 		if (preg_match('/^(.+)-var\./', $_SERVER['HTTP_HOST'], $matches)) {
 			$specific_font = strtolower($matches[1]);
 		}
+		
+		if ($_SERVER['QUERY_STRING']) {
+			$specific_font = strtolower($_SERVER['QUERY_STRING']);
+		}
 	
 		foreach ($this->fontinfo as $filebase => $axes) {
 			if ($specific_font) {

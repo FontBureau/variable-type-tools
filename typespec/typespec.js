@@ -131,7 +131,7 @@ $(function() {
 		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 
-		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '');
+		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '', $('#style-' + activeStyle));
 
 		$('#input-size').trigger('change'); // does optical size magic
 	}
@@ -171,10 +171,6 @@ $(function() {
 
 		TNTools.handleFontChange(font);
 
-		$('head style[id^="style-"]').empty();
-		$('input[type=checkbox]').prop('checked',false).trigger('change');
-		$('#align-left').prop('checked',true);
-		
 /*
 		$('#input-size').trigger('change');
 		$('#input-column-width').val($('#input-column-width').data('original-value')).trigger('change');
