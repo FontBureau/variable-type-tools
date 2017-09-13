@@ -29,6 +29,7 @@ $(function() {
 	};
 	head.appendChild(script);
 
+/*
 	script = document.createElement('script');
 	script.src="/jspdf.js";
 	script.async = true;
@@ -39,6 +40,7 @@ $(function() {
 		head.appendChild(script);
 	}
 	head.appendChild(script);
+*/
 
 	var temp; //general use
 	
