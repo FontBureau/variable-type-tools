@@ -1,6 +1,13 @@
 <?php
 namespace TypeNetwork\TypeTools;
 
+if (!isset($_SERVER['PHP_AUTH_USER']) or $_SERVER['PHP_AUTH_USER'] !== 'typetools' or $_SERVER['PHP_AUTH_PW'] !== 'variablefonts') {
+	header('WWW-Authenticate: Basic realm="Type Tools"');
+	header('HTTP/1.0 401 Unauthorized');
+	echo 'Go to jail. Do not pass word.';
+	exit;
+}
+
 class TypeTools {
 	public $fontinfo;
 	private $slidercount = 0;
