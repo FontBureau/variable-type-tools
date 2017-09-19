@@ -76,7 +76,6 @@ $(function() {
 		var font = $(this).val();
 		TNTools.handleFontChange(font);
 		$('#input-size').trigger('change');
-		slidersToElement();
 	}).trigger('change');
 
 	$('#reset').on('click', function() {
