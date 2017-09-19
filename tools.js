@@ -163,11 +163,12 @@
 			editvalue.max = slider.max = values.max;
 			editvalue.step = slider.step = values.max-values.min > 50 ? 1 : (values.max-values.min)/100;
 			editvalue.value = slider.value = values.default;
-
+			
 			li.appendChild(label);
 			li.appendChild(editlabel);
 			li.appendChild(editvalue);
 			li.appendChild(slider);
+			
 			axisInputs.append(li);
 		});
 	}
@@ -199,7 +200,7 @@
 			$('#input-size').data('oldval', constrained);
 
 			//auto-match optical size
-			$('input[name="opsz"]').val(el.value).trigger(evt.type);
+			setTimeout(function() { $('input[name="opsz"]').val(el.value).trigger(evt.type); });
 		}
 
 		//calculate composite axes into their individual parameters
@@ -269,7 +270,7 @@
 					fvs[this.name] = axisDefaults[this.name].default + sum;
 				}
 				fvsv[this.name] = axisDefaults[this.name].default + sum;
-				$('input[name="' + this.name + '"]').val(fvs[this.name]);
+				$('input[name="' + this.name + '"]').val(fvsv[this.name]);
 			} else {
 				// iOS 11 Safari has a bug that treats unspecified axes as the minimum instead of the default
 				// so always specify everything
@@ -329,7 +330,7 @@
 		$('#align-left').prop('checked',true);
 
 		TNTools.populateAxisSliders(font);
-
+		
 		axisSliders = axisInputs.find('input[type=range]');
 	}
 
