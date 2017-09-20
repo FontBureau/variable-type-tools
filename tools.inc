@@ -1,12 +1,12 @@
 <?php
 namespace TypeNetwork\TypeTools;
 
-if (!isset($_SERVER['PHP_AUTH_USER']) or $_SERVER['PHP_AUTH_USER'] !== 'typetools' or $_SERVER['PHP_AUTH_PW'] !== 'variablefonts') {
+/* if (!isset($_SERVER['PHP_AUTH_USER']) or $_SERVER['PHP_AUTH_USER'] !== 'typetools' or $_SERVER['PHP_AUTH_PW'] !== 'variablefonts') {
 	header('WWW-Authenticate: Basic realm="Type Tools"');
 	header('HTTP/1.0 401 Unauthorized');
 	echo 'Go to jail. Do not pass word.';
 	exit;
-}
+} */
 
 class TypeTools {
 	public $fontinfo;
@@ -220,5 +220,28 @@ class TypeTools {
 		</div>
 	<?php
 		return "";
+	}
+	
+	public function lastFontUpdate() {
+		$now = time();
+		$then = filemtime("{$_SERVER['DOCUMENT_ROOT']}/fonts/axes.json");
+		$date = date("j M", $then);
+		$time = date("H:i", $then);
+		$diff = $now - $then;
+		if ($diff < 60) {
+			return $diff == 1 ? "just now" : "$diff seconds ago";
+		}
+		$diff = floor($diff/60);
+		if ($diff < 60) {
+			return $diff == 1 ? "1 minute ago" : "$diff minutes ago";
+		}
+		$diff = floor($diff/24);
+		if ($diff < 24) {
+			return $diff == 1 ? "1 hour ago" : "$diff hours ago";
+		}
+		if ($diff < 48) {
+			return "yesterday $time";
+		}
+		return "$date $time";
 	}
 }

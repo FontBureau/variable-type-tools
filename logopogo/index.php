@@ -24,6 +24,7 @@ print $tools->pageHead('Logo Pogo')
 			<p><label><input id="show-css" type="checkbox" name="show-css" value="1"> Show CSS ouptut</label></p>
 <!-- 			<p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
 			<p><a href="/" id='reset'>Reset to font defaults</a></p>
+			<p><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $tools->lastFontUpdate() ?>">Grab latest font files</a></p>
 		</form>
 		<h1>Logo Pogo</h1>
 		<figure id='pogologo' contenteditable spellcheck="false" data-style="Settings">
