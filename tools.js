@@ -382,6 +382,29 @@
 			$('#select-font').trigger('change');
 			return false;
 		});
+		
+		$('#grab-new-fonts').on('click', function() {
+			var clocks = ['🕛','🕧','🕐','🕜','🕑','🕝','🕒','🕞','🕓','🕟','🕔','🕠','🕕','🕢','🕖','🕢','🕗','🕣','🕘','🕤','🕙','🕥','🕚','🕦'];
+			var start = Date.now();
+			$(this).next('span').remove();
+			var spinner = $("<span style='padding-left: 0.33em'>" + clocks[0] + "</span>").insertAfter(this);
+			var interval = setInterval(function() {
+				var sec = (Date.now() - start) / 1000;
+				spinner.text(clocks[Math.floor(sec*2)%24]);
+			}, 500);
+			$.ajax(this.href, {
+				'complete': function(xhr) {
+					clearInterval(interval);
+					if (xhr.status === 200) {
+						spinner.text("✅ reloading…").attr('title', xhr.responseText);
+						setTimeout(function() { window.location.reload(); }, 1000);
+					} else {
+						spinner.text("❌").attr('title', xhr.statusText + " — call chris!");
+					}
+				}
+			});
+			return false;
+		});
 	});
 	
 	window.TNTools = tnTypeTools();
