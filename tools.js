@@ -478,19 +478,20 @@
 			addCustomFonts(this.files);
 		});
 		
-		$('body').on('dragover', function(evt) {
+		var dragging = false;
+		$(document).on('dragover', function(evt) {
+			if (dragging) return false;
+			dragging = true;
+			evt.originalEvent.dataTransfer.dropEffect = 'copy';
 			$('body').addClass('dropzone');
 			return false;
-		});
-		
-		$('body').on('dragend', function(evt) {
+		}).on('dragend', function(evt) {
 			$('body').removeClass('dropzone');
+			dragging = false;
 			return false;
-		});
-		
-		$('body').on('drop', function(evt) {
-			$('body').removeClass('dropzone');
+		}).on('drop', function(evt) {
 			addCustomFonts(evt.originalEvent.dataTransfer.files);
+			$(this).trigger('dragend');
 			return false;
 		});
 	});
