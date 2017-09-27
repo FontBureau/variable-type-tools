@@ -436,27 +436,26 @@
 							'axisOrder': [],
 							'composites': []
 						};
-						if (!font.tables.fvar || !font.tables.fvar.axes) {
-							console.log(info.name + " has no fvar table");
-							return;
+						if ('fvar' in font.tables && 'axes' in font.tables.fvar) {
+							$.each(font.tables.fvar.axes, function(i, axis) {
+								info.axes[axis.tag] = {
+									'name': 'name' in axis ? axis.name.en : axis.tag,
+									'min': axis.minValue,
+									'max': axis.maxValue,
+									'default': axis.defaultValue
+								};
+								info.axisOrder.push(axis.tag);
+							});
 						}
-						$.each(font.tables.fvar.axes, function(i, axis) {
-							info.axes[axis.tag] = {
-								'name': 'name' in axis ? axis.name.en : axis.tag,
-								'min': axis.minValue,
-								'max': axis.maxValue,
-								'default': axis.defaultValue
-							};
-							info.axisOrder.push(axis.tag);
-						});
 
 						$('head').append('<style>@font-face { font-family:"' + info.name + ' Demo"; src: url("' + datauri + '") format("' + format + '"); }</style>');
 						window.fontInfo[fonttag] = info;
-						var optgroup, option = document.createElement('option');
+						var optgroup = $('#custom-optgroup');
+						var option = document.createElement('option');
 						option.value = fonttag;
 						option.innerHTML = info.name;
-						if (!optgroup) {
-							option.selected = true;
+						option.selected = true;
+						if (!optgroup.length) {
 							$('#select-font').wrapInner('<optgroup label="Defaults"></optgroup>');
 							optgroup = $('<optgroup id="custom-optgroup" label="Your fonts"></optgroup>').prependTo($('#select-font'));
 						}
