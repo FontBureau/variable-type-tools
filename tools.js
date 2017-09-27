@@ -405,6 +405,94 @@
 			});
 			return false;
 		});
+
+		function addCustomFonts(files) {
+			$.each(files, function(i, file) {
+				var reader = new FileReader();
+				var mimetype, format;
+				if (file.name.match(/\.[ot]tf$/)) {
+					mimetype = "application/font-sfnt";
+					format = "opentype";
+				} else if (file.name.match(/\.(woff2?)$/)) {
+					mimetype = "application/font-woff";
+					format = RegExp.$1;
+				} else {
+					console.log(file.name + " not a supported file type");
+					return;
+				}
+				var blob = new Blob([file], {'type': mimetype});
+				reader.addEventListener('load', function() {
+					var datauri = this.result;
+					window.opentype.load(datauri, function (err, font) {
+						if (err) {
+							console.log(err);
+							return;
+						}
+						window.font = font;
+						var fonttag = 'custom-' + file.name.replace(/(-VF)?\.\w+$/, '');
+						var info = {
+							'name': font.getEnglishName('fullName'),
+							'axes': {},
+							'axisOrder': [],
+							'composites': []
+						};
+						if (!font.tables.fvar || !font.tables.fvar.axes) {
+							console.log(info.name + " has no fvar table");
+							return;
+						}
+						$.each(font.tables.fvar.axes, function(i, axis) {
+							info.axes[axis.tag] = {
+								'name': 'name' in axis ? axis.name.en : axis.tag,
+								'min': axis.minValue,
+								'max': axis.maxValue,
+								'default': axis.defaultValue
+							};
+							info.axisOrder.push(axis.tag);
+						});
+
+						$('head').append('<style>@font-face { font-family:"' + info.name + ' Demo"; src: url("' + datauri + '") format("' + format + '"); }</style>');
+						window.fontInfo[fonttag] = info;
+						var optgroup, option = document.createElement('option');
+						option.value = fonttag;
+						option.innerHTML = info.name;
+						if (!optgroup) {
+							option.selected = true;
+							$('#select-font').wrapInner('<optgroup label="Defaults"></optgroup>');
+							optgroup = $('<optgroup id="custom-optgroup" label="Your fonts"></optgroup>').prependTo($('#select-font'));
+						}
+						optgroup.append(option);
+					});
+				});
+				reader.readAsDataURL(blob);
+			});
+			//for some reason the new selection doesn't register for a moment
+			setTimeout(function() { $('#select-font').trigger('change') }, 100);
+		}
+		
+		$('#custom-fonts-fakeout').on('click', function() {
+			$('#custom-fonts')[0].click();
+			return false;
+		})
+
+		$('#custom-fonts').on('change', function() {
+			addCustomFonts(this.files);
+		});
+		
+		$('body').on('dragover', function(evt) {
+			$('body').addClass('dropzone');
+			return false;
+		});
+		
+		$('body').on('dragend', function(evt) {
+			$('body').removeClass('dropzone');
+			return false;
+		});
+		
+		$('body').on('drop', function(evt) {
+			$('body').removeClass('dropzone');
+			addCustomFonts(evt.originalEvent.dataTransfer.files);
+			return false;
+		});
 	});
 	
 	window.TNTools = tnTypeTools();
