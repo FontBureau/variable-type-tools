@@ -159,7 +159,9 @@ class TypeTools {
 		<title><?= $title ?></title>
 		<meta name="viewport" content="initial-scale=1,shrink-to-fit=no">
 		<link rel="stylesheet" href="https://store.typenetwork.com/css/tn.css">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script async src="/opentype.js/dist/opentype.min.js"></script>
 		<style>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
 			@font-face {
@@ -190,6 +192,8 @@ class TypeTools {
 				<option value="<?= $filebase ?>"<?php if ($info->name==='Amstelvar') print " selected"; ?>><?= $info->name ?></option>
 <?php endforeach ?>
 			</select>
+			<a href="#custom-fonts" id="custom-fonts-fakeout">Add your own</a>
+			<input type='file' name='custom-fonts' id='custom-fonts'>
 	<?php
 		return "";
 	}
