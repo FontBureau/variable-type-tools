@@ -23,10 +23,11 @@ body.dropzone::after {
 	background-color: rgba(64, 64, 64, 0.9);
 	color: white;
 	font-size: 3rem;
-	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
+	padding: 40% 1rem;
 	content: "Drop your own font file(s) here";
+	z-index: 1000;
 }
 
 a {
