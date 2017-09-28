@@ -14,17 +14,8 @@ print $tools->pageHead('Type Specification Demo')
 			]) ?>
 			<hr>
 			<label>Currently editing: <span id='currently-editing'>T2</span></label>
-			<?= $tools->slider([
-				'id' => 'size', 'name' => 'size', 'unit' => 'px', 'label' => 'Size',
-				'min' => 8, 'max' => 96, 'default' => 12,
-			]) ?>
-			<?= $tools->slider([
-				'id' => 'leading', 'name' => 'leading', 'unit' => 'px', 'label' => 'Leading',
-				'min' => 8, 'max' => 144, 'default' => 14,
-			]) ?>
-			<?= $tools->color('foreground', '#000000'); ?>
-			<?= $tools->color('background', '#ffffff'); ?>
-			<div id='alignment-controls' class="slider_container">
+			<?= $tools->sizeLeadingColor(12, 14, 8, 96); ?>
+			<div id='alignment-controls'>
 				<label>Alignment</label>
 				<input id='align-left' type='radio' checked name='alignment' value='left'>
 				<label for='align-left'>L</label>

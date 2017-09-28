@@ -8,16 +8,7 @@ print $tools->pageHead('Logo Pogo')
 ?>
 		<form id='controls'>
 			<?= $tools->selectFont() ?>
-			<?= $tools->slider([
-				'id' => 'size', 'name' => 'size', 'unit' => 'px', 'label' => 'Size',
-				'min' => 12, 'max' => 288, 'default' => 72,
-			]) ?>
-			<?= $tools->slider([
-				'id' => 'leading', 'name' => 'leading', 'unit' => 'px', 'label' => 'Leading',
-				'min' => 12, 'max' => 288, 'default' => 72,
-			]) ?>
-			<?= $tools->color('foreground', '#000000'); ?>
-			<?= $tools->color('background', '#ffffff'); ?>
+			<?= $tools->sizeLeadingColor(72, 72, 12, 288); ?>
 			<ul id='axis-inputs'>
 			</ul>
 			<p><label><input id="everybox" type="checkbox" name="show" value="everything"> Show all axes</label></p>

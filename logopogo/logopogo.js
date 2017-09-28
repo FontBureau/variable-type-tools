@@ -62,7 +62,7 @@ $(function() {
 	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
 		if (this.type === 'range' && this.name === 'size') {
-			var leading = parseFloat($('#input-leading').val());
+			var leading = parseFloat($('#edit-leading').val());
 			var oldval = parseFloat($(this).data('oldval'));
 		}
 		TNTools.handleSliderChange(evt);
@@ -76,7 +76,7 @@ $(function() {
 	$('#select-font').on('change', function() {
 		var font = $(this).val();
 		TNTools.handleFontChange(font);
-		$('#input-size').trigger('change');
+		$('#edit-size').trigger('change');
 	}).trigger('change');
 
 	$('#reset').on('click', function() {
@@ -134,7 +134,7 @@ $(function() {
 		var svglines = [];
 		svglines.push('<?xml version="1.0" standalone="yes" ?>');
 		svglines.push('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">');
-		svglines.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="' + viewbox.join(' ') + '" height="' + $('#input-size').val() + 'px" width="' + ($('#input-size').val()*viewbox[2]/viewbox[3]) + '">');
+		svglines.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="' + viewbox.join(' ') + '" height="' + $('#edit-size').val() + 'px" width="' + ($('#edit-size').val()*viewbox[2]/viewbox[3]) + '">');
 		svglines.push('<g stroke="none" fill="black" transform="translate(0,' + (viewbox[1]+viewbox[3]) +') scale(1,-1) translate(0,' + (-viewbox[1]) + ')">');
 		svglines.push(paths.join("\n"));
 		svglines.push('</g>');

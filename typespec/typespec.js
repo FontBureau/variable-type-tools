@@ -107,14 +107,15 @@ $(function() {
 		TNTools.elementToSliders(testEl);
 		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '', $('#style-' + activeStyle));
 
-		$('#input-size').trigger('change'); // does optical size magic
+		$('#edit-size').trigger('change'); // does optical size magic
 	}
 
 	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
+		console.log(this.name, evt.type);
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
 		if (activeStyle === 'T2') {
 			if (this.type === 'range' && this.name === 'size') {
-				var leading = parseFloat($('#input-leading').val());
+				var leading = parseFloat($('#edit-leading').val());
 				var oldval = parseFloat($(this).data('oldval'));
 				$('input[name="column-width"]').val(parseFloat(articleStyles['max-width'])*oldval/constrained).trigger(evt.type);
 			}
@@ -130,7 +131,7 @@ $(function() {
 				$('#style-T1').text($('#style-T1').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 				$('#style-T2').text($('#style-T2').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 				if (activeStyle === 'T1' || activeStyle === 'T2') {
-					$('input[name=leading]').val(lh * $('#input-size').val());
+					$('input[name=leading]').val(lh * $('#edit-size').val());
 				}
 			}
 		}
@@ -149,9 +150,9 @@ $(function() {
 		TNTools.handleFontChange(font);
 
 /*
-		$('#input-size').trigger('change');
+		$('#edit-size').trigger('change');
 		$('#input-column-width').val($('#input-column-width').data('original-value')).trigger('change');
-		$('#input-leading').val($('#input-leading').data('original-value')).trigger('change');
+		$('#edit-leading').val($('#edit-leading').data('original-value')).trigger('change');
 */
 
 		var realColumnWidth = parseInt($('article').css('max-width'));
@@ -170,8 +171,8 @@ $(function() {
 				var testEl = styleElements.filter('.' + activeStyle).find(style2class[k]);
 				var fontsize = parseInt(testEl.css('font-size'));
 				var leading = parseInt(testEl.css('line-height'));
-				$('#input-leading').val(leading);
-				$('#input-size').val(fontsize).data('oldval', fontsize);
+				$('#edit-leading').val(leading);
+				$('#edit-size').val(fontsize).data('oldval', fontsize);
 				$('input[name="opsz"]').val(fontsize).trigger('change');
 				slidersToElement();
 			});

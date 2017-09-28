@@ -212,6 +212,22 @@ class TypeTools {
 		return "";
 	}
 	
+	public function sizeLeadingColor($size, $leading, $min=8, $max=96 , $fg="#000000", $bg="#ffffff") {
+	?>
+		<div id='size-leading-color'>
+			<label for='edit-size'>Size</label>
+			<input type="number" name='size' id='edit-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
+			<label for='edit-leading'>Leading</label>
+			<input type="number" name='leading' id='edit-leading' min='<?= $min ?>' max='<?= ($max*1.5) ?>' value='<?= $leading ?>'>
+			<label for='foreground'>FG</label>
+			<div class='color'><input type='color' id='foreground' name='foreground' value='<?= $fg ?>'></div>
+			<label for='background'>BG</label>
+			<div class='color'><input type='color' id='background' name='background' value='<?= $bg ?>'></div>
+		</div>
+	<?php
+		return "";
+	}
+	
 	public function slider($options=array()) {
 		if (!is_array($options)) {
 			$options = array(

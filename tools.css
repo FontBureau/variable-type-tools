@@ -153,6 +153,21 @@ body > #controls ~ * {
 	display: none;
 }
 
+#controls #size-leading-color {
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: auto, auto;
+}
+
+#controls #size-leading-color label {
+	grid-row: 1;
+}
+
+#controls #size-leading-color input[type=number],
+#controls #size-leading-color .color {
+	grid-row: 2;
+}
+
 .slider {
 	display: grid;
 	grid-template-columns: auto min-content 3em;
@@ -174,11 +189,15 @@ body > #controls ~ * {
 	content: ":";
 }
 
-.slider input[type=number] {
-	width: 100%;
+input[type=number] {
 	border: none;
 	padding-left: 3px;
 	border-bottom: 1px solid #999;
+	width: 100%;
+	max-width: 3em;
+}
+
+.slider input[type=number] {
 }
 
 input[type=range] {
