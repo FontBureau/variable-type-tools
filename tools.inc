@@ -162,6 +162,8 @@ class TypeTools {
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script async src="/opentype.js/dist/opentype.min.js"></script>
+		<script src="/spectrum/spectrum.js"></script>
+		<link rel="stylesheet" href="/spectrum/spectrum.css">
 		<style>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
 			@font-face {
@@ -179,7 +181,7 @@ class TypeTools {
 		<script src="<?= $whichtool ?>.js"></script>
 	</head>
 	<body>
-		<h1><img src="/images/typenetwork-logo.svg" alt="Type Network"></h1>
+		<h1><a href="/"><img src="/images/typenetwork-logo.svg" alt="Type Network"></a></h1>
 <?php
 		return "";
 	}
@@ -194,6 +196,18 @@ class TypeTools {
 			</select>
 			<a href="#custom-fonts" id="custom-fonts-fakeout">Add your own</a>
 			<input type='file' name='custom-fonts' id='custom-fonts'>
+	<?php
+		return "";
+	}
+	
+	public function color($name='color', $color='black', $label='') {
+		if (!$label) {
+			$label = ucfirst($name);
+		}
+	?>
+		<div class='color'>
+			<label><input type='color' id='<?= $name ?>' name='<?= $name ?>' value='<?= $color ?>'> <?= $label ?></label>
+		</div>
 	<?php
 		return "";
 	}

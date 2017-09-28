@@ -70,6 +70,7 @@ $(function() {
 	});
 	
 	$("input[type=radio]").on('change', slidersToElement);
+	$('#foreground, #background').on('move.spectrum change.spectrum hide.spectrum', slidersToElement);
 	
 	//font change triggers a lot of updates
 	$('#select-font').on('change', function() {

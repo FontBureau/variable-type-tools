@@ -22,6 +22,8 @@ print $tools->pageHead('Type Specification Demo')
 				'id' => 'leading', 'name' => 'leading', 'unit' => 'px', 'label' => 'Leading',
 				'min' => 8, 'max' => 144, 'default' => 14,
 			]) ?>
+			<?= $tools->color('foreground', '#000000'); ?>
+			<?= $tools->color('background', '#ffffff'); ?>
 			<div id='alignment-controls' class="slider_container">
 				<label>Alignment</label>
 				<input id='align-left' type='radio' checked name='alignment' value='left'>
