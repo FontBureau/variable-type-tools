@@ -236,7 +236,9 @@
 		
 		var size = parseInt($('#input-size').val());
 		var leading = parseInt($('#input-leading').val());
-		
+		var foreground = $('#foreground').length && $('#foreground').spectrum('get').toString();
+		var background = $('#background').length && $('#background').spectrum('get').toString();
+
 		rules.push('font-family: "' + fontInfo[$('#select-font').val()].name + ' Demo"');
 		
 		if (size) {
@@ -245,6 +247,14 @@
 		
 		if (leading) {
 			rules.push("line-height: " + leading + 'px');
+		}
+		
+		if (background) {
+			rules.push('background-color: ' + background);
+		}
+
+		if (foreground) {
+			rules.push('color: ' + foreground);
 		}
 		
 		if ((temp=$('input[name=alignment]')).length) {
@@ -314,10 +324,59 @@
 		updateCSSOutput();
 	}
 	
+	function elementToSliders(testEl) {
+		var align;
+		
+		switch (testEl.css('text-align')) {
+			case 'start': case 'left':
+				align='left';
+				break;
+			case 'end': case 'right':
+				align='right';
+				break;
+			case 'justify': case 'justify-all':
+				align='justify';
+				break;
+			case 'center':
+				align='center';
+				break;
+			default:
+				align='left';
+				break;
+		}
+				
+		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size')));
+		$('#input-size').data('oldval', parseInt(testEl.css('font-size')));
+		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
+		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
+		
+		$('#foreground').spectrum('set', testEl.css('color'));
+
+		var temp = testEl.css('background-color');
+		$('#background').spectrum('set', temp === 'transparent' || temp.match(/rgba\(.+,\s*0(\.0)?/) ? 'white' : temp);
+	}
+	
 	function handleFontChange(font) {
 		//populate axis sliders with font defaults
 		axisInputs.empty();
+		
+		var spectropts = {
+			'showInput': true,
+			'showAlpha': true,
+			'showSelectionPalette': true,
+			'localStorageKey': 'spectrum',
+			'showInitial': true,
+			'chooseText': 'OK',
+			'cancelText': 'Cancel',
+			'preferredFormat': 'hex'
+		};
+		
+		spectropts.color = $('#foreground').attr('value');
+		$('#foreground').spectrum(spectropts);
 
+		spectropts.color = $('#background').attr('value');
+		$('#background').spectrum(spectropts);
+		
 		composites = fontInfo[font].composites;
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
@@ -340,6 +399,7 @@
 			'isRegisteredAxis': function(axis) { return registeredAxes.indexOf(axis) >= 0; },
 			'populateAxisSliders': populateAxisSliders,
 			'slidersToElement': slidersToElement,
+			'elementToSliders': elementToSliders,
 			'updateParameters': updateParameters,
 			'updateCSSOutput': updateCSSOutput,
 			'handleSliderChange': handleSlider,
@@ -475,6 +535,12 @@
 
 		$('#custom-fonts').on('change', function() {
 			addCustomFonts(this.files);
+		});
+		
+		$('#foreground, #background').on('click', function() {
+			//clicking color labels fires the real control and not the spectrum picker
+			$(this).spectrum('toggle');
+			return false;
 		});
 		
 		var dragging = false;

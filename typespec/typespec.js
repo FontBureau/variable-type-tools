@@ -104,33 +104,7 @@ $(function() {
 			return;
 		}
 
-		var axes = {};
-		
-		var align;
-		
-		switch (testEl.css('text-align')) {
-			case 'start': case 'left':
-				align='left';
-				break;
-			case 'end': case 'right':
-				align='right';
-				break;
-			case 'justify': case 'justify-all':
-				align='justify';
-				break;
-			case 'center':
-				align='center';
-				break;
-			default:
-				align='left';
-				break;
-		}
-				
-		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size')));
-		$('#input-size').data('oldval', parseInt(testEl.css('font-size')));
-		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
-		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
-
+		TNTools.elementToSliders(testEl);
 		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '', $('#style-' + activeStyle));
 
 		$('#input-size').trigger('change'); // does optical size magic
@@ -166,6 +140,7 @@ $(function() {
 	});
 	
 	$("input[type=radio]").on('change', slidersToElement);
+	$('#foreground, #background').on('move.spectrum change.spectrum hide.spectrum', slidersToElement);
 	
 	//font change triggers a lot of updates
 	$('#select-font').on('change', function() {
