@@ -192,12 +192,12 @@
 		if (el.name === 'size') {
 			if (evt.type === 'input') {
 				//auto-match leading
-				var leading = parseFloat($('#input-leading').val());
-				var oldval = parseFloat($('#input-size').data('oldval')) || el.value;
+				var leading = parseFloat($('#edit-leading').val());
+				var oldval = parseFloat($('#edit-size').data('oldval')) || el.value;
 				$('input[name="leading"]').val(leading + constrained - oldval).trigger(evt.type);
 			}
 			
-			$('#input-size').data('oldval', constrained);
+			$('#edit-size').data('oldval', constrained);
 
 			//auto-match optical size
 			setTimeout(function() { $('input[name="opsz"]').val(el.value).trigger(evt.type); });
@@ -213,8 +213,8 @@
 
 	function updateParameters(el) {
 		el = $(el);
-		var size = parseInt($('#input-size').val());
-		var leading = parseInt($('#input-leading').val());
+		var size = parseInt($('#edit-size').val());
+		var leading = parseInt($('#edit-leading').val());
 		var fvs = el.css('font-variation-settings') || '';
 
 		el.attr('data-axes', fvs.replace(/['"]\s+/g, ' ').replace(/['"]/g, ''));
@@ -234,8 +234,8 @@
 		var rules = [];
 		var vrules = [];
 		
-		var size = parseInt($('#input-size').val());
-		var leading = parseInt($('#input-leading').val());
+		var size = parseInt($('#edit-size').val());
+		var leading = parseInt($('#edit-leading').val());
 		var foreground = $('#foreground').length && $('#foreground').spectrum('get').toString();
 		var background = $('#background').length && $('#background').spectrum('get').toString();
 
@@ -265,7 +265,7 @@
 		var fvs = {};
 		var fvsv = {};
 
-		//fvs['opsz'] = $('#input-size').val();
+		//fvs['opsz'] = $('#edit-size').val();
 		$.each($('#axis-inputs input[type=range]'), function() {
 			if (this.name in composites) {
 				//composite axes get left at default, but let's but in a fake helper string to remember the value
@@ -346,7 +346,7 @@
 		}
 				
 		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size')));
-		$('#input-size').data('oldval', parseInt(testEl.css('font-size')));
+		$('#edit-size').data('oldval', parseInt(testEl.css('font-size')));
 		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 		
