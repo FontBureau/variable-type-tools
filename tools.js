@@ -367,6 +367,7 @@
 		var spectropts = {
 			'showInput': true,
 			'showAlpha': true,
+			'showPalette': true,
 			'showSelectionPalette': true,
 			'localStorageKey': 'spectrum',
 			'showInitial': true,
@@ -418,6 +419,18 @@
 		controls = $('#controls');
 		axisInputs = $('#axis-inputs');
 		axisSliders = axisInputs.find('input[type=range]');
+
+		if (/[\?&]css=([^&]+)/.test(window.location.search)) {
+			var originalStyle = decodeURIComponent(RegExp.$1);
+			var osEl = document.createElement('style');
+			osEl.id = 'bookmarked-style';
+			osEl.textContent = originalStyle;
+			$('head').append(osEl);
+		}
+
+		if (/[\?&]composites=([^&]+)/.test(window.location.search)) {
+			window.bookmarkedComposites = JSON.parse(decodeURIComponent(RegExp.$1));
+		}
 
 		$('#everybox').on('change', function () {
 			if (this.checked) {
@@ -547,6 +560,18 @@
 			return false;
 		});
 		
+		$('#bookmark').on('click', function() {
+			var data = {};
+			$('style[id^="style-"]').each(function() {
+				data[this.id] = $(this).data();
+			});
+			var css = $('#css-output').text();
+			css = css.replace(/\s*([\n:;\{\}])\s*/g, '$1');
+			css = css.replace(/\n/g, '');
+			window.history.replaceState({}, '', '?css=' + encodeURIComponent(css) + '&composites=' + encodeURIComponent(JSON.stringify(data)));
+			return false;
+		});
+				
 		var dragging = false;
 		$(document).on('dragover', function(evt) {
 			if (dragging) return false;

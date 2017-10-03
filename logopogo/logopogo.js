@@ -29,19 +29,6 @@ $(function() {
 	};
 	head.appendChild(script);
 
-/*
-	script = document.createElement('script');
-	script.src="/jspdf.js";
-	script.async = true;
-	script.onload = function() {
-		var script = document.createElement('script');
-		script.src="/svgToPdf.js";
-		script.async = true;
-		head.appendChild(script);
-	}
-	head.appendChild(script);
-*/
-
 	var temp; //general use
 	
 	var controls = $('#controls');
@@ -162,16 +149,8 @@ $(function() {
 	$('#save-svg').on('click', function() {
 		var text = logopogo.text().trim();
 		loadFontForOutput(function(font) {
-
 			var svgdata = getSVG(font).replace(/\n/g, '');
 			var url = 'data:image/svg+xml,' + encodeURIComponent(svgdata);
-/*
-			var now = new Date();
-			var filename = [];
-			$.each([now.getFullYear(), now.getMonth()+1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds()], function(i,v) {
-				filename.push((v < 10 ? '0' : '') + v);
-			});
-*/
 			var filename = ($('#select-font option:selected').text().trim() + '-' + text).replace(/\s+/g, '-') + '.svg';
 			download(url, filename);
 		});
