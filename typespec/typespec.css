@@ -57,14 +57,8 @@ article > .row > * {
 	display: table-cell;
 	vertical-align: baseline;
 	position: relative;
-}
-
-article > .row > * + * {
-	border-left: 1rem solid transparent;
-}
-
-article > .row + .row > * {
-	border-top: 1rem solid transparent;
+	border: none;
+	padding: 0.5rem 0.5rem 1rem;
 }
 
 article .current {
