@@ -11,13 +11,7 @@ print $tools->pageHead('Logo Pogo')
 			<?= $tools->sizeLeadingColor(72, 72, 12, 288); ?>
 			<ul id='axis-inputs'>
 			</ul>
-			<p><label><input id="everybox" type="checkbox" name="show" value="everything"> Show all axes</label></p>
-			<p><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></p>
-			<p><label><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Show <span style="color:#09f">parameters</span></label></p>
-			<p><label><input id="show-css" type="checkbox" name="show-css" value="1"> Show CSS ouptut</label></p>
-<!-- 			<p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
-			<p><a href="/" id='reset'>Reset to font defaults</a></p>
-			<p><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $tools->lastFontUpdate() ?>">Grab latest font files</a></p>
+			<?= $tools->metaLinks() ?>
 		</form>
 		<h1>Logo Pogo</h1>
 		<figure id='pogologo' contenteditable spellcheck="false" data-style="Settings">

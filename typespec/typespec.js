@@ -27,27 +27,6 @@ $(function() {
 		'max-width': ''
 	};
 	
-	if (temp=window.location.search.match(/show=([^&]+)/)) {
-		show = decodeURIComponent(temp[1]);
-		$('input[name=show][value="' +show+ '"]').prop('checked', true);
-	}
-
-/*
-	function realUpdateURL() {
-			$('#bookmark').attr('href', '?settings=' + encodeURIComponent(JSON.stringify(currentStyles)) + '&show=' + show);
-	}
-	
-	var urltimeout;
-	function updateURL() {
-		urltimeout && clearTimeout(urltimeout);
-		urltimeout = setTimeout(realUpdateURL, 500);
-	}
-
-	function makeId(str) {
-		return 'style-' + str.replace(/[\W-]+/g, '-') + '-style';
-	}
-*/
-
 	function updateArticleStyle(name, value) {
 		articleStyles[name] = value;
 		var css = "\narticle {";
@@ -107,7 +86,7 @@ $(function() {
 		TNTools.elementToSliders(testEl);
 		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '', $('#style-' + activeStyle));
 
-		$('#edit-size').trigger('change'); // does optical size magic
+		//$('#input-column-width').trigger('change'); // does optical size magic
 	}
 
 	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
@@ -125,8 +104,8 @@ $(function() {
 
 		if (this.name === 'column-width') {
 			updateArticleStyle('max-width', constrained + 'em');
-			var lh = Math.max(1.3, Math.min(2.0, constrained/27.0));
 			if (evt.originalEvent) {
+				var lh = Math.max(1.3, Math.min(2.0, constrained/27.0));
 				$('#style-T1').text($('#style-T1').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 				$('#style-T2').text($('#style-T2').text().replace(/line-height: [\w\.]+/, 'line-height: ' + lh));
 				if (activeStyle === 'T1' || activeStyle === 'T2') {
@@ -147,12 +126,6 @@ $(function() {
 		var font = $(this).val();
 
 		TNTools.handleFontChange(font);
-
-/*
-		$('#edit-size').trigger('change');
-		$('#input-column-width').val($('#input-column-width').data('original-value')).trigger('change');
-		$('#edit-leading').val($('#edit-leading').data('original-value')).trigger('change');
-*/
 
 		var realColumnWidth = parseInt($('article').css('max-width'));
 		var realFontSize = parseInt($('article ' + style2class.T2).css('font-size'));
@@ -186,7 +159,15 @@ $(function() {
 
 	styleElements.each(toSlidersAndBack).on('click', toSlidersAndBack);
 
+	if (window.bookmarkedComposites) {
+		$.each(window.bookmarkedComposites, function(id, data) {
+			$('#' + id).data(data);
+		});
+	}
+
 	styleElements.filter('.H1').trigger('click');
+
+	//$('#bookmarked-style').remove();
 	
 	pageLoaded = true;
 });
