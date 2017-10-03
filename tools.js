@@ -251,6 +251,10 @@
 		
 		if (background) {
 			rules.push('background-color: ' + background);
+			//update background of paragraph container
+			if (options.paramsElement && options.selector && !(options.paramsElement).is(options.selector)) {
+    			$(options.paramsElement).css('background-color', background);
+			}
 		}
 
 		if (foreground) {

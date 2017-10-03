@@ -111,7 +111,6 @@ $(function() {
 	}
 
 	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
-		console.log(this.name, evt.type);
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
 		if (activeStyle === 'T2') {
 			if (this.type === 'range' && this.name === 'size') {
