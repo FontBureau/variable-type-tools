@@ -1,17 +1,18 @@
 /* GENERAL */
-* {
+*, *::before, *::after {
 	margin: 0;
 	padding: 0;
 	color: inherit;
 	font: inherit;
 	line-height: inherit;
-	box-sizing: border-box;
+	box-sizing: inherit;
 }
 
-html, body {
+html {
 /* 	font-family: Verdana, sans-serif; */
 	font-size: 14px;
 	line-height: 1;
+	box-sizing: border-box;
 }
 
 body.dropzone::after {

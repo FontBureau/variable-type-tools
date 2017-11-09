@@ -1,0 +1,52 @@
+
+section.problem {
+	padding: 1em 0;
+	margin-bottom: 1em;
+}
+
+section.problem + section.problem {
+	border-top: 1px solid #999;
+}
+
+section.problem .controls {
+	padding: 1em 0;
+}
+
+section.problem figure {
+	position: relative;
+	font-family: "Amstelvar Demo";
+}
+
+/* JUSTIFICATION */
+
+#justification figure {
+	padding: 1em;
+	columns: 16em;
+	column-gap: 2em;
+	column-rule: 1px solid black;
+	border: 1px solid black;
+	text-align: justify;
+}
+
+#justification figure::after {
+	content: "↔︎";
+	position: absolute;
+	display: block;
+	right: -0.5em;
+	top: 0;
+	bottom: 0;
+	left: auto;
+	/* padding-top: 50% produces bizarre results */
+	cursor: ew-resize;
+}
+
+#justification span.line {
+	display: block;
+	line-height: inherit;
+	white-space: nowrap;
+	text-align-last: justify;
+}
+
+#justification .highlight-spaces span.sp {
+	background-color: #DDF;
+}
