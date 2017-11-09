@@ -553,7 +553,9 @@
   }, 
   "Dunbar-VF": {
     "order": [
-      "wght"
+      "wght", 
+      "XHGT", 
+      "opsz"
     ], 
     "wght": {
       "default": 500.0, 
@@ -561,16 +563,16 @@
       "name": "Weight", 
       "min": 100.0
     }, 
-    "xhgt": {
+    "XHGT": {
       "default": 500.0, 
       "max": 574.0, 
-      "name": "xheight", 
+      "name": "xHeight", 
       "min": 353.0
     }, 
     "opsz": {
       "default": 36.0, 
       "max": 36.0, 
-      "name": "optical", 
+      "name": "Optical Size", 
       "min": 10.0
     }
   }
