@@ -170,4 +170,8 @@ $(function() {
 	//$('#bookmarked-style').remove();
 	
 	pageLoaded = true;
+	
+	if (!$('#bookmarked-style').length) {
+		$('#select-font').trigger('change');
+	}
 });
