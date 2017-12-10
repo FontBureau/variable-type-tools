@@ -58,6 +58,10 @@ print $tools->pageHead('Type Specification Demo')
 					</p>
 					<p>Two ideas altered the design of the printing press radically: First, the use of steam power for running the machinery, and second the replacement of the printing flatbed with the rotary motion of cylinders. Both elements were first successfully implemented by the German printer Friedrich Koenig in a series of press designs devised between 1802 and 1818, with assistance from engineer Andreas Friedrich Bauer. Koenig and Bauer sold two of their first models to The Times in London in 1814, capable of 1,100 impressions per hour. The first edition so printed was on 28 November 1814.
 					</p>
+					<p>我的征途是星辰大海 "My Conquest is the Sea of Stars", a famous sentence in Legend Of The Galactic Heroes
+					</p>
+					<p>很久很久以前，在一个遥远的星系 "A long time ago in a galaxy far, far away", a famous sentence in Star Wars
+					</p>
 				</div>
 			</div>
 		</article>
