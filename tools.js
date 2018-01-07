@@ -573,11 +573,15 @@
 		});
 				
 		var dragging = false;
-		$(document).on('dragover', function(evt) {
+		$(document).on('dragenter', function(evt) {
 			if (dragging) return false;
 			dragging = true;
 			evt.originalEvent.dataTransfer.dropEffect = 'copy';
 			$('body').addClass('dropzone');
+			return false;
+		}).on('dragleave', function(evt) {
+			dragging = false;
+			$('body').removeClass('dropzone');
 			return false;
 		}).on('dragend', function(evt) {
 			$('body').removeClass('dropzone');

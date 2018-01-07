@@ -147,7 +147,7 @@ body > #controls ~ * {
 /* 	font-family: Courier, monospace; */
 	display: block;
 	font-size: 13px;
-	margin-top: 1em;
+	margin-top: 0.75em;
 }
 
 #controls #custom-fonts {
@@ -171,9 +171,9 @@ body > #controls ~ * {
 
 .slider {
 	display: grid;
-	grid-template-columns: auto min-content 3em;
+	grid-template-columns: auto min-content 3.5em;
 	grid-template-rows: auto auto;
-	grid-gap: 0.25em;
+	grid-gap: 0;
 	align-items: baseline;
 	width: 3in;
 }
@@ -183,7 +183,8 @@ body > #controls ~ * {
 }
 
 .slider > * {
-	padding-bottom: 2px;
+	padding-bottom: 0;
+	line-height: 0.5 !important;
 }
 
 .slider label ~ label::after {
@@ -195,13 +196,14 @@ input[type=number] {
 	padding-left: 3px;
 	border-bottom: 1px solid #999;
 	width: 100%;
-	max-width: 3em;
+	max-width: 4em;
 }
 
 .slider input[type=number] {
 }
 
 input[type=range] {
+	-webkit-appearance: none;
 	position: relative;
 	vertical-align: middle;
 	grid-column: 1/4;
@@ -211,6 +213,28 @@ input[type=range] {
 	width: calc(100% - 6em);
 	margin: 0 3em;
 */
+	line-height: 1 !important;
+	height: 2em;
+	background: transparent;
+}
+
+/* bigger gnubbel for ios */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: black;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #999;
+  height: 1.75em;
+  width: 1.75em;
+  border-radius: 1em;
+  margin-top: -0.875em;
+  background: #DDD;
+  cursor: pointer;
 }
 
 input[type=range]::before {
