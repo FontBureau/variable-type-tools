@@ -161,7 +161,7 @@ class TypeTools {
 		<link rel="stylesheet" href="https://store.typenetwork.com/css/tn.css">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script async src="/opentype.js/dist/opentype.min.js"></script>
+		<script src="/opentype.js/dist/opentype.min.js"></script>
 		<script src="/spectrum/spectrum.js"></script>
 		<link rel="stylesheet" href="/spectrum/spectrum.css">
 		<style>
