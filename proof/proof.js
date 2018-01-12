@@ -49,14 +49,18 @@ $(function() {
 		$('#edit-size').trigger('change');
 
 		var datauri = this.result;
-		window.opentype.load('/fonts/' + font + '.woff', function (err, font) {
-			if (err) {
-				alert(err);
-				return;
-			}
-			window.font = font;
-			populateGrid(font);
-		});
+		if (font.match(/^custom-/) && window.fontInfo[font] && window.fontInfo[font].fontobj) {
+			populateGrid(window.fontInfo[font].fontobj);
+		} else {
+			var url = '/fonts/' + font + '.woff';
+			window.opentype.load(url, function (err, font) {
+				if (err) {
+					alert(err);
+					return;
+				}
+				populateGrid(font);
+			});
+		}
 	}).trigger('change');
 
 	$('#reset').on('click', function() {

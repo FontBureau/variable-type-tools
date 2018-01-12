@@ -398,8 +398,77 @@
 		axisSliders = axisInputs.find('input[type=range]');
 	}
 
+	function addCustomFont(fonttag, url, format, font) {
+		var info = {
+			'name': font.getEnglishName('fullName'),
+			'axes': {},
+			'axisOrder': [],
+			'composites': [],
+			'fontobj': font
+		};
+		if ('fvar' in font.tables && 'axes' in font.tables.fvar) {
+			$.each(font.tables.fvar.axes, function(i, axis) {
+				info.axes[axis.tag] = {
+					'name': 'name' in axis ? axis.name.en : axis.tag,
+					'min': axis.minValue,
+					'max': axis.maxValue,
+					'default': axis.defaultValue
+				};
+				info.axisOrder.push(axis.tag);
+			});
+		}
+
+		$('head').append('<style>@font-face { font-family:"' + info.name + ' Demo"; src: url("' + url + '") format("' + format + '"); }</style>');
+
+		window.fontInfo[fonttag] = info;
+		var optgroup = $('#custom-optgroup');
+		var option = document.createElement('option');
+		option.value = fonttag;
+		option.innerHTML = info.name;
+		option.selected = true;
+		if (!optgroup.length) {
+			$('#select-font').wrapInner('<optgroup label="Defaults"></optgroup>');
+			optgroup = $('<optgroup id="custom-optgroup" label="Your fonts"></optgroup>').prependTo($('#select-font'));
+		}
+		optgroup.append(option);
+	}
+
+	function addCustomFonts(files) {
+		$.each(files, function(i, file) {
+			var reader = new FileReader();
+			var mimetype, format;
+			if (file.name.match(/\.[ot]tf$/)) {
+				mimetype = "application/font-sfnt";
+				format = "opentype";
+			} else if (file.name.match(/\.(woff2?)$/)) {
+				mimetype = "application/font-woff";
+				format = RegExp.$1;
+			} else {
+				alert(file.name + " not a supported file type");
+				return;
+			}
+			var blob = new Blob([file], {'type': mimetype});
+			reader.addEventListener('load', function() {
+				var datauri = this.result;
+				window.opentype.load(datauri, function(err, font) {
+					if (err) {
+						console.log(err);
+						return;
+					}
+					var fonttag = 'custom-' + file.name.replace(/(-VF)?\.\w+$/, '');
+					addCustomFont(fonttag, datauri, format, font);
+				});
+			});
+			reader.readAsDataURL(blob);
+		});
+		//for some reason the new selection doesn't register for a moment
+		setTimeout(function() { $('#select-font').trigger('change') }, 100);
+	}
+	
+
 	function tnTypeTools() {
 		return {
+			'customFonts': {},
 			'clone': function(obj) { return JSON.parse(JSON.stringify(obj)); },
 			'isRegisteredAxis': function(axis) { return registeredAxes.indexOf(axis) >= 0; },
 			'populateAxisSliders': populateAxisSliders,
@@ -411,7 +480,9 @@
 			'handleFontChange': handleFontChange,
 			'fvsToAxes': fvsToAxes,
 			'fvsToSliders': fvsToSliders,
-			'compositeToParametric': compositeToParametric
+			'compositeToParametric': compositeToParametric,
+			'addCustomFonts': addCustomFonts,
+			'addCustomFont': addCustomFont
 		};
 	}
 	
@@ -483,68 +554,6 @@
 			return false;
 		});
 
-		function addCustomFonts(files) {
-			$.each(files, function(i, file) {
-				var reader = new FileReader();
-				var mimetype, format;
-				if (file.name.match(/\.[ot]tf$/)) {
-					mimetype = "application/font-sfnt";
-					format = "opentype";
-				} else if (file.name.match(/\.(woff2?)$/)) {
-					mimetype = "application/font-woff";
-					format = RegExp.$1;
-				} else {
-					console.log(file.name + " not a supported file type");
-					return;
-				}
-				var blob = new Blob([file], {'type': mimetype});
-				reader.addEventListener('load', function() {
-					var datauri = this.result;
-					window.opentype.load(datauri, function (err, font) {
-						if (err) {
-							console.log(err);
-							return;
-						}
-						window.font = font;
-						var fonttag = 'custom-' + file.name.replace(/(-VF)?\.\w+$/, '');
-						var info = {
-							'name': font.getEnglishName('fullName'),
-							'axes': {},
-							'axisOrder': [],
-							'composites': []
-						};
-						if ('fvar' in font.tables && 'axes' in font.tables.fvar) {
-							$.each(font.tables.fvar.axes, function(i, axis) {
-								info.axes[axis.tag] = {
-									'name': 'name' in axis ? axis.name.en : axis.tag,
-									'min': axis.minValue,
-									'max': axis.maxValue,
-									'default': axis.defaultValue
-								};
-								info.axisOrder.push(axis.tag);
-							});
-						}
-
-						$('head').append('<style>@font-face { font-family:"' + info.name + ' Demo"; src: url("' + datauri + '") format("' + format + '"); }</style>');
-						window.fontInfo[fonttag] = info;
-						var optgroup = $('#custom-optgroup');
-						var option = document.createElement('option');
-						option.value = fonttag;
-						option.innerHTML = info.name;
-						option.selected = true;
-						if (!optgroup.length) {
-							$('#select-font').wrapInner('<optgroup label="Defaults"></optgroup>');
-							optgroup = $('<optgroup id="custom-optgroup" label="Your fonts"></optgroup>').prependTo($('#select-font'));
-						}
-						optgroup.append(option);
-					});
-				});
-				reader.readAsDataURL(blob);
-			});
-			//for some reason the new selection doesn't register for a moment
-			setTimeout(function() { $('#select-font').trigger('change') }, 100);
-		}
-		
 		$('#custom-fonts-fakeout').on('click', function() {
 			$('#custom-fonts')[0].click();
 			return false;
@@ -573,13 +582,16 @@
 		});
 				
 		var dragging = false;
-		$(document).on('dragenter', function(evt) {
+		$('body').on('dragover', function(evt) {
 			if (dragging) return false;
 			dragging = true;
 			evt.originalEvent.dataTransfer.dropEffect = 'copy';
 			$('body').addClass('dropzone');
 			return false;
 		}).on('dragleave', function(evt) {
+			if (evt.target !== document.body) {
+				return;
+			}
 			dragging = false;
 			$('body').removeClass('dropzone');
 			return false;
