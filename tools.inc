@@ -32,22 +32,22 @@ class TypeTools {
 					),
 				),
 				'wdth' => array(
-					'60' => array(
+					'35' => array(
 						'XTRA' => 42,
 						'XOPQ' => 70,
 						'YOPQ' => 45,
 					),
-					'402' => array(),
+					'100' => array(),
 				),
 				'wght' => array(
-					'38' => array(
+					'100' => array(
 						'XOPQ' => 38,
 						'YOPQ' => 25,
 						'XTRA' => 375,
 						'YTSE' => 8,
 					),
-					'88' => array(),
-					'250' => array(
+					'400' => array(),
+					'900' => array(
 						'XOPQ' => 250,
 						'XTRA' => 250,
 						'YTLC' => 525,

@@ -85,16 +85,16 @@
   }, 
   "AmstelvarAlpha-VF": {
     "wght": {
-      "default": 88.0, 
-      "max": 250.0, 
+      "default": 400.0, 
+      "max": 900.0, 
       "name": "Weight", 
-      "min": 38.0
+      "min": 100.0
     }, 
     "wdth": {
-      "default": 402.0, 
-      "max": 402.0, 
+      "default": 100.0, 
+      "max": 100.0, 
       "name": "Width", 
-      "min": 60.0
+      "min": 35.0
     }, 
     "opsz": {
       "default": 14.0, 
