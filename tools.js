@@ -203,11 +203,16 @@
 			setTimeout(function() { $('input[name="opsz"]').val(el.value).trigger(evt.type); });
 		}
 
-		//calculate composite axes into their individual parameters
 		if (el.name in composites) {
+			//calculate composite axes into their individual parameters
 			TNTools.compositeToParametric(el.name, constrained);
 		} else if (el.name in axisDeltas) {
-			delete axisDeltas[el.name];
+			//when adjusting parametric axes, reset composites to their defaults
+			$.each(axisDeltas[el.name], function(caxis, cdelta) {
+				$('input[name="' + caxis + '"]').val(axisDefaults[caxis].default);
+			})
+			axisDeltas = {};
+//			delete axisDeltas[el.name];
 		}
 	}
 
