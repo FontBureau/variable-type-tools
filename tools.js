@@ -272,19 +272,18 @@
 		//fvs['opsz'] = $('#edit-size').val();
 		$.each($('#axis-inputs input[type=range]'), function() {
 			if (this.name in composites) {
-				//composite axes get left at default, but let's but in a fake helper string to remember the value
-				styleEl.data(this.name, this.value); //axisDefaults[this.name].default;
-				fvsv[this.name] = axisDefaults[this.name].default;
+				// we use the real value of the composite and leave parametrics at default
+				fvs[this.name] = fvsv[this.name] = this.value;
 			} else if (this.name in axisDeltas) {
+				//parametric axes get left at default, but let's but in a fake helper string to remember the value
 				var sum = 0;
 				$.each(axisDeltas[this.name], function(caxis, cdelta) {
 					sum += cdelta;
 				});
-				if (sum != 0) {
-					fvs[this.name] = axisDefaults[this.name].default + sum;
-				}
-				fvsv[this.name] = axisDefaults[this.name].default + sum;
-				$('input[name="' + this.name + '"]').val(fvsv[this.name]);
+				var theoreticalValue = axisDefaults[this.name].default + sum;
+				styleEl.data(this.name, theoreticalValue);
+				fvs[this.name] = fvsv[this.name] = axisDefaults[this.name].default;
+				$('input[name="' + this.name + '"]').val(theoreticalValue);
 			} else {
 				// iOS 11 Safari has a bug that treats unspecified axes as the minimum instead of the default
 				// so always specify everything
