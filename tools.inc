@@ -16,7 +16,7 @@ class TypeTools {
 	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum');
 	
 	private $customSettings = array(
-		'Amstelvar' => array(
+		'Amstelvar Alpha' => array(
 			'composites' => array(
 				'opsz' => array(
 					'10' => array(
@@ -99,7 +99,8 @@ class TypeTools {
 */
 	
 			#take off dev stuff from the end of the filename
-			$fontname = preg_replace('/(?:[Vv]\d+|[Aa]lpha|[Bb]eta)?-VF$/', '', $filebase);
+			//$fontname = preg_replace('/(?:[Vv]\d+|[Aa]lpha|[Bb]eta)?-VF$/', '', $filebase);
+			$fontname = preg_replace('/(?:[Vv]\d+)?-VF$/', '', $filebase);
 			
 			#separate into words
 			$fontname = preg_replace('/(?<=[a-z])[_-]?(?=[A-Z])/', ' ', $fontname);
@@ -118,6 +119,20 @@ class TypeTools {
 				@unset($axes->order);
 			}
 */
+
+			//reality check on composite axes
+			if (isset($this->customSettings[$fontname]['composites'])) {
+				foreach ($this->customSettings[$fontname]['composites'] as $composite => $numbers) {
+					foreach ($numbers as $pivot => $paxes) {
+						foreach ($paxes as $paxis => $number) {
+							if (!isset($axes->$paxis)) {
+								unset($this->customSettings[$fontname]['composites']);
+								break 3;
+							}
+						}
+					}
+				}
+			}
 
 			if (!$order) {
 				unset($axes->order);

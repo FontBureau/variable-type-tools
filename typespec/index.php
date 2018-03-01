@@ -14,7 +14,7 @@ print $tools->pageHead('Type Specification Demo')
 			]) ?>
 			<hr>
 			<label>Currently editing: <span id='currently-editing'>T2</span></label>
-			<?= $tools->sizeLeadingColor(12, 14, 8, 96); ?>
+			<?= $tools->sizeLeadingColor(12, 14, 8, 288); ?>
 			<div id='alignment-controls'>
 				<label>Alignment</label>
 				<input id='align-left' type='radio' checked name='alignment' value='left'>
