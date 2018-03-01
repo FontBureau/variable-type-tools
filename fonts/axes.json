@@ -84,6 +84,25 @@
     }
   }, 
   "AmstelvarAlpha-VF": {
+    "order": [
+      "wght", 
+      "wdth", 
+      "opsz", 
+      "XOPQ", 
+      "XTRA", 
+      "YOPQ", 
+      "YTLC", 
+      "YTSE", 
+      "GRAD", 
+      "XTCH", 
+      "YTCH", 
+      "YTAS", 
+      "YTDE", 
+      "YTUC", 
+      "YTRA", 
+      "PWGT", 
+      "PWDT"
+    ], 
     "wght": {
       "default": 400.0, 
       "max": 900.0, 
@@ -136,7 +155,7 @@
       "default": 88.0, 
       "max": 150.0, 
       "name": "Grade", 
-      "min": 88.0
+      "min": 25.0
     }, 
     "XTCH": {
       "default": 1000.0, 
@@ -173,6 +192,18 @@
       "max": 1200.0, 
       "name": "y transparent", 
       "min": 800.0
+    }, 
+    "PWGT": {
+      "default": 88.0, 
+      "max": 250.0, 
+      "name": "Para Weight", 
+      "min": 38.0
+    }, 
+    "PWDT": {
+      "default": 402.0, 
+      "max": 402.0, 
+      "name": "Para Width", 
+      "min": 60.0
     }
   }, 
   "Roboto-VF": {
@@ -574,6 +605,50 @@
       "max": 36.0, 
       "name": "Optical Size", 
       "min": 10.0
+    }
+  }, 
+  "SegoePilot-VF": {
+    "opsz": {
+      "default": 12.0, 
+      "max": 36.0, 
+      "name": "Optical Size", 
+      "min": 8.0
+    }, 
+    "wght": {
+      "default": 400.0, 
+      "max": 900.0, 
+      "name": "Weight", 
+      "min": 100.0
+    }, 
+    "wdth": {
+      "default": 100.0, 
+      "max": 125.0, 
+      "name": "Width", 
+      "min": 75.0
+    }, 
+    "XOPQ": {
+      "default": 82.0, 
+      "max": 211.0, 
+      "name": "x opaque", 
+      "min": 48.0
+    }, 
+    "XTRA": {
+      "default": 362.0, 
+      "max": 620.0, 
+      "name": "x transparent", 
+      "min": 236.0
+    }, 
+    "YOPQ": {
+      "default": 74.0, 
+      "max": 191.0, 
+      "name": "y opaque", 
+      "min": 44.0
+    }, 
+    "YTLC": {
+      "default": 500.0, 
+      "max": 598.0, 
+      "name": "y transparent lowercase", 
+      "min": 402.0
     }
   }
 }
