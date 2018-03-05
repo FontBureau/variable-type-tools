@@ -400,8 +400,51 @@
 		TNTools.populateAxisSliders(font);
 		
 		axisSliders = axisInputs.find('input[type=range]');
+
+		//populate named instances selector
+		var selectInstance = $('#select-instance').empty();
+		var instances = fontInfo[font].instances || [];
+		if (instances.length) {
+			var foundDefault = false;
+			$.each(instances, function(i, instance) {
+				var isDefault = true;
+				var option = $('<option></option>');
+				option.val(i);
+				option.text(instance.name);
+				option.data('axes', instance.axes);
+				$.each(instance.axes, function(k, v) {
+					if (!(k in axisDefaults) || axisDefaults[k].default != v) {
+						isDefault = false;
+						return false;
+					}
+				});
+				if (isDefault) {
+					foundDefault = true;
+					option.attr('selected', true);
+				}
+				selectInstance.append(option);
+			});
+			if (!foundDefault) {
+				selectInstance.prepend("<option></option>");
+			}
+		} else {
+			selectInstance.append("<option	>No named instances</option>");
+		}
 	}
 
+	function handleInstanceChange() {
+		var instance = $('#select-instance option:selected');
+		if (!instance.length) return;
+		var axes = instance.data('axes');
+		if (!axes) return;
+		$.each(axes, function(k, v) {
+			var inputs = $('#controls input[name="' + k + '"]');
+			inputs.val(v);
+			inputs.filter('[type=range]').trigger('change');
+		});
+		
+	}
+	
 	function addCustomFont(fonttag, url, format, font) {
 		var info = {
 			'name': font.getEnglishName('fullName'),
@@ -482,6 +525,7 @@
 			'updateCSSOutput': updateCSSOutput,
 			'handleSliderChange': handleSlider,
 			'handleFontChange': handleFontChange,
+			'handleInstanceChange': handleInstanceChange,
 			'fvsToAxes': fvsToAxes,
 			'fvsToSliders': fvsToSliders,
 			'compositeToParametric': compositeToParametric,
@@ -506,6 +550,8 @@
 		if (/[\?&]composites=([^&]+)/.test(window.location.search)) {
 			window.bookmarkedComposites = JSON.parse(decodeURIComponent(RegExp.$1));
 		}
+
+		$('#select-instance').on('change', handleInstanceChange);
 
 		$('#everybox').on('change', function () {
 			if (this.checked) {
