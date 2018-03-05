@@ -137,6 +137,12 @@ class TypeTools {
 				}
 			}
 
+			$instances = array();
+			if (isset($axes->instances)) {
+				$instances = $axes->instances;
+				unset($axes->instances);
+			}
+
 			if (!$order) {
 				unset($axes->order);
 				$order = array_keys(get_object_vars($axes));
@@ -157,10 +163,10 @@ class TypeTools {
 				});
 			}
 
-
 			$this->fontinfo[$filebase] = (object)array(
 				'name' => $fontname,
 				'axes' => $axes,
+				'instances' => $instances,
 				'axisOrder' => $order,
 				'composites' => isset($this->customSettings[$fontname]['composites']) ? $this->customSettings[$fontname]['composites'] : array(),
 			);
@@ -206,7 +212,7 @@ class TypeTools {
 	
 	public function selectFont($label="Font") {
 	?>
-			<label for="select-font"><?= $label ?></label>
+			<label for="select-font">Family</label>
 			<select name="font" id='select-font'>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
 				<option value="<?= $filebase ?>"<?php if ($info->name==='Amstelvar') print " selected"; ?>><?= $info->name ?></option>
@@ -214,6 +220,9 @@ class TypeTools {
 			</select>
 			<a href="#custom-fonts" id="custom-fonts-fakeout">Add your own</a>
 			<input type='file' name='custom-fonts' id='custom-fonts'>
+			<label for="select-instance">Instance</label>
+			<select name="instance" id='select-instance'>
+			</select>
 	<?php
 		return "";
 	}
