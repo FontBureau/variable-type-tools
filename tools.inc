@@ -196,18 +196,18 @@ class TypeTools {
 				src: url("/fonts/<?= $filebase ?>.woff") format("woff");
 			}
 <?php endforeach; ?>
-			<?php include("tools.css"); ?>
+			<?php readfile("tools.css"); ?>
 <?php foreach ($this->tools as $tool => $name): ?>
-			<?php include("$tool/$tool.css"); ?>
+			<?php readfile("$tool/$tool.css"); ?>
 <?php endforeach; ?>
 		</style>
 		<script>
 			var fontInfo = <?= json_encode($this->fontinfo) ?>;
 		</script>
 		<script src="https://www.typenetwork.com/assets_content/js/functions.js"></script>
-		<script><?php include('tools.js'); ?></script>
+		<script><?php readfile('tools.js'); ?></script>
 <?php foreach ($this->tools as $tool => $name): ?>
-		<script><?php include("$tool/$tool.js"); ?></script>
+		<script><?php readfile("$tool/$tool.js"); ?></script>
 <?php endforeach; ?>
 	</head>
 	<body>
