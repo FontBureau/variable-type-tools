@@ -326,3 +326,15 @@ input[type=range][disabled] {
 .show-parameters *[data-axes]::after, .show-parameters[data-axes]::after {
 	display: block;
 }
+
+
+
+/* CONTENT */
+
+#mode-sections > section {
+	display: none;
+}
+
+#mode-sections > section:first-child {
+	display: block;
+}

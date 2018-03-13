@@ -1,16 +1,15 @@
 <?php
 namespace TypeNetwork\TypeTools;
 
-/* if (!isset($_SERVER['PHP_AUTH_USER']) or $_SERVER['PHP_AUTH_USER'] !== 'typetools' or $_SERVER['PHP_AUTH_PW'] !== 'variablefonts') {
-	header('WWW-Authenticate: Basic realm="Type Tools"');
-	header('HTTP/1.0 401 Unauthorized');
-	echo 'Go to jail. Do not pass word.';
-	exit;
-} */
-
 class TypeTools {
 	public $fontinfo;
 	private $slidercount = 0;
+	
+	private $tools = array(
+		'typespec' => "Type Spec", 
+		'logopogo' => "Logo Pogo", 
+		'proof' => "Glyphs",
+	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
 	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum');
@@ -174,7 +173,6 @@ class TypeTools {
 	}
 
 	public function pageHead($title) {
-		$tools = array('typespec');
 	?>
 <!DOCTYPE html>
 <html lang="en" id="typetools" class='typespec'>
@@ -199,7 +197,7 @@ class TypeTools {
 			}
 <?php endforeach; ?>
 			<?php include("tools.css"); ?>
-<?php foreach ($tools as $tool): ?>
+<?php foreach ($this->tools as $tool => $name): ?>
 			<?php include("$tool/$tool.css"); ?>
 <?php endforeach; ?>
 		</style>
@@ -208,7 +206,7 @@ class TypeTools {
 		</script>
 		<script src="https://www.typenetwork.com/assets_content/js/functions.js"></script>
 		<script><?php include('tools.js'); ?></script>
-<?php foreach ($tools as $tool): ?>
+<?php foreach ($this->tools as $tool => $name): ?>
 		<script><?php include("$tool/$tool.js"); ?></script>
 <?php endforeach; ?>
 	</head>
@@ -251,6 +249,7 @@ class TypeTools {
 				<a class="content-filters-close" href="#">Close</a>
 
 				<form id='controls'>
+					<?= $this->selectMode() ?>
 					<?= $this->selectFont() ?>
 					<?= $this->slider([
 						'id' => 'column-width', 'name' => 'column-width', 'unit' => 'em', 'label' => 'Column width',
@@ -284,6 +283,18 @@ class TypeTools {
 		return "";
 	}
 	
+	public function pageSections() {
+		print "<div id='mode-sections'>";
+		foreach ($this->tools as $tool => $name) {
+			print "<section id='$tool'>";
+			include("$tool/$tool.php");
+			print "</section>";
+		}
+		print "<div id='css-output'></div>";
+		print "</div>";
+		return "";
+	}
+	
 	public function pageFoot() {
 ?>
 				<footer class="footer-global">
@@ -299,6 +310,20 @@ class TypeTools {
 	</body>
 </html>
 <?php
+		return "";
+	}
+	
+	public function selectMode() {
+	?>
+		<div>
+			<h3 class="inline"><label for="select-mode">Specimen:</label></h3>
+			<select name="font" id='select-mode'>
+<?php foreach ($this->tools as $tool => $name): ?>
+				<option value="<?= $tool ?>"><?= $name ?></option>
+<?php endforeach ?>
+			</select>
+		</div>
+	<?php
 		return "";
 	}
 	
