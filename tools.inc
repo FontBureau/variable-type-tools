@@ -174,15 +174,18 @@ class TypeTools {
 	}
 
 	public function pageHead($title) {
-		$whichtool = basename(dirname($_SERVER['SCRIPT_FILENAME']));
+		$tools = array('typespec');
 	?>
 <!DOCTYPE html>
-<html lang="en" id="<?= $whichtool ?>">
+<html lang="en" id="typetools" class='typespec'>
 	<head>
 		<meta charset="utf-8">
 		<title><?= $title ?></title>
 		<meta name="viewport" content="initial-scale=1,shrink-to-fit=no">
-		<link rel="stylesheet" href="https://store.typenetwork.com/css/tn.css">
+		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/reset.css">
+		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/adobe-blank.css">
+		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/fonts-momentum-sans.css">
+		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/style.css">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="/opentype.js/dist/opentype.min.js"></script>
@@ -195,34 +198,127 @@ class TypeTools {
 				src: url("/fonts/<?= $filebase ?>.woff") format("woff");
 			}
 <?php endforeach; ?>
+			<?php include("tools.css"); ?>
+<?php foreach ($tools as $tool): ?>
+			<?php include("$tool/$tool.css"); ?>
+<?php endforeach; ?>
 		</style>
-		<link rel="stylesheet" href="/tools.css">
-		<link rel="stylesheet" href="<?= $whichtool ?>.css">
 		<script>
 			var fontInfo = <?= json_encode($this->fontinfo) ?>;
 		</script>
-		<script src="/tools.js"></script>
-		<script src="<?= $whichtool ?>.js"></script>
+		<script src="https://www.typenetwork.com/assets_content/js/functions.js"></script>
+		<script><?php include('tools.js'); ?></script>
+<?php foreach ($tools as $tool): ?>
+		<script><?php include("$tool/$tool.js"); ?></script>
+<?php endforeach; ?>
 	</head>
 	<body>
-		<h1><a href="/"><img src="/images/typenetwork-logo.svg" alt="Type Network"></a></h1>
+		<div class="wrapper">
+			<header class="header-global">
+				<h1><a href="https://www.typenetwork.com/">Type Network</a></h1>
+			</header>
+		
+			<nav class="nav-global">
+				<a class="nav-global-reveal" href="#">Menu</a>
+				<ul>
+					<li><a class="nav-home-link" href="https://www.typenetwork.com/">Home</a></li>
+					<li><a href="http://store.typenetwork.com">Fonts</a></li>
+					<li><a href="https://www.typenetwork.com/news" >News</a></li>
+					<li><a href="https://www.typenetwork.com/gallery" >Gallery</a></li>
+				</ul>
+			</nav>
+			
+			<nav class="nav-user">
+				<a class="nav-user-reveal" href="#">Menu</a>
+				<ul>
+					<li><a href="http://store.typenetwork.com/account/licenses" class="nav-user-account"></a></li>
+					<li><a href="http://store.typenetwork.com/account/favorites" class="nav-user-favorites"></a></li>
+					<li><a href="http://store.typenetwork.com/cart" class="nav-user-cart"></a></li>
+				</ul>
+			</nav>
+			
+			<?= $this->pageSidebar() ?>
+			
+			<div class="content-main">
+				<a class="content-options-show-filters" href="#">Sidebar</a>
+<?php
+		return "";
+	}
+
+	public function pageSidebar() {
+?>
+			<aside class="content-filters">
+				<a class="content-filters-close" href="#">Close</a>
+
+				<form id='controls'>
+					<?= $this->selectFont() ?>
+					<?= $this->slider([
+						'id' => 'column-width', 'name' => 'column-width', 'unit' => 'em', 'label' => 'Column width',
+						'min' => 10, 'max' => 80, 'default' => 40, 'step' => 0.1,
+					]) ?>
+					<?= $this->sizeLeading(12, 14, 8, 288); ?>
+					<div id='alignment-color'>
+						<label>Alignment</label>
+						<input id='align-left' type='radio' checked name='alignment' value='left'>
+						<label for='align-left'>L</label>
+						<input id='align-center' type='radio' name='alignment' value='center'>
+						<label for='align-center'>C</label>
+						<input id='align-right' type='radio' name='alignment' value='right'>
+						<label for='align-right'>R</label>
+						<input id='align-justify' type='radio' name='alignment' value='justify'>
+						<label for='align-justify'>J</label>
+						<label for='foreground'>FG</label>
+						<div class='color'><input type='color' id='foreground' name='foreground' value='black'></div>
+						<label for='background'>BG</label>
+						<div class='color'><input type='color' id='background' name='background' value='white'></div>
+					</div>
+					
+					<div><input id="everybox" type="checkbox" name="show" value="everything"> <h3 class='inline'><label for="everybox">View all axes</label></h3></div>
+					<ul id='axis-inputs'>
+					</ul>
+					<?= $this->metaLinks() ?>
+				</form>
+
+			</aside>
+<?php
+		return "";
+	}
+	
+	public function pageFoot() {
+?>
+				<footer class="footer-global">
+					<ul>
+						<li><a href="//www.typenetwork.com/about">About Type Network</a></li>
+						<li><a href="//www.typenetwork.com/about#subscribe">Subscribe to the Newsletter</a></li>
+						<li><a href="//www.typenetwork.com/support">Help and Support</a></li>
+					</ul>
+					<p>&copy; Type Network <?= date("Y") ?>. All rights reserved.</p>
+				</footer>
+			</div> <!-- content-main -->
+		</div> <!-- wrapper -->
+	</body>
+</html>
 <?php
 		return "";
 	}
 	
 	public function selectFont($label="Font") {
 	?>
-			<label for="select-font">Family</label>
+		<div>
+			<h3 class="inline"><label for="select-font">Family:</label></h3>
 			<select name="font" id='select-font'>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
 				<option value="<?= $filebase ?>"<?php if ($info->name==='Amstelvar') print " selected"; ?>><?= $info->name ?></option>
 <?php endforeach ?>
 			</select>
-			<a href="#custom-fonts" id="custom-fonts-fakeout">Add your own</a>
 			<input type='file' name='custom-fonts' id='custom-fonts'>
-			<label for="select-instance">Instance</label>
-			<select name="instance" id='select-instance'>
+			<a id='add-your-own-button' href='#add-your-own'>&nbsp;+&nbsp;</a>
+		</div>
+		<div>
+			<h3 class="inline"><label for="select-instance">Style:</label></h3>
+			<select name="instance" id='select-instance' aria-label="Instance">
 			</select>
+		</div>
 	<?php
 		return "";
 	}
@@ -239,17 +335,15 @@ class TypeTools {
 		return "";
 	}
 	
-	public function sizeLeadingColor($size, $leading, $min=8, $max=96 , $fg="#000000", $bg="#ffffff") {
+	public function sizeLeading($size, $leading, $min=8, $max=96) {
 	?>
-		<div id='size-leading-color'>
-			<label for='edit-size'>Size</label>
+		<div id='size-leading'>
+			<label for='edit-size'>Size:</label>
 			<input type="number" name='size' id='edit-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
-			<label for='edit-leading'>Leading</label>
-			<input type="number" name='leading' id='edit-leading' min='<?= $min ?>' max='<?= ($max*1.5) ?>' value='<?= $leading ?>'>
-			<label for='foreground'>FG</label>
-			<div class='color'><input type='color' id='foreground' name='foreground' value='<?= $fg ?>'></div>
-			<label for='background'>BG</label>
-			<div class='color'><input type='color' id='background' name='background' value='<?= $bg ?>'></div>
+			<label for='edit-to-size'>to</label>
+			<input type="number" name='to-size' id='edit-to-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
+			<label for='edit-leading'>Leading:</label>
+			<input type="number" name='leading' id='edit-leading' min='<?= $min ?>' max='<?= ($max*2) ?>' value='<?= $leading ?>'>
 		</div>
 	<?php
 		return "";
@@ -275,7 +369,6 @@ class TypeTools {
 	?>
 		<div class='slider'>
 			<label for="input-<?= $options['id'] ?>"><?= $options['label'] ?></label>
-			<label for="edit-<?= $options['id'] ?>"><?= $options['unit'] ?></label>
 			<input type='number' id="edit-<?= $options['id'] ?>" name='<?= $options['name'] ?>' min='<?= isset($options['min']) ? $options['min'] : 1 ?>' max='<?= isset($options['max']) ? $options['max'] : 1000 ?>' value='<?= isset($options['default']) ? $options['default'] : 500 ?>'>
 			<input type='range' id="input-<?= $options['id'] ?>" name='<?= $options['name'] ?>' min='<?= isset($options['min']) ? $options['min'] : 1 ?>' max='<?= isset($options['max']) ? $options['max'] : 1000 ?>' value='<?= isset($options['default']) ? $options['default'] : 500 ?>' step='<?= isset($options['step']) ? $options['step'] : 1 ?>'>
 		</div>
@@ -308,13 +401,19 @@ class TypeTools {
 	
 	public function metaLinks() {
 	?>
-		<p><label><input id="everybox" type="checkbox" name="show" value="everything"> Show all axes</label></p>
-		<p><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></p>
-		<p><label><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Show <span style="color:#09f">parameters</span></label></p>
-		<p><label><input id="show-css" type="checkbox" name="show-css" value="1"> Show CSS ouptut</label></p>
-		<p><a id="bookmark" href="?">Bookmark these settings</a></p>
-		<p><a href="/" id='reset'>Reset to font defaults</a></p>
-		<p><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $this->lastFontUpdate() ?>">Grab latest font files</a></p>
+		<h3>Show</h3>
+		<ul>
+			<li><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></li>
+			<li><label style="color:#09f"><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Parameters</label></li>
+			<li><label><input id="show-css" type="checkbox" name="show-css" value="1"> CSS</label></li>
+		</ul>
+
+		<h3>Meta</h3>
+		<ul>
+			<!-- <p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
+			<li><a href="/" id='reset'>Reset to font defaults</a></li>
+			<li><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $this->lastFontUpdate() ?>">Grab latest font files</a></li>
+		</ul>
 	<?php
 		return "";
 	}

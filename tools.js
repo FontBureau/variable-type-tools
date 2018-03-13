@@ -146,14 +146,12 @@
 
 			var label = document.createElement('label');
 			var slider = document.createElement('input');
-			var editlabel = document.createElement('label');
 			var editvalue = document.createElement('input');
 			
 			label.for = slider.id = "input-" + axis;				
-			label.textContent = values.name || axis;
+			label.innerHTML = values.name ? values.name + ' <abbr>' + axis + '</abbr>' : axis;
 
-			editlabel.for = editvalue.id = "edit-" + axis;
-			editlabel.textContent = axis;
+			editvalue.id = "edit-" + axis;
 			
 			editvalue.type = 'number';
 			slider.type = 'range';
@@ -165,7 +163,6 @@
 			editvalue.value = slider.value = values.default;
 			
 			li.appendChild(label);
-			li.appendChild(editlabel);
 			li.appendChild(editvalue);
 			li.appendChild(slider);
 			
@@ -361,7 +358,7 @@
 		$('#foreground').spectrum('set', testEl.css('color'));
 
 		var temp = testEl.css('background-color');
-		$('#background').spectrum('set', temp === 'transparent' || temp.match(/rgba\(.+,\s*0(\.0)?/) ? 'white' : temp);
+		$('#background').spectrum('set', (temp === 'transparent' || temp.match(/rgba\(.+,\s*0(\.0)?/)) ? 'white' : temp);
 	}
 	
 	function handleFontChange(font) {
@@ -604,10 +601,10 @@
 			return false;
 		});
 
-		$('#custom-fonts-fakeout').on('click', function() {
+		$('#add-your-own-button').on('click', function(evt) {
 			$('#custom-fonts')[0].click();
 			return false;
-		})
+		});
 
 		$('#custom-fonts').on('change', function() {
 			addCustomFonts(this.files);

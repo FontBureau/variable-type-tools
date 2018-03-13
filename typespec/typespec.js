@@ -125,7 +125,9 @@ $(function() {
 	$('#select-font').on('change', function() {
 		var font = $(this).val();
 
-		TNTools.handleFontChange(font);
+		if (TNTools.handleFontChange(font) === false) {
+			return;
+		}
 
 		var realColumnWidth = parseInt($('article').css('max-width'));
 		var realFontSize = parseInt($('article ' + style2class.T2).css('font-size'));
