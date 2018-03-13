@@ -4,7 +4,9 @@
 }
 
 #logopogo figure {
-	margin-top: 1rem;
+	margin: 0;
+	width: 100%;
+	max-width: none;
 	padding: 1rem 0.5rem;
 }
 

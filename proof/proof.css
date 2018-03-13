@@ -4,8 +4,10 @@
 }
 
 #proof-grid {
-	margin-top: 1rem;
-	padding: 1rem 0.5rem;
+	margin: 0;
+	width: 100%;
+	max-width: none;
+	padding: 1rem;
 	word-break: break-all;
 	word-wrap: break-word;
 	overflow-wrap: break-word;

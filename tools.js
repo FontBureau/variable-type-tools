@@ -12,6 +12,28 @@
 	
 	var controls, axisInputs, axisSliders;
 	
+	var events = {};
+
+	function register(event, callback) {
+		if (!(event in events)) {
+			events[event] = [];
+		}
+		events[event].push(callback);
+	}
+	
+	function fire(event) {
+		var i, l;
+		var args = [];
+		for (i=1, l=arguments.length; i<l; i++) {
+			args.push(arguments[i]);
+		}
+		if (event in events) {
+			for (i in events[event]) {
+				events[event][i].apply(this, args);
+			} 
+		}
+	}
+	
 	//composite axis and value
 	window.c2p = compositeToParametric;
 	function compositeToParametric(caxis, cvalue) {
@@ -122,7 +144,7 @@
 		//update CSS output
 		var styletext = "";
 		$('head style[id^="style-"]').each(function() { 
-			styletext += $(this).text();
+			styletext += this.textContent;
 		});
 		$('#css-output').text(styletext.trim());
 	}
@@ -512,6 +534,8 @@
 
 	function tnTypeTools() {
 		return {
+			'register': register,
+			'fire': fire,
 			'customFonts': {},
 			'clone': function(obj) { return JSON.parse(JSON.stringify(obj)); },
 			'isRegisteredAxis': function(axis) { return registeredAxes.indexOf(axis) >= 0; },
@@ -548,7 +572,35 @@
 			window.bookmarkedComposites = JSON.parse(decodeURIComponent(RegExp.$1));
 		}
 
+		$('#select-mode').on('change', function() {
+			$('#mode-sections > section').hide();
+			$('#mode-sections > #' + this.value).show();
+		});
+
+		$('#select-font').on('change', function(evt) {
+			if (TNTools.handleFontChange($(this).val()) === false) {
+				return;
+			}
+
+			fire.call(this, 'fontChange', evt);
+		});
+
 		$('#select-instance').on('change', handleInstanceChange);
+
+		controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
+			var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
+			if (this.type === 'range' && this.name === 'size') {
+				var leading = parseFloat($('#edit-leading').val());
+				var oldval = parseFloat($(this).data('oldval'));
+			}
+
+			fire.call(this, 'sliderChange', evt);
+			handleSlider(evt);
+			fire('slidersToElement');
+		});
+
+		$("input[type=radio]").on('change', function() { TNTools.fire('slidersToElement'); });
+		$('#foreground, #background').on('move.spectrum change.spectrum hide.spectrum', function() { TNTools.fire('slidersToElement'); });
 
 		$('#everybox').on('change', function () {
 			if (this.checked) {
@@ -654,4 +706,8 @@
 	});
 	
 	window.TNTools = tnTypeTools();
+	
+	$(window).on('load', function() {
+		$('#select-font').trigger('change');
+	});
 })();

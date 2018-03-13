@@ -13,7 +13,7 @@ $(function() {
 	
 	var pageLoaded = false;
 	var controls = $('#controls');
-	var styleElements = $('article > .row');
+	var styleElements = $('#typespec article > .row');
 	var activeStyle = 'H1';
 	var show = "";
 	
@@ -29,17 +29,17 @@ $(function() {
 	
 	function updateArticleStyle(name, value) {
 		articleStyles[name] = value;
-		var css = "\narticle {";
+		var css = "\n#typespec article {";
 		$.each(articleStyles, function(k, v) {
 			css += "\n\t" + k + ": " + v + ';';
 		});
 		css += "\n}\n";
-		
+
 		$('#style-article').text(css);
 	}
 
-	function slidersToElement() {
-		var rows = $('article .row.' + activeStyle);
+	TNTools.register('slidersToElement', function() {
+		var rows = $('#typespec article .row.' + activeStyle);
 		var contentcell = rows.find(style2class[activeStyle]);
 		if (contentcell.parent('.container').length) {
 			contentcell = contentcell.parent('.container');
@@ -47,11 +47,11 @@ $(function() {
 
 		contentcell.attr('data-style', activeStyle);
 		TNTools.slidersToElement({
-			'selector': 'article ' + style2class[activeStyle],
+			'selector': '#typespec article ' + style2class[activeStyle],
 			'styleElement': $('#style-' + activeStyle),
 			'paramsElement': contentcell
 		});
-	}
+	});
 
 	//add stylesheets for the various styles
 	function selectElement(el) {
@@ -68,13 +68,13 @@ $(function() {
 		});
 		
 		//update sliders
-		$('article .current').removeClass('current');
+		$('#typespec article .current').removeClass('current');
 		styleElements.filter('.' + activeStyle).children('label').addClass('current');
 		
 		$('#currently-editing').text(activeStyle);
 	}
 
-	function elementToSliders(el) {
+	TNTools.register('elementToSliders', function(el) {
 		var row = $(el);
 		var testEl = row.find(style2class[activeStyle]);
 
@@ -85,11 +85,9 @@ $(function() {
 
 		TNTools.elementToSliders(testEl);
 		TNTools.fvsToSliders(testEl.css('font-variation-settings') || '', $('#style-' + activeStyle));
+	});
 
-		//$('#input-column-width').trigger('change'); // does optical size magic
-	}
-
-	controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
+	TNTools.register('sliderChange', function(evt) {
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
 		if (activeStyle === 'T2') {
 			if (this.type === 'range' && this.name === 'size') {
@@ -113,24 +111,14 @@ $(function() {
 				}
 			}
 		}
-		
-		TNTools.handleSliderChange(evt);
-		slidersToElement();
 	});
 	
-	$("input[type=radio]").on('change', slidersToElement);
-	$('#foreground, #background').on('move.spectrum change.spectrum hide.spectrum', slidersToElement);
-	
 	//font change triggers a lot of updates
-	$('#select-font').on('change', function() {
+	TNTools.register('fontChange', function(evt) {
 		var font = $(this).val();
 
-		if (TNTools.handleFontChange(font) === false) {
-			return;
-		}
-
-		var realColumnWidth = parseInt($('article').css('max-width'));
-		var realFontSize = parseInt($('article ' + style2class.T2).css('font-size'));
+ 		var realColumnWidth = parseInt($('#typespec article').css('max-width'));
+		var realFontSize = parseInt($('#typespec article ' + style2class.T2).css('font-size'));
 		var cwEm = (Math.round(realColumnWidth/realFontSize*100)/100).toString().replace(/(\.\d\d).*$/, '$1');
 
 		updateArticleStyle('font-family', '"' + fontInfo[font].name + ' Demo"');
@@ -140,23 +128,23 @@ $(function() {
 		$('input[name="column-width"]').val(cwEm);
 
 		if (pageLoaded) {
-			$.each(style2class, function(k, v) {
-				activeStyle = k;
-				var testEl = styleElements.filter('.' + activeStyle).find(style2class[k]);
+			$.each(style2class, function(stylename, selector) {
+				activeStyle = stylename;
+				var testEl = styleElements.filter('.' + activeStyle).find(selector);
 				var fontsize = parseInt(testEl.css('font-size'));
 				var leading = parseInt(testEl.css('line-height'));
 				$('#edit-leading').val(leading);
 				$('#edit-size').val(fontsize).data('oldval', fontsize);
 				$('input[name="opsz"]').val(fontsize).trigger('change');
-				slidersToElement();
 			});
 			styleElements.filter('.H1').trigger('click');
 		}
-	}).trigger('change');
+	});
 
 	var toSlidersAndBack = function() {
 		selectElement(this);
-		elementToSliders(this);
+		TNTools.fire('elementToSliders', this);
+		TNTools.fire('slidersToElement');
 	};
 
 	styleElements.each(toSlidersAndBack).on('click', toSlidersAndBack);

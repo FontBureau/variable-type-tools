@@ -9,28 +9,28 @@
 
 /* LABELS */
 
-article label {
+#typespec article label {
 	font-family: sans-serif;
 	text-align: right;
 }
 
-.H1 label {
+#typespec .H1 label {
 	font-size: 2.5rem;
 }
 
-.H2 label {
+#typespec .H2 label {
 	font-size: 2rem;
 }
 
-.H3 label {
+#typespec .H3 label {
 	font-size: 1.5rem;
 }
 
-.T1 label {
+#typespec .T1 label {
 	font-size: 1.25rem;
 }
 
-.T2 label {
+#typespec .T2 label {
 	font-size: 1rem;
 }
 
@@ -39,21 +39,21 @@ article label {
 
 /* STYLES LAYOUT */
 
-article {
+#typespec article {
 	display: table;
 	border-collapse: collapse;
 	margin-bottom: 2rem;
 }
 
-article h1, article h2, article h3 {
+#typespec article h1, #typespec article h2, #typespec article h3 {
 	font-weight: normal;
 }
 
-article > .row {
+#typespec article > .row {
 	display: table-row;
 }
 
-article > .row > * {
+#typespec article > .row > * {
 	display: table-cell;
 	vertical-align: baseline;
 	position: relative;
@@ -61,37 +61,37 @@ article > .row > * {
 	padding: 0.5rem 0.5rem 1rem;
 }
 
-article .current {
+#typespec article .current {
 	background-color: #EEF;
 }
 
 /* DEFAULTS */
 
-article {
+#typespec article {
 	max-width: 40em;
 }
 
-article h1 {
+#typespec article h1 {
 	font-size: 64px;
 	line-height: 60px;
 }
 
-article h2 {
+#typespec article h2 {
 	font-size: 36px;
 	line-height: 36px;
 }
 
-article h3 {
+#typespec article h3 {
 	font-size: 18px;
 	line-height: 24px;
 }
 
-article p.lede {
+#typespec article p.lede {
 	font-size: 18px;
 	line-height: 24px;
 }
 
-article p {
+#typespec article p {
 	font-size: 14px;
 	line-height: 20px;
 }
