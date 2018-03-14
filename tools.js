@@ -252,8 +252,19 @@
 		*/
 			
 //		updateURL();
-		
-		var styleEl = $(options.styleElement);
+
+		if (typeof options !== 'object') {
+			options = {};
+		}
+
+		//if called with non-standard options, run it with standard options too, to update general styles
+		if (options.styleElement || options.selector || options.paramsElement) {
+			slidersToElement();
+		}
+
+		var styleEl = $(options.styleElement || '#style-general');
+		var selector = options.selector || '.variable-demo-target';
+		var paramsEl = $(options.paramsElement || '.variable-demo-target');
 		
 		var rules = [];
 		var vrules = [];
@@ -276,8 +287,8 @@
 		if (background) {
 			rules.push('background-color: ' + background);
 			//update background of paragraph container
-			if (options.paramsElement && options.selector && !(options.paramsElement).is(options.selector)) {
-    			$(options.paramsElement).css('background-color', background);
+			if (paramsEl && !paramsEl.is(selector)) {
+    			paramsEl.css('background-color', background);
 			}
 		}
 
@@ -342,12 +353,12 @@
 
 		// update the actual CSS
 		styleEl.text('\n' 
-			+ options.selector + ' {\n\t' + rules.join(';\n\t') + ';\n}\n'
-			+ '\n.verbose-fvs ' + options.selector + ' {\n\t' + vrules.join(';\n\t') + ';\n}\n'
+			+ selector + ' {\n\t' + rules.join(';\n\t') + ';\n}\n'
+			+ '\n.verbose-fvs ' + selector + ' {\n\t' + vrules.join(';\n\t') + ';\n}\n'
 		);
 
 		// update colophon output
-		updateParameters(options.paramsElement);
+		updateParameters(paramsEl);
 		updateCSSOutput();
 	}
 	
@@ -571,6 +582,14 @@
 		if (/[\?&]composites=([^&]+)/.test(window.location.search)) {
 			window.bookmarkedComposites = JSON.parse(decodeURIComponent(RegExp.$1));
 		}
+
+		$('head').append("<style id='style-general'></style>");
+		$('#mode-sections > sections').each(function() {
+			var styleid = 'style-' + this.id;
+			if ($('#' + styleid).length === 0) {
+				$('head').append("<style id='" + styleid + "'></style>");
+			}
+		});
 
 		$('#select-mode').on('change', function() {
 			$('#mode-sections > section').hide();

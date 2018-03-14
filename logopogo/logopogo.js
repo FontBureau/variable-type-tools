@@ -34,18 +34,6 @@ $(function() {
 	var controls = $('#controls');
 	var logopogo = $('#pogologo');
 	
-	if (!$('#style-pogologo').length) {
-		$('head').append("<style id='style-pogologo'></style>");
-	}
-	
-	TNTools.register('slidersToElement', function() {
-		TNTools.slidersToElement({
-			'selector': '#pogologo',
-			'styleElement': $('#style-pogologo'),
-			'paramsElement': logopogo
-		});
-	});
-
 	function loadFontForOutput(callback) {
 		if (!window.fontkit) {
 			alert("fontkit not loaded; please wait a second and try again.");

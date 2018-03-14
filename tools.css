@@ -338,3 +338,9 @@ input[type=range][disabled] {
 #mode-sections > section:first-child {
 	display: block;
 }
+
+#mode-sections figure {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+}

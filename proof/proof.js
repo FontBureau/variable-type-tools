@@ -9,18 +9,6 @@ $(function() {
 	var controls = $('#controls');
 	var proof = $('#proof-grid');
 	
-	if (!$('#style-proof').length) {
-		$('head').append("<style id='style-proof'></style>");
-	}
-	
-	TNTools.register('slidersToElement', function() {
-		TNTools.slidersToElement({
-			'selector': '#proof-grid',
-			'styleElement': $('#style-proof'),
-			'paramsElement': proof
-		});
-	});
-
 	function populateGrid(font) {
 		var gid;
 		for (gid in font.tables.cmap.glyphIndexMap) {

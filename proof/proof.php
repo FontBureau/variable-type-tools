@@ -1,1 +1,1 @@
-<figure id='proof-grid' data-style="Settings"></figure>
+<figure id='proof-grid' class="variable-demo-target" data-style="Settings"></figure>
