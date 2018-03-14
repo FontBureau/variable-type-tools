@@ -4,9 +4,6 @@
 }
 
 #proof-grid {
-	margin: 0;
-	width: 100%;
-	max-width: none;
 	padding: 1rem;
 	word-break: break-all;
 	word-wrap: break-word;

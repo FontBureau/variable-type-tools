@@ -316,7 +316,7 @@ class TypeTools {
 	public function selectMode() {
 	?>
 		<div>
-			<h3 class="inline"><label for="select-mode">Specimen:</label></h3>
+			<h3 class="inline"><label for="select-mode">Layout:</label></h3>
 			<select name="font" id='select-mode'>
 <?php foreach ($this->tools as $tool => $name): ?>
 				<option value="<?= $tool ?>"><?= $name ?></option>
