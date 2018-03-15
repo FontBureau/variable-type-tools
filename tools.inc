@@ -7,8 +7,9 @@ class TypeTools {
 	
 	private $tools = array(
 		'typespec' => "Type Spec", 
-		'logopogo' => "Logo Pogo", 
 		'proof' => "Glyphs",
+		'waterfall' => "Waterfall",
+		'logopogo' => "Logo Pogo", 
 	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
