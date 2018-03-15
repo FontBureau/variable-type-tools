@@ -1,3 +1,4 @@
 RewriteEngine on
 RewriteBase "/"
 RewriteRule (^\.|/\.) - [F]
+RewriteRule ^(typespec|logopogo|proof)/(index.+)?$ / [R=301]
