@@ -6,19 +6,29 @@ $(function() {
 	var controls = $('#controls');
 	var waterfall = $('#waterfallll');
 	
+	TNTools.register('modeChange', function(evt) {
+		if (this.value === 'waterfall') {
+			$('input[name=size]').val(8).trigger('change');
+			$('input[name="to-size"]').val(144).trigger('change');
+		}
+	});
+	
 	TNTools.register('sliderChange', function(evt) {
-		var size, toSize;
+		var size = $('#edit-size');
+		var toSize = $('#edit-to-size');
+		if (evt.type !== 'change') {
+			//don't update for keystrokes
+			return;
+		}
 		if (this.name === 'size') {
-			size = $(this);
-			toSize = $('#controls input[name="to-size"]');
-			if (toSize.val() < this.value) {
-				toSize.val(this.value);
+			if (parseInt(size.val()) > parseInt(toSize.val())) {
+				toSize.val(size.val()).trigger('change');
+				return;
 			}
 		} else if (this.name === 'to-size') {
-			toSize = $(this);
-			size = $('#controls input[name="size"]');
-			if (size.val() > this.value) {
-				size.val(this.value);
+			if (parseInt(size.val()) > parseInt(toSize.val())) {
+				size.val(toSize.val()).trigger('change');
+				return;
 			}
 		} else {
 			return;
@@ -29,12 +39,23 @@ $(function() {
 		waterfall.empty();
 		
 		var i, l, li;
-		for (i=size.val(), l=toSize.val(); i<=l; i++) {
+		var fvs = waterfall.css('font-variation-settings');
+		var opsz = /["']opsz['"]\s+(?:\d+)/g;
+		for (i=parseInt(size.val()), l=parseInt(toSize.val()); i<=l; i++) {
 			li = document.createElement('li');
 			li.textContent = sentence;
 			li.style.fontSize = i + 'px';
+			if (fvs) {
+				li.style.fontVariationSettings = fvs.replace(opsz, '"opsz" ' + i);
+			}
 			li.setAttribute('data-size', i);
+			li.contentEditable = 'true';
 			waterfall.append(li);
 		}
+	});
+	
+	waterfall.on('keyup', function(evt) {
+		var li = $(evt.target).closest('li');
+		waterfall.find('li').not(li).text(li.text());
 	});
 });

@@ -591,9 +591,10 @@
 			}
 		});
 
-		$('#select-mode').on('change', function() {
+		$('#select-mode').on('change', function(evt) {
 			$('#mode-sections > section').hide();
 			$('#mode-sections > #' + this.value).show();
+			fire.call(this, 'modeChange', evt);
 		});
 
 		$('#select-font').on('change', function(evt) {
