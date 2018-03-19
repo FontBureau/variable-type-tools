@@ -1,6 +1,7 @@
 
 #waterfall *[data-axes]::after {
 	text-align: left;
+	white-space: nowrap;
 }
 
 #waterfallll {
