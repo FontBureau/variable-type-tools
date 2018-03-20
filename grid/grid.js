@@ -40,4 +40,36 @@ $(function() {
 		var td = $(evt.target).closest('td');
 		grid.find('td').not(td).text(td.text());
 	});
+	
+	$('#remove-row').on('click', function() {
+		var rows = grid.find('tr');
+		if (rows.length > 1) {
+			rows.last().remove();
+			updateCells();
+		}
+	});
+
+	$('#remove-column').on('click', function() {
+		var cols = grid.find('tr').first().children('td');
+		if (cols.length > 1) {
+			grid.find('tr td:last-child').remove();
+			updateCells();
+		}
+	});
+
+	$('#add-row').on('click', function() {
+		var lastrow = grid.find('tr').last();
+		lastrow.after(lastrow.clone());
+		updateCells();
+	});
+
+	$('#add-column').on('click', function() {
+		var lastcol = grid.find('tr td:last-child');
+		lastcol.each(function() {
+			var col = $(this);
+			col.after(col.clone());
+		});
+		updateCells();
+	});
+
 });
