@@ -8,8 +8,8 @@ $(function() {
 	
 	TNTools.register('modeChange', function(evt) {
 		if (this.value === 'waterfall') {
-			$('input[name=size]').val(8).trigger('change');
-			$('input[name="to-size"]').val(144).trigger('change');
+			$('input[name=size]').val(18).trigger('change');
+			$('input[name="to-size"]').val(72).trigger('change');
 		}
 	});
 	
@@ -30,7 +30,14 @@ $(function() {
 				size.val(toSize.val()).trigger('change');
 				return;
 			}
-		} else {
+		} else if (this.name !== 'opsz') {
+			var fvs = waterfall.css('font-variation-settings');
+			var opsz = /["']opsz['"]\s+(?:\d+)/g;
+			if (fvs) {
+				waterfall.children('li').each(function() {
+					this.style.fontVariationSettings = fvs.replace(opsz, '"opsz" ' + parseInt(this.style.fontSize));
+				})
+			}
 			return;
 		}
 		
@@ -39,15 +46,11 @@ $(function() {
 		waterfall.empty();
 		
 		var i, l, li;
-		var fvs = waterfall.css('font-variation-settings');
-		var opsz = /["']opsz['"]\s+(?:\d+)/g;
 		for (i=parseInt(size.val()), l=parseInt(toSize.val()); i<=l; i++) {
 			li = document.createElement('li');
 			li.textContent = sentence;
 			li.style.fontSize = i + 'px';
-			if (fvs) {
-				li.style.fontVariationSettings = fvs.replace(opsz, '"opsz" ' + i);
-			}
+
 			li.setAttribute('data-size', i);
 			li.contentEditable = 'true';
 			waterfall.append(li);
