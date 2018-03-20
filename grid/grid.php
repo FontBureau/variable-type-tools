@@ -11,4 +11,8 @@
 		<?php endfor; ?>
 	<?php endfor; ?>
 	</table>
+	<button type='button' id='remove-row' title="Remove a row">-</button>
+	<button type='button' id='add-row' title="Add a row">+</button>
+	<button type='button' id='remove-column' title="Remove a column">-</button>
+	<button type='button' id='add-column' title="Add a column">+</button>
 </div>
