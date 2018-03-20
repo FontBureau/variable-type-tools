@@ -16,8 +16,7 @@ $(function() {
 		}
 	}
 	
-	TNTools.register('fontChange', function() {
-		var font = $(this).val();
+	TNTools.register('fontChange', function(font) {
 		proof.empty();
 
 		if (font.match(/^custom-/) && window.fontInfo[font] && window.fontInfo[font].fontobj) {

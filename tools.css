@@ -331,6 +331,10 @@ input[type=range][disabled] {
 
 /* CONTENT */
 
+#mode-sections {
+	padding: 1rem;
+}
+
 #mode-sections > section {
 	display: none;
 }
