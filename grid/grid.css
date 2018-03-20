@@ -23,30 +23,30 @@
 	border-radius: 2px;
 }
 
-#griddd #add-row, #griddd #remove-row {
+#griddd #add-column, #griddd #remove-column {
 	top: 0;
 	height: 1rem;
 	width: 5rem;
 }
 
-#griddd #add-column, #griddd #remove-column {
+#griddd #add-row, #griddd #remove-row {
 	left: 0;
 	height: 5rem;
 	width: 1rem;
 }
 
 #griddd #remove-column {
-	bottom: 51%;
+	left: 1.5rem;
 }
 
 #griddd #add-column {
-	top: 51%;
+	left: 7.5rem;
 }
 
 #griddd #remove-row {
-	right: 51%;
+	top: 1.5rem;
 }
 
 #griddd #add-row {
-	left: 51%;
+	top: 7.5rem;
 }

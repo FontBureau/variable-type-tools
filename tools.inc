@@ -6,10 +6,10 @@ class TypeTools {
 	private $slidercount = 0;
 	
 	private $tools = array(
-		'grid' => "Grid",
 		'typespec' => "Type Spec", 
 		'proof' => "Glyphs",
 		'waterfall' => "Waterfall",
+		'grid' => "Grid",
 		'logopogo' => "Logo Pogo", 
 	);
 	
