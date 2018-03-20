@@ -6,6 +6,7 @@ class TypeTools {
 	private $slidercount = 0;
 	
 	private $tools = array(
+		'grid' => "Grid",
 		'typespec' => "Type Spec", 
 		'proof' => "Glyphs",
 		'waterfall' => "Waterfall",
@@ -186,7 +187,7 @@ class TypeTools {
 		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/fonts-momentum-sans.css">
 		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/style.css">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="/opentype.js/dist/opentype.min.js"></script>
 		<script src="/spectrum/spectrum.js"></script>
 		<link rel="stylesheet" href="/spectrum/spectrum.css">

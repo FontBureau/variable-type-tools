@@ -602,7 +602,7 @@
 				return;
 			}
 
-			fire.call(this, 'fontChange', evt);
+			fire.call(this, 'fontChange', $(this).val());
 		});
 
 		$('#select-instance').on('change', handleInstanceChange);

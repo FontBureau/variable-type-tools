@@ -1,0 +1,10 @@
+
+#grid *[data-axes]::after {
+	text-align: left;
+	white-space: nowrap;
+}
+
+#griddd td{
+	padding: 0.25em;
+}
+
