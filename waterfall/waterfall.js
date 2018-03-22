@@ -6,6 +6,16 @@ $(function() {
 	var controls = $('#controls');
 	var waterfall = $('#waterfallll');
 	
+	function doOpsz() {
+		var fvs = waterfall.css('font-variation-settings');
+		var opsz = /["']opsz['"]\s+(?:\d+)/g;
+		if (fvs) {
+			waterfall.children('li').each(function() {
+				this.style.fontVariationSettings = fvs.replace(opsz, '"opsz" ' + parseInt(this.style.fontSize));
+			})
+		}
+	}
+	
 	TNTools.register('modeChange', function(evt) {
 		if (this.value === 'waterfall') {
 			$('input[name=size]').val(18).trigger('change');
@@ -31,13 +41,7 @@ $(function() {
 				return;
 			}
 		} else if (this.name !== 'opsz') {
-			var fvs = waterfall.css('font-variation-settings');
-			var opsz = /["']opsz['"]\s+(?:\d+)/g;
-			if (fvs) {
-				waterfall.children('li').each(function() {
-					this.style.fontVariationSettings = fvs.replace(opsz, '"opsz" ' + parseInt(this.style.fontSize));
-				})
-			}
+			doOpsz();
 			return;
 		}
 		
@@ -55,6 +59,8 @@ $(function() {
 			li.contentEditable = 'true';
 			waterfall.append(li);
 		}
+		
+		doOpsz();
 	});
 	
 	waterfall.on('keyup', function(evt) {
