@@ -7,6 +7,7 @@
 
 	//these get updated whenever the font changes
 	var composites = {};
+	var compositesBak = {};
 	var axisDeltas = {};
 	var axisDefaults = {};
 	
@@ -227,9 +228,11 @@
 			TNTools.compositeToParametric(el.name, constrained);
 		} else if (el.name in axisDeltas) {
 			//when adjusting parametric axes, reset composites to their defaults
-			$.each(axisDeltas[el.name], function(caxis, cdelta) {
-				$('input[name="' + caxis + '"]').val(axisDefaults[caxis].default);
-			})
+			if ($('#ghost-sliders').checked) {
+				$.each(axisDeltas[el.name], function(caxis, cdelta) {
+					$('input[name="' + caxis + '"]').val(axisDefaults[caxis].default);
+				});
+			}
 			axisDeltas = {};
 //			delete axisDeltas[el.name];
 		}
@@ -416,7 +419,9 @@
 		spectropts.color = $('#background').attr('value');
 		$('#background').spectrum(spectropts);
 		
-		composites = fontInfo[font].composites;
+		composites = compositesBak = fontInfo[font].composites;
+		$('#ghost-sliders').trigger('change');
+		
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
 		
@@ -606,6 +611,10 @@
 		});
 
 		$('#select-instance').on('change', handleInstanceChange);
+
+		$('#ghost-sliders').on('change', function() {
+			composites = this.checked ? compositesBak : {};
+		});
 
 		controls.on('change input', 'input[type=range], input[type=number]', function(evt) {
 			var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
