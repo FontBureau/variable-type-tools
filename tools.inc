@@ -6,7 +6,7 @@ class TypeTools {
 	private $slidercount = 0;
 	
 	private $tools = array(
-		'typespec' => "Type Spec", 
+		'typespec' => "Ramp", 
 		'proof' => "Glyphs",
 		'waterfall' => "Waterfall",
 		'grid' => "Grid",
@@ -14,7 +14,7 @@ class TypeTools {
 	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
-	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum');
+	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum', 'RobotoDelta', 'Agency', 'Nobel');
 	
 	private $customSettings = array(
 		'Amstelvar Alpha' => array(
@@ -112,7 +112,6 @@ class TypeTools {
 			//figure out axis order
 			$order = array();
 			
-/* //ignore custom orders for now
 			if (isset($this->customSettings[$fontname]['order'])) {
 				$order = $this->customSettings[$fontname]['order'];
 			}
@@ -120,9 +119,8 @@ class TypeTools {
 				if (!$order) {
 					$order = $axes->order;
 				}
-				@unset($axes->order);
+				unset($axes->order);
 			}
-*/
 
 			//reality check on composite axes
 			if (isset($this->customSettings[$fontname]['composites'])) {
@@ -335,11 +333,11 @@ class TypeTools {
 			<h3 class="inline"><label for="select-font">Family:</label></h3>
 			<select name="font" id='select-font'>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
-				<option value="<?= $filebase ?>"<?php if ($info->name==='Amstelvar') print " selected"; ?>><?= $info->name ?></option>
+				<option value="<?= $filebase ?>"<?php if (strpos($info->name, 'Amstelvar')===0) print " selected"; ?>><?= $info->name ?></option>
 <?php endforeach ?>
 			</select>
 			<input type='file' name='custom-fonts' id='custom-fonts'>
-			<a id='add-your-own-button' href='#add-your-own'>&nbsp;+&nbsp;</a>
+			<a id='add-your-own-button' href='#add-your-own' style='white-space:nowrap' title="…or drag a font file onto the window">+ Add your own</a>
 		</div>
 		<div>
 			<h3 class="inline"><label for="select-instance">Style:</label></h3>
