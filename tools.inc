@@ -428,6 +428,7 @@ class TypeTools {
 	?>
 		<h3>Show</h3>
 		<ul>
+			<li><label><input id='ghost-sliders' type='checkbox' name='ghost-sliders' value='1' checked> Parametric slider relationships</label></li>
 			<li><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></li>
 			<li><label style="color:#09f"><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Parameters</label></li>
 			<li><label><input id="show-css" type="checkbox" name="show-css" value="1"> CSS</label></li>
