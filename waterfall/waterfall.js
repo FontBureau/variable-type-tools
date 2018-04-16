@@ -45,7 +45,7 @@ $(function() {
 			return;
 		}
 		
-		var sentence = waterfall.children('li').first().text() || 'Type designers just love a-z idioms like “the quick brown fox…”';
+		var sentence = waterfall.children('li').first().text() || 'ABCDEFGHUJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
 		
 		waterfall.empty();
 		
