@@ -67,10 +67,17 @@ body.dropzone::after {
 	letter-spacing: inherit;
 }
 
+#controls #add-your-own-button {
+	font-size: 0.8rem;
+	display: block;
+	text-align: right;
+}
+
 #controls #custom-fonts {
 	position: absolute;
 	left: -200vw;
 }
+
 
 #controls #size-leading {
 	display: grid;
