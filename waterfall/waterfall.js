@@ -45,7 +45,7 @@ $(function() {
 			return;
 		}
 		
-		var sentence = waterfall.children('li').first().text() || 'ABCDEFGHUJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+		var sentence = waterfall.children('li').first().text() || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
 		
 		waterfall.empty();
 		
