@@ -87,12 +87,12 @@
 	line-height: 24px;
 }
 
-#typespec article p.lede {
+#typespec article .T1-target {
 	font-size: 18px;
 	line-height: 24px;
 }
 
-#typespec article p {
+#typespec article .T2-target {
 	font-size: 14px;
 	line-height: 20px;
 }
