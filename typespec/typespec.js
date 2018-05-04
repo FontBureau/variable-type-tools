@@ -3,14 +3,6 @@ $(function() {
 
 	var temp; //general use
 	
-	var style2class = {
-		'H1': 'h1',
-		'H2': 'h2',
-		'H3': 'h3',
-		'T1': 'p.lede',
-		'T2': 'p:not(.lede)'
-	};
-	
 	var pageLoaded = false;
 	var controls = $('#controls');
 	var styleElements = $('#typespec article > .row');
@@ -40,16 +32,12 @@ $(function() {
 
 	TNTools.register('slidersToElement', function() {
 		var rows = $('#typespec article .row.' + activeStyle);
-		var contentcell = rows.find(style2class[activeStyle]);
-		if (contentcell.parent('.container').length) {
-			contentcell = contentcell.parent('.container');
-		}
+		var contentcell = rows.find('.' + activeStyle + '-target');
 
 		contentcell.attr('data-style', activeStyle);
 		TNTools.slidersToElement({
-			'selector': '#typespec article ' + style2class[activeStyle],
-			'styleElement': $('#style-' + activeStyle),
-			'paramsElement': contentcell
+			'selector': '#typespec article ' + '.' + activeStyle + '-target',
+			'styleElement': $('#style-' + activeStyle)
 		});
 	});
 
@@ -58,7 +46,7 @@ $(function() {
 		var row = $(el);
 
 		$.each(row[0].className.split(/\s+/), function(i, cls) {
-			if (cls in style2class) {
+			if (cls.match(/^[HT][1-3]$/)) {
 				activeStyle = cls;
 				if ($('#style-' + activeStyle).length === 0) {
 					$('head').append("<style id='style-" + activeStyle + "'></style>");
@@ -76,7 +64,7 @@ $(function() {
 
 	TNTools.register('elementToSliders', function(el) {
 		var row = $(el);
-		var testEl = row.find(style2class[activeStyle]);
+		var testEl = row.find('.' + activeStyle + '-target');
 
 		if (testEl.length === 0) {
 			console.log("Couldn't find any element for " + activeStyle);
@@ -118,7 +106,7 @@ $(function() {
 		var font = $(this).val();
 
  		var realColumnWidth = parseInt($('#typespec article').css('max-width'));
-		var realFontSize = parseInt($('#typespec article ' + style2class.T2).css('font-size'));
+		var realFontSize = parseInt($('#typespec article .T2-target').css('font-size'));
 		var cwEm = (Math.round(realColumnWidth/realFontSize*100)/100).toString().replace(/(\.\d\d).*$/, '$1');
 
 		updateArticleStyle('font-family', '"' + fontInfo[font].name + ' Demo"');
@@ -128,9 +116,9 @@ $(function() {
 		$('input[name="column-width"]').val(cwEm);
 
 		if (pageLoaded) {
-			$.each(style2class, function(stylename, selector) {
+			$.each(['H1', 'H2', 'H3', 'T1', 'T2'], function(i, stylename) {
 				activeStyle = stylename;
-				var testEl = styleElements.filter('.' + activeStyle).find(selector);
+				var testEl = styleElements.filter('.' + activeStyle).find('.' + stylename + '-target');
 				var fontsize = parseInt(testEl.css('font-size'));
 				var leading = parseInt(testEl.css('line-height'));
 				$('#edit-leading').val(leading);

@@ -258,13 +258,12 @@
 		}
 
 		//if called with non-standard options, run it with standard options too, to update general styles
-		if (options.styleElement || options.selector || options.paramsElement) {
+		if (options.styleElement || options.selector) {
 			slidersToElement();
 		}
 
 		var styleEl = $(options.styleElement || '#style-general');
 		var selector = options.selector || '.variable-demo-target';
-		var paramsEl = $(options.paramsElement || '.variable-demo-target');
 		
 		var rules = [];
 		var vrules = [];
@@ -286,10 +285,6 @@
 		
 		if (background) {
 			rules.push('background-color: ' + background);
-			//update background of paragraph container
-			if (paramsEl && !paramsEl.is(selector)) {
-    			paramsEl.css('background-color', background);
-			}
 		}
 
 		if (foreground) {
@@ -358,7 +353,7 @@
 		);
 
 		// update colophon output
-		updateParameters(paramsEl);
+		updateParameters(selector);
 		updateCSSOutput();
 	}
 	
