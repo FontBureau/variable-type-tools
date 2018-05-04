@@ -121,6 +121,20 @@ class TypeTools {
 				}
 				unset($axes->order);
 			}
+			
+			//sanity check on axis order
+			foreach ($order as $oaxis) {
+				if (!isset($axes->$oaxis)) {
+					$order = array();
+					break;
+				}
+				foreach (get_object_vars($axes) as $k => $v) {
+					if (!in_array($k, $order)) {
+						$order = array();
+						break;
+					}
+				}
+			}
 
 			//reality check on composite axes
 			if (isset($this->customSettings[$fontname]['composites'])) {
@@ -143,7 +157,6 @@ class TypeTools {
 			}
 
 			if (!$order) {
-				unset($axes->order);
 				$order = array_keys(get_object_vars($axes));
 				usort($order, function($a, $b) {
 					//registered, then lowercase, then alphabetic
