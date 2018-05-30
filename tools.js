@@ -496,8 +496,9 @@
 	
 	function addCustomFont(fonttag, url, format, font) {
 		var info = {
-			'name': font.getEnglishName('fullName'),
+			'name': font.getEnglishName('fontFamily'),
 			'axes': {},
+			'instances': [],
 			'axisOrder': [],
 			'composites': [],
 			'fontobj': font
@@ -513,6 +514,16 @@
 				info.axisOrder.push(axis.tag);
 			});
 		}
+		if ('fvar' in font.tables && 'instances' in font.tables.fvar) {
+			$.each(font.tables.fvar.instances, function(i, instance) {
+				info.instances.push({
+					'name': instance.name.en || instance.name,
+					'axes': instance.coordinates
+				});
+			});
+		}
+		
+		window.font = font;
 
 		$('head').append('<style>@font-face { font-family:"' + info.name + ' Demo"; src: url("' + url + '") format("' + format + '"); }</style>');
 
@@ -527,6 +538,8 @@
 			optgroup = $('<optgroup id="custom-optgroup" label="Your fonts"></optgroup>').prependTo($('#select-font'));
 		}
 		optgroup.append(option);
+
+		setTimeout(function() { $('#select-font').trigger('change') });
 	}
 
 	function addCustomFonts(files) {
@@ -557,8 +570,6 @@
 			});
 			reader.readAsDataURL(blob);
 		});
-		//for some reason the new selection doesn't register for a moment
-		setTimeout(function() { $('#select-font').trigger('change') }, 100);
 	}
 	
 
