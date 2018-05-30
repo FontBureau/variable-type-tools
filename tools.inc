@@ -14,7 +14,7 @@ class TypeTools {
 	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
-	private $includeFonts = array('Amstelvar', 'Escrow', 'Gimlet', 'Dunbar', 'Louvette', 'Decovar', 'Input', 'Momentum', 'RobotoDelta', 'Agency', 'Nobel');
+	private $excludeFonts = array('Segoe', 'Roboto(?!.*Delta)');
 	
 	private $customSettings = array(
 		'Amstelvar Alpha' => array(
@@ -90,7 +90,7 @@ class TypeTools {
 					unset($this->fontinfo[$filebase]);
 					continue;
 				}
-			} else if (!preg_match('/^(' . implode('|', $this->includeFonts) . ')/', $filebase)) {
+			} else if ($this->excludeFonts and preg_match('/^(' . implode('|', $this->excludeFonts) . ')/', $filebase)) {
 				unset($this->fontinfo[$filebase]);
 				continue;
 			}
