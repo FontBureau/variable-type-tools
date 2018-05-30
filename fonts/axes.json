@@ -1,4 +1,1311 @@
 {
+  "RobotoDelta-VF": {
+    "XTRA": {
+      "name": "XTRA",
+      "min": 210.0,
+      "max": 513.0,
+      "default": 359.0
+    },
+    "XOPQ": {
+      "name": "XOPQ",
+      "min": 26.0,
+      "max": 171.0,
+      "default": 94.0
+    },
+    "YOPQ": {
+      "name": "YOPQ",
+      "min": 26.0,
+      "max": 132.0,
+      "default": 77.0
+    },
+    "YTLC": {
+      "name": "YTLC",
+      "min": 416.0,
+      "max": 570.0,
+      "default": 514.0
+    },
+    "YTUC": {
+      "name": "YTUC",
+      "min": 528.0,
+      "max": 760.0,
+      "default": 712.0
+    },
+    "YTAS": {
+      "name": "YTAS",
+      "min": 649.0,
+      "max": 854.0,
+      "default": 750.0
+    },
+    "YTDE": {
+      "name": "YTDE",
+      "min": -305.0,
+      "max": -98.0,
+      "default": -203.0
+    },
+    "YTAD": {
+      "name": "YTAD",
+      "min": 460.0,
+      "max": 600.0,
+      "default": 563.0
+    },
+    "YTDD": {
+      "name": "YTDD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "UDLN": {
+      "name": "UDLN",
+      "min": -195.0,
+      "max": 0.0,
+      "default": -49.0
+    },
+    "wght": {
+      "name": "wght",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "wdth",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "opsz",
+      "min": 8.0,
+      "max": 144.0,
+      "default": 12.0
+    },
+    "PWGT": {
+      "name": "PWGT",
+      "min": 44.0,
+      "max": 150.0,
+      "default": 94.0
+    },
+    "PWDT": {
+      "name": "PWDT",
+      "min": 560.0,
+      "max": 867.0,
+      "default": 712.0
+    },
+    "POPS": {
+      "name": "POPS",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "GRAD": {
+      "name": "GRAD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "YTRA": {
+      "name": "YTRA",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "Roboto-min-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": -1.0,
+      "max": 1.125,
+      "default": -0.1
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 75.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "slnt": {
+      "name": "Slant",
+      "min": 0.0,
+      "max": 12.0,
+      "default": 0.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": -1.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Thin"
+      },
+      {
+        "axes": {
+          "wght": -0.55,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 0.35,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Medium"
+      },
+      {
+        "axes": {
+          "wght": 0.73,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Bold"
+      },
+      {
+        "axes": {
+          "wght": 1.125,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Black"
+      },
+      {
+        "axes": {
+          "wght": -1.0,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Thin Italic"
+      },
+      {
+        "axes": {
+          "wght": -0.55,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Light Italic"
+      },
+      {
+        "axes": {
+          "wght": -0.1,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.35,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.73,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 1.125,
+          "wdth": 100.0,
+          "slnt": 12.0
+        },
+        "name": "Black Italic"
+      },
+      {
+        "axes": {
+          "wght": -0.55,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Light"
+      },
+      {
+        "axes": {
+          "wght": -0.1,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Regular"
+      },
+      {
+        "axes": {
+          "wght": 0.75,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Bold"
+      },
+      {
+        "axes": {
+          "wght": -0.55,
+          "wdth": 75.0,
+          "slnt": 12.0
+        },
+        "name": "Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": -0.1,
+          "wdth": 75.0,
+          "slnt": 12.0
+        },
+        "name": "Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.75,
+          "wdth": 75.0,
+          "slnt": 12.0
+        },
+        "name": "Condensed Bold Italic"
+      }
+    ]
+  },
+  "Gimlet_Italics-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 300.0,
+      "max": 800.0,
+      "default": 300.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 64.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "Optical Size",
+      "min": 8.0,
+      "max": 48.0,
+      "default": 48.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 100.0,
+          "opsz": 48.0
+        },
+        "name": "Display Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 100.0,
+          "opsz": 48.0
+        },
+        "name": "Display Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 100.0,
+          "opsz": 48.0
+        },
+        "name": "Display Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 100.0,
+          "opsz": 48.0
+        },
+        "name": "Display Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 100.0,
+          "opsz": 48.0
+        },
+        "name": "Display Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 88.0,
+          "opsz": 48.0
+        },
+        "name": "Display Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 88.0,
+          "opsz": 48.0
+        },
+        "name": "Display Narrow Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 88.0,
+          "opsz": 48.0
+        },
+        "name": "Display Narrow Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 88.0,
+          "opsz": 48.0
+        },
+        "name": "Display Narrow Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 88.0,
+          "opsz": 48.0
+        },
+        "name": "Display Narrow Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 76.0,
+          "opsz": 48.0
+        },
+        "name": "Display Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 76.0,
+          "opsz": 48.0
+        },
+        "name": "Display Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 76.0,
+          "opsz": 48.0
+        },
+        "name": "Display Condensed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 76.0,
+          "opsz": 48.0
+        },
+        "name": "Display Condensed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 76.0,
+          "opsz": 48.0
+        },
+        "name": "Display Condensed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 64.0,
+          "opsz": 48.0
+        },
+        "name": "Display Compressed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 64.0,
+          "opsz": 48.0
+        },
+        "name": "Display Compressed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 64.0,
+          "opsz": 48.0
+        },
+        "name": "Display Compressed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 64.0,
+          "opsz": 48.0
+        },
+        "name": "Display Compressed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 64.0,
+          "opsz": 48.0
+        },
+        "name": "Display Compressed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 100.0,
+          "opsz": 12.0
+        },
+        "name": "Text Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 100.0,
+          "opsz": 12.0
+        },
+        "name": "Text Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 100.0,
+          "opsz": 12.0
+        },
+        "name": "Text Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 100.0,
+          "opsz": 12.0
+        },
+        "name": "Text Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 100.0,
+          "opsz": 12.0
+        },
+        "name": "Text Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Narrow Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Narrow Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Narrow Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Narrow Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Narrow Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Condensed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Condensed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 88.0,
+          "opsz": 12.0
+        },
+        "name": "Text Condensed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 64.0,
+          "opsz": 12.0
+        },
+        "name": "Text Compressed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 64.0,
+          "opsz": 12.0
+        },
+        "name": "Text Compressed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 64.0,
+          "opsz": 12.0
+        },
+        "name": "Text Compressed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 64.0,
+          "opsz": 12.0
+        },
+        "name": "Text Compressed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "wdth": 64.0,
+          "opsz": 12.0
+        },
+        "name": "Text Compressed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 100.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 100.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 100.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 100.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Narrow Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Narrow Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Narrow Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Narrow Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Condensed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 88.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Condensed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 64.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Compressed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 64.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Compressed Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 64.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Compressed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 64.0,
+          "opsz": 8.0
+        },
+        "name": "Micro Compressed Bold Italic"
+      }
+    ]
+  },
+  "AgencyFB-with-slant-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 105.0
+    },
+    "YUCW": {
+      "name": "Waist",
+      "min": 335.0,
+      "max": 1035.0,
+      "default": 735.0
+    },
+    "XSDA": {
+      "name": "x stem diagonal angle",
+      "min": 45.0,
+      "max": 135.0,
+      "default": 90.0
+    },
+    "YSDA": {
+      "name": "y stem diagonal angle",
+      "min": -45.0,
+      "max": 45.0,
+      "default": 0.0
+    },
+    "YSDT": {
+      "name": "y stem diagonal terminal",
+      "min": 0.0,
+      "max": 20.0,
+      "default": 0.0
+    },
+    "slnt": {
+      "name": "slant",
+      "min": 0.0,
+      "max": 8.0,
+      "default": 0.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 105.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Regular"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 105.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 105.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "wdth": 105.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 105.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Black"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 75.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Compressed"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 75.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Compressed Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 75.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Compressed Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "wdth": 75.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Compressed Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 75.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Compressed Black"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 85.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 85.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 85.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "wdth": 85.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 85.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Black"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 115.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Wide"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 115.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Wide Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 115.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Wide Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "wdth": 115.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Wide Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 115.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Wide Black"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 125.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Extended"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 125.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Extended Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 125.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Extended Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "wdth": 125.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Extended Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 125.0,
+          "YUCW": 735.0,
+          "XSDA": 90.0,
+          "YSDA": 0.0,
+          "YSDT": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Extended Black"
+      }
+    ]
+  },
+  "Escrowvar-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 87.0,
+      "max": 191.0,
+      "default": 111.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 583.0,
+      "max": 796.0,
+      "default": 796.0
+    },
+    "opsz": {
+      "name": "Optical Size",
+      "min": 12.0,
+      "max": 72.0,
+      "default": 24.0
+    },
+    "instances": []
+  },
+  "Fit-VF": {
+    "order": [
+      "wdth"
+    ],
+    "wdth": {
+      "name": "Width",
+      "min": 0.0,
+      "max": 1000.0,
+      "default": 110.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wdth": 0.0
+        },
+        "name": "Skyline"
+      },
+      {
+        "axes": {
+          "wdth": 10.0
+        },
+        "name": "Compressed"
+      },
+      {
+        "axes": {
+          "wdth": 27.0
+        },
+        "name": "Extra Condensed"
+      },
+      {
+        "axes": {
+          "wdth": 56.0
+        },
+        "name": "Condensed"
+      },
+      {
+        "axes": {
+          "wdth": 110.0
+        },
+        "name": "Regular"
+      },
+      {
+        "axes": {
+          "wdth": 191.0
+        },
+        "name": "Wide"
+      },
+      {
+        "axes": {
+          "wdth": 335.0
+        },
+        "name": "Extra Wide"
+      },
+      {
+        "axes": {
+          "wdth": 580.0
+        },
+        "name": "Extended"
+      },
+      {
+        "axes": {
+          "wdth": 825.0
+        },
+        "name": "Extra Extended"
+      },
+      {
+        "axes": {
+          "wdth": 1000.0
+        },
+        "name": "Ultra Extended"
+      }
+    ]
+  },
+  "Output_Sans-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 0.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "slnt": {
+      "name": "Height",
+      "min": 0.0,
+      "max": 1000.0,
+      "default": 0.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 0.0
+        },
+        "name": "Hairline"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Thin"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 0.0
+        },
+        "name": "Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "slnt": 0.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 0.0
+        },
+        "name": "Regular"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "slnt": 0.0
+        },
+        "name": "Medium"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "slnt": 0.0
+        },
+        "name": "Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "slnt": 0.0
+        },
+        "name": "Black"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 1000.0
+        },
+        "name": "Hairline Italic"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "slnt": 1000.0
+        },
+        "name": "Thin_Italic"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 1000.0
+        },
+        "name": "Extra Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "slnt": 1000.0
+        },
+        "name": "Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 1000.0
+        },
+        "name": "Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "slnt": 1000.0
+        },
+        "name": "Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "slnt": 1000.0
+        },
+        "name": "Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "slnt": 1000.0
+        },
+        "name": "Black Italic"
+      }
+    ]
+  },
   "Nobel-VF": {
     "wght": {
       "name": "Weight",
@@ -204,223 +1511,333 @@
       }
     ]
   },
-  "Roboto-min-VF": {
+  "Louvette_Italic-VF": {
     "wght": {
       "name": "Weight",
-      "min": -1.0,
-      "max": 1.125,
-      "default": -0.1
+      "min": 300.0,
+      "max": 1000.0,
+      "default": 300.0
     },
-    "wdth": {
-      "name": "Width",
-      "min": 75.0,
+    "yopq": {
+      "name": "Hairline",
+      "min": 14.0,
       "max": 100.0,
       "default": 100.0
     },
-    "slnt": {
-      "name": "Slant",
-      "min": 0.0,
-      "max": 12.0,
-      "default": 0.0
+    "ytde": {
+      "name": "Descender",
+      "min": 14.0,
+      "max": 100.0,
+      "default": 100.0
     },
     "instances": [
       {
         "axes": {
-          "wght": -1.0,
-          "wdth": 100.0,
-          "slnt": 0.0
+          "wght": 300.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Thin"
+        "name": "Headline-Regular"
       },
       {
         "axes": {
-          "wght": -0.55,
-          "wdth": 100.0,
-          "slnt": 0.0
+          "wght": 400.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Light"
+        "name": "Headline-Medium"
       },
       {
         "axes": {
-          "wght": 0.35,
-          "wdth": 100.0,
-          "slnt": 0.0
+          "wght": 500.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Medium"
+        "name": "Headline-Semi Bold"
       },
       {
         "axes": {
-          "wght": 0.73,
-          "wdth": 100.0,
-          "slnt": 0.0
+          "wght": 600.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Bold"
+        "name": "Headline-Bold"
       },
       {
         "axes": {
-          "wght": 1.125,
-          "wdth": 100.0,
-          "slnt": 0.0
+          "wght": 800.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Black"
+        "name": "Headline-Black"
       },
       {
         "axes": {
-          "wght": -1.0,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 1000.0,
+          "yopq": 100.0,
+          "ytde": 100.0
         },
-        "name": "Thin Italic"
+        "name": "Headline-Ultra"
       },
       {
         "axes": {
-          "wght": -0.55,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 300.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Light Italic"
+        "name": "Text-Regular"
       },
       {
         "axes": {
-          "wght": -0.1,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 400.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Italic"
+        "name": "Text-Medium"
       },
       {
         "axes": {
-          "wght": 0.35,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 500.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Medium Italic"
+        "name": "Text-Semi Bold"
       },
       {
         "axes": {
-          "wght": 0.73,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 600.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Bold Italic"
+        "name": "Text-Bold"
       },
       {
         "axes": {
-          "wght": 1.125,
-          "wdth": 100.0,
-          "slnt": 12.0
+          "wght": 800.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Black Italic"
+        "name": "Text-Black"
       },
       {
         "axes": {
-          "wght": -0.55,
-          "wdth": 75.0,
-          "slnt": 0.0
+          "wght": 1000.0,
+          "yopq": 14.0,
+          "ytde": 14.0
         },
-        "name": "Condensed Light"
+        "name": "Text-Ultra"
       },
       {
         "axes": {
-          "wght": -0.1,
-          "wdth": 75.0,
-          "slnt": 0.0
+          "wght": 300.0,
+          "yopq": 36.0,
+          "ytde": 36.0
         },
-        "name": "Condensed Regular"
+        "name": "Deck-Regular"
       },
       {
         "axes": {
-          "wght": 0.75,
-          "wdth": 75.0,
-          "slnt": 0.0
+          "wght": 400.0,
+          "yopq": 36.0,
+          "ytde": 36.0
         },
-        "name": "Condensed Bold"
+        "name": "Deck-Medium"
       },
       {
         "axes": {
-          "wght": -0.55,
-          "wdth": 75.0,
-          "slnt": 12.0
+          "wght": 500.0,
+          "yopq": 36.0,
+          "ytde": 36.0
         },
-        "name": "Condensed Light Italic"
+        "name": "Deck-Semi Bold"
       },
       {
         "axes": {
-          "wght": -0.1,
-          "wdth": 75.0,
-          "slnt": 12.0
+          "wght": 600.0,
+          "yopq": 36.0,
+          "ytde": 36.0
         },
-        "name": "Condensed Italic"
+        "name": "Deck-Bold"
       },
       {
         "axes": {
-          "wght": 0.75,
-          "wdth": 75.0,
-          "slnt": 12.0
+          "wght": 800.0,
+          "yopq": 36.0,
+          "ytde": 36.0
         },
-        "name": "Condensed Bold Italic"
+        "name": "Deck-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Ultra"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Regular"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Medium"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Bold"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Ultra"
       }
     ]
   },
-  "NobelItalic-VF": {
+  "SegoePilot-VF": {
+    "opsz": {
+      "name": "Optical Size",
+      "min": 8.0,
+      "max": 36.0,
+      "default": 12.0
+    },
     "wght": {
       "name": "Weight",
       "min": 100.0,
       "max": 900.0,
       "default": 400.0
     },
+    "wdth": {
+      "name": "Width",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 100.0
+    },
+    "XOPQ": {
+      "name": "x opaque",
+      "min": 48.0,
+      "max": 211.0,
+      "default": 82.0
+    },
+    "XTRA": {
+      "name": "x transparent",
+      "min": 236.0,
+      "max": 620.0,
+      "default": 362.0
+    },
+    "YOPQ": {
+      "name": "y opaque",
+      "min": 44.0,
+      "max": 191.0,
+      "default": 74.0
+    },
+    "YTLC": {
+      "name": "y transparent lowercase",
+      "min": 402.0,
+      "max": 598.0,
+      "default": 500.0
+    },
     "instances": [
       {
         "axes": {
-          "wght": 100.0
-        },
-        "name": "ExtraLight"
-      },
-      {
-        "axes": {
-          "wght": 200.0
+          "opsz": 16.0,
+          "wght": 100.0,
+          "wdth": 100.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
         "name": "Light"
       },
       {
         "axes": {
-          "wght": 300.0
+          "opsz": 12.0,
+          "wght": 150.0,
+          "wdth": 100.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
-        "name": "Book"
+        "name": "Semilight"
       },
       {
         "axes": {
-          "wght": 400.0
+          "opsz": 12.0,
+          "wght": 400.0,
+          "wdth": 100.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
         "name": "Regular"
       },
       {
         "axes": {
-          "wght": 500.0
+          "opsz": 18.0,
+          "wght": 600.0,
+          "wdth": 97.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
         "name": "Semibold"
       },
       {
         "axes": {
-          "wght": 600.0
+          "opsz": 24.0,
+          "wght": 750.0,
+          "wdth": 95.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
         "name": "Bold"
       },
       {
         "axes": {
-          "wght": 700.0
-        },
-        "name": "Extrabold"
-      },
-      {
-        "axes": {
-          "wght": 800.0
-        },
-        "name": "Heavy"
-      },
-      {
-        "axes": {
-          "wght": 900.0
+          "opsz": 30.0,
+          "wght": 900.0,
+          "wdth": 94.0,
+          "XOPQ": 82.0,
+          "XTRA": 362.0,
+          "YOPQ": 74.0,
+          "YTLC": 500.0
         },
         "name": "Black"
       }
@@ -877,76 +2294,1146 @@
       }
     ]
   },
-  "Fit-VF": {
-    "order": [
-      "wdth"
-    ],
+  "MomentumSans-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 10.0,
+      "max": 220.0,
+      "default": 115.0
+    },
     "wdth": {
       "name": "Width",
-      "min": 0.0,
-      "max": 1000.0,
-      "default": 110.0
+      "min": 533.0,
+      "max": 769.0,
+      "default": 769.0
+    },
+    "opsz": {
+      "name": "Optical Size",
+      "min": 12.0,
+      "max": 72.0,
+      "default": 12.0
     },
     "instances": [
       {
         "axes": {
-          "wdth": 0.0
+          "wght": 30.0,
+          "wdth": 769.0,
+          "opsz": 12.0
         },
-        "name": "Skyline"
+        "name": "Text Thin"
       },
       {
         "axes": {
-          "wdth": 10.0
+          "wght": 50.0,
+          "wdth": 769.0,
+          "opsz": 12.0
         },
-        "name": "Compressed"
+        "name": "Text Extra Light"
       },
       {
         "axes": {
-          "wdth": 27.0
+          "wght": 80.0,
+          "wdth": 769.0,
+          "opsz": 12.0
         },
-        "name": "Extra Condensed"
+        "name": "Text Light"
       },
       {
         "axes": {
-          "wdth": 56.0
+          "wght": 100.0,
+          "wdth": 769.0,
+          "opsz": 12.0
         },
-        "name": "Condensed"
+        "name": "Text Regular"
       },
       {
         "axes": {
-          "wdth": 110.0
+          "wght": 120.0,
+          "wdth": 769.0,
+          "opsz": 12.0
+        },
+        "name": "Text Medium"
+      },
+      {
+        "axes": {
+          "wght": 140.0,
+          "wdth": 769.0,
+          "opsz": 12.0
+        },
+        "name": "Text Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 160.0,
+          "wdth": 769.0,
+          "opsz": 12.0
+        },
+        "name": "Text Bold"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "wdth": 769.0,
+          "opsz": 12.0
+        },
+        "name": "Text Extra Bold"
+      },
+      {
+        "axes": {
+          "wght": 220.0,
+          "wdth": 769.0,
+          "opsz": 12.0
+        },
+        "name": "Text Black"
+      },
+      {
+        "axes": {
+          "wght": 30.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Thin"
+      },
+      {
+        "axes": {
+          "wght": 50.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 80.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Light"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Regular"
+      },
+      {
+        "axes": {
+          "wght": 120.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Medium"
+      },
+      {
+        "axes": {
+          "wght": 140.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 160.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Bold"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Extra Bold"
+      },
+      {
+        "axes": {
+          "wght": 220.0,
+          "wdth": 769.0,
+          "opsz": 36.0
+        },
+        "name": "Deck Black"
+      },
+      {
+        "axes": {
+          "wght": 30.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Thin"
+      },
+      {
+        "axes": {
+          "wght": 50.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 80.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Light"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Regular"
+      },
+      {
+        "axes": {
+          "wght": 120.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Medium"
+      },
+      {
+        "axes": {
+          "wght": 140.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 160.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Bold"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Extra Bold"
+      },
+      {
+        "axes": {
+          "wght": 220.0,
+          "wdth": 769.0,
+          "opsz": 72.0
+        },
+        "name": "Display Black"
+      }
+    ]
+  },
+  "BentonSansV14-VF": {
+    "xopq": {
+      "name": "xopq",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "xtra": {
+      "name": "xtra",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "ylct": {
+      "name": "ylct",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "yopq": {
+      "name": "yopq",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "ytra": {
+      "name": "ytra",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "NobelItalic-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 100.0
+        },
+        "name": "ExtraLight"
+      },
+      {
+        "axes": {
+          "wght": 200.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 300.0
+        },
+        "name": "Book"
+      },
+      {
+        "axes": {
+          "wght": 400.0
         },
         "name": "Regular"
       },
       {
         "axes": {
-          "wdth": 191.0
+          "wght": 500.0
         },
-        "name": "Wide"
+        "name": "Semibold"
       },
       {
         "axes": {
-          "wdth": 335.0
+          "wght": 600.0
         },
-        "name": "Extra Wide"
+        "name": "Bold"
       },
       {
         "axes": {
-          "wdth": 580.0
+          "wght": 700.0
         },
-        "name": "Extended"
+        "name": "Extrabold"
       },
       {
         "axes": {
-          "wdth": 825.0
+          "wght": 800.0
         },
-        "name": "Extra Extended"
+        "name": "Heavy"
       },
       {
         "axes": {
-          "wdth": 1000.0
+          "wght": 900.0
         },
-        "name": "Ultra Extended"
+        "name": "Black"
+      }
+    ]
+  },
+  "AmstelvarAlpha-VF": {
+    "order": [
+      "opsz",
+      "wght",
+      "PWGT",
+      "wdth",
+      "PWDT",
+      "GRAD",
+      "XOPQ",
+      "XTRA",
+      "YOPQ",
+      "YTUC",
+      "YTLC",
+      "YTAS",
+      "YTDE",
+      "YTSE",
+      "YTRA",
+      "XTCH",
+      "YTCH"
+    ],
+    "opsz": {
+      "name": "Optical Size",
+      "min": 10.0,
+      "max": 72.0,
+      "default": 14.0
+    },
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "PWGT": {
+      "name": "Para Weight",
+      "min": 38.0,
+      "max": 250.0,
+      "default": 88.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 35.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "PWDT": {
+      "name": "Para Width",
+      "min": 60.0,
+      "max": 402.0,
+      "default": 402.0
+    },
+    "GRAD": {
+      "name": "Grade",
+      "min": 88.0,
+      "max": 150.0,
+      "default": 88.0
+    },
+    "XOPQ": {
+      "name": "x opaque",
+      "min": 5.0,
+      "max": 500.0,
+      "default": 88.0
+    },
+    "XTRA": {
+      "name": "x transparent",
+      "min": 42.0,
+      "max": 402.0,
+      "default": 402.0
+    },
+    "YOPQ": {
+      "name": "y opaque",
+      "min": 4.0,
+      "max": 85.0,
+      "default": 50.0
+    },
+    "YTUC": {
+      "name": "y transparent uppercase",
+      "min": 650.0,
+      "max": 950.0,
+      "default": 750.0
+    },
+    "YTLC": {
+      "name": "lc y transparent",
+      "min": 445.0,
+      "max": 600.0,
+      "default": 500.0
+    },
+    "YTAS": {
+      "name": "y transparent ascender",
+      "min": 650.0,
+      "max": 850.0,
+      "default": 750.0
+    },
+    "YTDE": {
+      "name": "y transparent descender",
+      "min": 150.0,
+      "max": 350.0,
+      "default": 250.0
+    },
+    "YTSE": {
+      "name": "Serif height",
+      "min": 0.0,
+      "max": 48.0,
+      "default": 18.0
+    },
+    "YTRA": {
+      "name": "y transparent",
+      "min": 800.0,
+      "max": 1200.0,
+      "default": 1000.0
+    },
+    "XTCH": {
+      "name": "x transparent Chinese",
+      "min": 800.0,
+      "max": 1200.0,
+      "default": 1000.0
+    },
+    "YTCH": {
+      "name": "y transparent Chinese",
+      "min": 800.0,
+      "max": 1200.0,
+      "default": 1000.0
+    },
+    "instances": []
+  },
+  "Input_Mono-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 0.0,
+      "max": 1000.0,
+      "default": 400.0
+    },
+    "slnt": {
+      "name": "Height",
+      "min": 0.0,
+      "max": 8.0,
+      "default": 0.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 100.0,
+      "max": 500.0,
+      "default": 500.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Bold"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Medium"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Regular"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Black"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Bold"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Medium"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Regular"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Black"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Bold"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Medium"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Regular"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Black"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Bold"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Light"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Medium"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Regular"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Black"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Extra Light"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 0.0,
+          "wdth": 500.0
+        },
+        "name": "Thin"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 0.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Thin"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 0.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Thin"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 0.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Thin"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Italic"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Italic"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 820.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 320.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Italic"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Extra Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Extra Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Extra Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 200.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Extra Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 13.0,
+          "wdth": 500.0
+        },
+        "name": "Thin Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 13.0,
+          "wdth": 66.0
+        },
+        "name": "Narrow Thin Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 13.0,
+          "wdth": 33.0
+        },
+        "name": "Condensed Thin Italic"
+      },
+      {
+        "axes": {
+          "wght": 0.0,
+          "slnt": 13.0,
+          "wdth": 100.0
+        },
+        "name": "Compressed Thin Italic"
+      }
+    ]
+  },
+  "Louvette-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 300.0,
+      "max": 1000.0,
+      "default": 300.0
+    },
+    "yopq": {
+      "name": "Hairline",
+      "min": 14.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "ytde": {
+      "name": "Descender",
+      "min": 14.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 300.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Regular"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Medium"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Bold"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 100.0,
+          "ytde": 100.0
+        },
+        "name": "Headline-Ultra"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Regular"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Medium"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Bold"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 14.0,
+          "ytde": 14.0
+        },
+        "name": "Text-Ultra"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Regular"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Medium"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Bold"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 36.0,
+          "ytde": 36.0
+        },
+        "name": "Deck-Ultra"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Regular"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Medium"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Semi Bold"
+      },
+      {
+        "axes": {
+          "wght": 600.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Bold"
+      },
+      {
+        "axes": {
+          "wght": 800.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Black"
+      },
+      {
+        "axes": {
+          "wght": 1000.0,
+          "yopq": 72.0,
+          "ytde": 72.0
+        },
+        "name": "Display-Ultra"
       }
     ]
   },
@@ -1540,39 +4027,6 @@
       }
     ]
   },
-  "BentonSansV14-VF": {
-    "xopq": {
-      "name": "xopq",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "xtra": {
-      "name": "xtra",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "ylct": {
-      "name": "ylct",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "yopq": {
-      "name": "yopq",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "ytra": {
-      "name": "ytra",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "instances": []
-  },
   "Roboto-VF": {
     "wght": {
       "name": "Weight",
@@ -1591,380 +4045,6 @@
       "min": 0.0,
       "max": 12.0,
       "default": 0.0
-    },
-    "instances": []
-  },
-  "SegoePilot-VF": {
-    "opsz": {
-      "name": "Optical Size",
-      "min": 8.0,
-      "max": 36.0,
-      "default": 12.0
-    },
-    "wght": {
-      "name": "Weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 75.0,
-      "max": 125.0,
-      "default": 100.0
-    },
-    "XOPQ": {
-      "name": "x opaque",
-      "min": 48.0,
-      "max": 211.0,
-      "default": 82.0
-    },
-    "XTRA": {
-      "name": "x transparent",
-      "min": 236.0,
-      "max": 620.0,
-      "default": 362.0
-    },
-    "YOPQ": {
-      "name": "y opaque",
-      "min": 44.0,
-      "max": 191.0,
-      "default": 74.0
-    },
-    "YTLC": {
-      "name": "y transparent lowercase",
-      "min": 402.0,
-      "max": 598.0,
-      "default": 500.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "opsz": 16.0,
-          "wght": 100.0,
-          "wdth": 100.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Light"
-      },
-      {
-        "axes": {
-          "opsz": 12.0,
-          "wght": 150.0,
-          "wdth": 100.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Semilight"
-      },
-      {
-        "axes": {
-          "opsz": 12.0,
-          "wght": 400.0,
-          "wdth": 100.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Regular"
-      },
-      {
-        "axes": {
-          "opsz": 18.0,
-          "wght": 600.0,
-          "wdth": 97.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Semibold"
-      },
-      {
-        "axes": {
-          "opsz": 24.0,
-          "wght": 750.0,
-          "wdth": 95.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Bold"
-      },
-      {
-        "axes": {
-          "opsz": 30.0,
-          "wght": 900.0,
-          "wdth": 94.0,
-          "XOPQ": 82.0,
-          "XTRA": 362.0,
-          "YOPQ": 74.0,
-          "YTLC": 500.0
-        },
-        "name": "Black"
-      }
-    ]
-  },
-  "RobotoDelta-VF": {
-    "XTRA": {
-      "name": "XTRA",
-      "min": 210.0,
-      "max": 513.0,
-      "default": 359.0
-    },
-    "XOPQ": {
-      "name": "XOPQ",
-      "min": 26.0,
-      "max": 171.0,
-      "default": 94.0
-    },
-    "YOPQ": {
-      "name": "YOPQ",
-      "min": 26.0,
-      "max": 132.0,
-      "default": 77.0
-    },
-    "YTLC": {
-      "name": "YTLC",
-      "min": 416.0,
-      "max": 570.0,
-      "default": 514.0
-    },
-    "YTUC": {
-      "name": "YTUC",
-      "min": 528.0,
-      "max": 760.0,
-      "default": 712.0
-    },
-    "YTAS": {
-      "name": "YTAS",
-      "min": 649.0,
-      "max": 854.0,
-      "default": 750.0
-    },
-    "YTDE": {
-      "name": "YTDE",
-      "min": -305.0,
-      "max": -98.0,
-      "default": -203.0
-    },
-    "YTAD": {
-      "name": "YTAD",
-      "min": 460.0,
-      "max": 600.0,
-      "default": 563.0
-    },
-    "YTDD": {
-      "name": "YTDD",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "UDLN": {
-      "name": "UDLN",
-      "min": -195.0,
-      "max": 0.0,
-      "default": -49.0
-    },
-    "wght": {
-      "name": "wght",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "wdth",
-      "min": 75.0,
-      "max": 125.0,
-      "default": 100.0
-    },
-    "opsz": {
-      "name": "opsz",
-      "min": 8.0,
-      "max": 144.0,
-      "default": 12.0
-    },
-    "PWGT": {
-      "name": "PWGT",
-      "min": 44.0,
-      "max": 150.0,
-      "default": 94.0
-    },
-    "PWDT": {
-      "name": "PWDT",
-      "min": 560.0,
-      "max": 867.0,
-      "default": 712.0
-    },
-    "POPS": {
-      "name": "POPS",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "GRAD": {
-      "name": "GRAD",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "YTRA": {
-      "name": "YTRA",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "instances": []
-  },
-  "Escrowvar-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 87.0,
-      "max": 191.0,
-      "default": 111.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 583.0,
-      "max": 796.0,
-      "default": 796.0
-    },
-    "opsz": {
-      "name": "Optical Size",
-      "min": 12.0,
-      "max": 72.0,
-      "default": 24.0
-    },
-    "instances": []
-  },
-  "AmstelvarAlpha-VF": {
-    "order": [
-      "opsz",
-      "wght",
-      "PWGT",
-      "wdth",
-      "PWDT",
-      "GRAD",
-      "XOPQ",
-      "XTRA",
-      "YOPQ",
-      "YTUC",
-      "YTLC",
-      "YTAS",
-      "YTDE",
-      "YTSE",
-      "YTRA",
-      "XTCH",
-      "YTCH"
-    ],
-    "opsz": {
-      "name": "Optical Size",
-      "min": 10.0,
-      "max": 72.0,
-      "default": 14.0
-    },
-    "wght": {
-      "name": "Weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "PWGT": {
-      "name": "Para Weight",
-      "min": 38.0,
-      "max": 250.0,
-      "default": 88.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 35.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "PWDT": {
-      "name": "Para Width",
-      "min": 60.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "GRAD": {
-      "name": "Grade",
-      "min": 88.0,
-      "max": 150.0,
-      "default": 88.0
-    },
-    "XOPQ": {
-      "name": "x opaque",
-      "min": 5.0,
-      "max": 500.0,
-      "default": 88.0
-    },
-    "XTRA": {
-      "name": "x transparent",
-      "min": 42.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "YOPQ": {
-      "name": "y opaque",
-      "min": 4.0,
-      "max": 85.0,
-      "default": 50.0
-    },
-    "YTUC": {
-      "name": "y transparent uppercase",
-      "min": 650.0,
-      "max": 950.0,
-      "default": 750.0
-    },
-    "YTLC": {
-      "name": "lc y transparent",
-      "min": 445.0,
-      "max": 600.0,
-      "default": 500.0
-    },
-    "YTAS": {
-      "name": "y transparent ascender",
-      "min": 650.0,
-      "max": 850.0,
-      "default": 750.0
-    },
-    "YTDE": {
-      "name": "y transparent descender",
-      "min": 150.0,
-      "max": 350.0,
-      "default": 250.0
-    },
-    "YTSE": {
-      "name": "Serif height",
-      "min": 0.0,
-      "max": 48.0,
-      "default": 18.0
-    },
-    "YTRA": {
-      "name": "y transparent",
-      "min": 800.0,
-      "max": 1200.0,
-      "default": 1000.0
-    },
-    "XTCH": {
-      "name": "x transparent Chinese",
-      "min": 800.0,
-      "max": 1200.0,
-      "default": 1000.0
-    },
-    "YTCH": {
-      "name": "y transparent Chinese",
-      "min": 800.0,
-      "max": 1200.0,
-      "default": 1000.0
     },
     "instances": []
   },
@@ -2438,1398 +4518,6 @@
       }
     ]
   },
-  "Gimlet_Italics-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 300.0,
-      "max": 800.0,
-      "default": 300.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 64.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "opsz": {
-      "name": "Optical Size",
-      "min": 8.0,
-      "max": 48.0,
-      "default": 48.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 100.0,
-          "opsz": 48.0
-        },
-        "name": "Display Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 100.0,
-          "opsz": 48.0
-        },
-        "name": "Display Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 100.0,
-          "opsz": 48.0
-        },
-        "name": "Display Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 100.0,
-          "opsz": 48.0
-        },
-        "name": "Display Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 100.0,
-          "opsz": 48.0
-        },
-        "name": "Display Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 88.0,
-          "opsz": 48.0
-        },
-        "name": "Display Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 88.0,
-          "opsz": 48.0
-        },
-        "name": "Display Narrow Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 88.0,
-          "opsz": 48.0
-        },
-        "name": "Display Narrow Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 88.0,
-          "opsz": 48.0
-        },
-        "name": "Display Narrow Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 88.0,
-          "opsz": 48.0
-        },
-        "name": "Display Narrow Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 76.0,
-          "opsz": 48.0
-        },
-        "name": "Display Condensed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 76.0,
-          "opsz": 48.0
-        },
-        "name": "Display Condensed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 76.0,
-          "opsz": 48.0
-        },
-        "name": "Display Condensed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 76.0,
-          "opsz": 48.0
-        },
-        "name": "Display Condensed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 76.0,
-          "opsz": 48.0
-        },
-        "name": "Display Condensed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 64.0,
-          "opsz": 48.0
-        },
-        "name": "Display Compressed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 64.0,
-          "opsz": 48.0
-        },
-        "name": "Display Compressed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 64.0,
-          "opsz": 48.0
-        },
-        "name": "Display Compressed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 64.0,
-          "opsz": 48.0
-        },
-        "name": "Display Compressed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 64.0,
-          "opsz": 48.0
-        },
-        "name": "Display Compressed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 100.0,
-          "opsz": 12.0
-        },
-        "name": "Text Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 100.0,
-          "opsz": 12.0
-        },
-        "name": "Text Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 100.0,
-          "opsz": 12.0
-        },
-        "name": "Text Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 100.0,
-          "opsz": 12.0
-        },
-        "name": "Text Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 100.0,
-          "opsz": 12.0
-        },
-        "name": "Text Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Narrow Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Narrow Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Narrow Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Narrow Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Narrow Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Condensed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Condensed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Condensed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Condensed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 88.0,
-          "opsz": 12.0
-        },
-        "name": "Text Condensed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 64.0,
-          "opsz": 12.0
-        },
-        "name": "Text Compressed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 64.0,
-          "opsz": 12.0
-        },
-        "name": "Text Compressed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 64.0,
-          "opsz": 12.0
-        },
-        "name": "Text Compressed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 64.0,
-          "opsz": 12.0
-        },
-        "name": "Text Compressed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "wdth": 64.0,
-          "opsz": 12.0
-        },
-        "name": "Text Compressed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 100.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 100.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 100.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 100.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Narrow Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Narrow Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Narrow Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Narrow Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Condensed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Condensed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Condensed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 88.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Condensed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 64.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Compressed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 64.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Compressed Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 64.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Compressed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 64.0,
-          "opsz": 8.0
-        },
-        "name": "Micro Compressed Bold Italic"
-      }
-    ]
-  },
-  "Input_Mono-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 0.0,
-      "max": 1000.0,
-      "default": 400.0
-    },
-    "slnt": {
-      "name": "Height",
-      "min": 0.0,
-      "max": 8.0,
-      "default": 0.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 100.0,
-      "max": 500.0,
-      "default": 500.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Bold"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Light"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Medium"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Regular"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Black"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Bold"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Light"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Medium"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Regular"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Black"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Bold"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Light"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Medium"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Regular"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Black"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Bold"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Light"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Medium"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Regular"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Black"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 0.0,
-          "wdth": 500.0
-        },
-        "name": "Thin"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 0.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Thin"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 0.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Thin"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 0.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Thin"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Italic"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Italic"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Italic"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 820.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 320.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Italic"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Extra Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Extra Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Extra Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Extra Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 13.0,
-          "wdth": 500.0
-        },
-        "name": "Thin Italic"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 13.0,
-          "wdth": 66.0
-        },
-        "name": "Narrow Thin Italic"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 13.0,
-          "wdth": 33.0
-        },
-        "name": "Condensed Thin Italic"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 13.0,
-          "wdth": 100.0
-        },
-        "name": "Compressed Thin Italic"
-      }
-    ]
-  },
-  "MomentumSans-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 10.0,
-      "max": 220.0,
-      "default": 115.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 533.0,
-      "max": 769.0,
-      "default": 769.0
-    },
-    "opsz": {
-      "name": "Optical Size",
-      "min": 12.0,
-      "max": 72.0,
-      "default": 12.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 30.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Thin"
-      },
-      {
-        "axes": {
-          "wght": 50.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 80.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Light"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Regular"
-      },
-      {
-        "axes": {
-          "wght": 120.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Medium"
-      },
-      {
-        "axes": {
-          "wght": 140.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 160.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Bold"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Extra Bold"
-      },
-      {
-        "axes": {
-          "wght": 220.0,
-          "wdth": 769.0,
-          "opsz": 12.0
-        },
-        "name": "Text Black"
-      },
-      {
-        "axes": {
-          "wght": 30.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Thin"
-      },
-      {
-        "axes": {
-          "wght": 50.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 80.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Light"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Regular"
-      },
-      {
-        "axes": {
-          "wght": 120.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Medium"
-      },
-      {
-        "axes": {
-          "wght": 140.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 160.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Bold"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Extra Bold"
-      },
-      {
-        "axes": {
-          "wght": 220.0,
-          "wdth": 769.0,
-          "opsz": 36.0
-        },
-        "name": "Deck Black"
-      },
-      {
-        "axes": {
-          "wght": 30.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Thin"
-      },
-      {
-        "axes": {
-          "wght": 50.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 80.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Light"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Regular"
-      },
-      {
-        "axes": {
-          "wght": 120.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Medium"
-      },
-      {
-        "axes": {
-          "wght": 140.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 160.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Bold"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Extra Bold"
-      },
-      {
-        "axes": {
-          "wght": 220.0,
-          "wdth": 769.0,
-          "opsz": 72.0
-        },
-        "name": "Display Black"
-      }
-    ]
-  },
-  "Louvette-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 300.0,
-      "max": 1000.0,
-      "default": 300.0
-    },
-    "yopq": {
-      "name": "Hairline",
-      "min": 14.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "ytde": {
-      "name": "Descender",
-      "min": 14.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Ultra"
-      }
-    ]
-  },
   "Segoe-VF": {
     "wght": {
       "name": "Weight",
@@ -3873,348 +4561,6 @@
           "wght": 900.0
         },
         "name": "Black"
-      }
-    ]
-  },
-  "Output_Sans-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 0.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "slnt": {
-      "name": "Height",
-      "min": 0.0,
-      "max": 1000.0,
-      "default": 0.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 0.0
-        },
-        "name": "Hairline"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Thin"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 0.0
-        },
-        "name": "Extra Light"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "slnt": 0.0
-        },
-        "name": "Light"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 0.0
-        },
-        "name": "Regular"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "slnt": 0.0
-        },
-        "name": "Medium"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "slnt": 0.0
-        },
-        "name": "Bold"
-      },
-      {
-        "axes": {
-          "wght": 900.0,
-          "slnt": 0.0
-        },
-        "name": "Black"
-      },
-      {
-        "axes": {
-          "wght": 0.0,
-          "slnt": 1000.0
-        },
-        "name": "Hairline Italic"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "slnt": 1000.0
-        },
-        "name": "Thin_Italic"
-      },
-      {
-        "axes": {
-          "wght": 200.0,
-          "slnt": 1000.0
-        },
-        "name": "Extra Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "slnt": 1000.0
-        },
-        "name": "Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "slnt": 1000.0
-        },
-        "name": "Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "slnt": 1000.0
-        },
-        "name": "Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "slnt": 1000.0
-        },
-        "name": "Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 900.0,
-          "slnt": 1000.0
-        },
-        "name": "Black Italic"
-      }
-    ]
-  },
-  "Louvette_Italic-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 300.0,
-      "max": 1000.0,
-      "default": 300.0
-    },
-    "yopq": {
-      "name": "Hairline",
-      "min": 14.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "ytde": {
-      "name": "Descender",
-      "min": 14.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 100.0,
-          "ytde": 100.0
-        },
-        "name": "Headline-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 14.0,
-          "ytde": 14.0
-        },
-        "name": "Text-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 36.0,
-          "ytde": 36.0
-        },
-        "name": "Deck-Ultra"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Regular"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Medium"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Semi Bold"
-      },
-      {
-        "axes": {
-          "wght": 600.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Bold"
-      },
-      {
-        "axes": {
-          "wght": 800.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Black"
-      },
-      {
-        "axes": {
-          "wght": 1000.0,
-          "yopq": 72.0,
-          "ytde": 72.0
-        },
-        "name": "Display-Ultra"
       }
     ]
   }
