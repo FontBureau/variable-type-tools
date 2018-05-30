@@ -113,7 +113,7 @@
 		var axes = {};
 		$.each(fvs, function(i, setting) {
 			var k, v;
-			if (temp = setting.match(/["']\[?(\w{4})\]?['"]\s+([\-\d\.]+)/)) {
+			if (temp = setting.match(/["'](....)['"]\s+([\-\d\.]+)/)) {
 				k = temp[1];
 				v = parseFloat(temp[2]);
 				axes[k] = v;
@@ -129,14 +129,32 @@
 	}
 
 	function fvsToSliders(fvs, styleEl) {
+		var savedDeltas, sliderVals;
+		
+		try {
+			savedDeltas = JSON.parse(styleEl.attr('data-axis-deltas'));
+		} catch (e) {
+			savedDeltas = null;
+		}
+		
+		try {
+			sliderVals = JSON.parse(styleEl.attr('data-slider-values') || '{}');
+		} catch (e) {
+			sliderVals = {};
+		}
+
 		var axes = fvsToAxes(fvs);
+
 		//convert fake CAPS values into their real versions
 		$.each(axes, function(k, v) {
-			var override = parseFloat(styleEl.data(k));
-			var val = isNaN(override) ? v : override;
-			controls.find('input[name="' + k + '"]').val(val);
-			compositeToParametric(k, val);
+			controls.find('input[name="' + k + '"]').val(k in sliderVals ? sliderVals[k] : v);
+			compositeToParametric(k, v);
 		});
+
+		//after everything, restore deltas to their previous values
+		if (savedDeltas) {
+			axisDeltas = savedDeltas;
+		}
 	}
 		
 
@@ -300,6 +318,7 @@
 		var fvsv = {};
 
 		//fvs['opsz'] = $('#edit-size').val();
+		var sliderVals = {};
 		$.each($('#axis-inputs input[type=range]'), function() {
 			if (this.name in composites) {
 				// we use the real value of the composite and leave parametrics at default
@@ -310,8 +329,7 @@
 				$.each(axisDeltas[this.name], function(caxis, cdelta) {
 					sum += cdelta;
 				});
-				var theoreticalValue = axisDefaults[this.name].default + sum;
-				styleEl.data(this.name, theoreticalValue);
+				var theoreticalValue = sliderVals[this.name] = axisDefaults[this.name].default + sum;
 				fvs[this.name] = fvsv[this.name] = axisDefaults[this.name].default;
 				$('input[name="' + this.name + '"]').val(theoreticalValue);
 			} else {
@@ -351,6 +369,12 @@
 			+ selector + ' {\n\t' + rules.join(';\n\t') + ';\n}\n'
 			+ '\n.verbose-fvs ' + selector + ' {\n\t' + vrules.join(';\n\t') + ';\n}\n'
 		);
+		
+		//record parametric ghosts
+		styleEl.attr({
+			'data-axis-deltas': JSON.stringify(axisDeltas),
+			'data-slider-values': JSON.stringify(sliderVals)
+		});
 
 		// update colophon output
 		updateParameters(selector);
