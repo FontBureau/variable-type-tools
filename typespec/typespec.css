@@ -44,6 +44,8 @@
 	display: table;
 	border-collapse: collapse;
 	margin-bottom: 2rem;
+	font-feature-settings: "rvrn" 1;
+	text-rendering: optimizeLegibility;
 }
 
 #typespec article h1, #typespec article h2, #typespec article h3 {

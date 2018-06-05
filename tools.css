@@ -355,3 +355,8 @@ input[type=range][disabled] {
 	max-width: none;
 	margin: 0;
 }
+
+.variable-demo-target {
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "rvrn" 1;
+}
