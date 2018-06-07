@@ -188,7 +188,7 @@ class TypeTools {
 	public function pageHead($title) {
 	?>
 <!DOCTYPE html>
-<html lang="en" id="typetools" class='typespec'>
+<html lang="en" id="typetools" class='filters-reveal'>
 	<head>
 		<meta charset="utf-8">
 		<title><?= $title ?></title>
