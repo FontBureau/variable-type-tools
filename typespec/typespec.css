@@ -64,6 +64,11 @@
 	padding: 0.5rem 0.5rem 1rem;
 }
 
+#typespec article p {
+	font-size: inherit;
+	line-height: inherit;
+}
+
 #typespec article .current {
 	background-color: #EEF;
 }
@@ -72,6 +77,7 @@
 
 #typespec article {
 	max-width: 40em;
+	font-size: 14px;
 }
 
 #typespec article h1 {
@@ -95,7 +101,7 @@
 }
 
 #typespec article .T2-target {
-	font-size: 14px;
+	font-size: 100%;
 	line-height: 20px;
 }
 

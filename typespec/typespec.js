@@ -78,7 +78,7 @@ $(function() {
 	TNTools.register('sliderChange', function(evt) {
 		var constrained = Math.max(this.min || -Infinity, Math.min(this.max || Infinity, this.value));
 		if (activeStyle === 'T2') {
-			if (this.type === 'range' && this.name === 'size') {
+			if (this.name === 'size') {
 				var leading = parseFloat($('#edit-leading').val());
 				var oldval = parseFloat($(this).data('oldval'));
 				$('input[name="column-width"]').val(parseFloat(articleStyles['max-width'])*oldval/constrained).trigger(evt.type);
