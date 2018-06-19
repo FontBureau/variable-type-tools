@@ -758,6 +758,10 @@
 	window.TNTools = tnTypeTools();
 	
 	$(window).on('load', function() {
+		var showSidebar = $('a.content-options-show-filters');
+		if (showSidebar.is(':visible')) {
+			showSidebar.click();
+		}
 		$('#select-font').trigger('change');
 	});
 })();
