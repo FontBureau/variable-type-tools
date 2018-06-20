@@ -311,7 +311,7 @@ input[type=range][disabled] {
 
 
 /* colophon */
-*[data-axes]::after {
+.blue-params {
 	display: none;
 /*
 	position: absolute;
@@ -321,7 +321,7 @@ input[type=range][disabled] {
 */
 	color: #09f;
 	font-size: 0.75rem;
-	content: attr(data-style) ": size " attr(data-size-leading) ", " attr(data-axes);
+/* 	content: attr(data-style) ": size " attr(data-size-leading) ", " attr(data-axes); */
 	font-family: Verdana;
 	font-weight: normal;
 	font-style: normal;
@@ -330,7 +330,7 @@ input[type=range][disabled] {
 	text-align: right;
 }
 
-.show-parameters *[data-axes]::after, .show-parameters[data-axes]::after {
+.show-parameters .blue-params, .show-parameters.blue-params {
 	display: block;
 }
 

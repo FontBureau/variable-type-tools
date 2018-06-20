@@ -259,8 +259,19 @@
 		var leading = parseInt($('#edit-leading').val());
 		var fvs = el.css('font-variation-settings') || '';
 
-		el.attr('data-axes', fvs.replace(/['"]\s+/g, ' ').replace(/['"]/g, ''));
+		var paramText = fvs.replace(/['"]\s+/g, ' ').replace(/['"]/g, '');
+
+		el.attr('data-axes', paramText);
 		el.attr('data-size-leading', size + '/' + leading);
+
+		var paramEl = el.children('.blue-params');
+		if (paramEl.text() !== paramText) {
+			if (!paramEl.length) {
+				paramEl = $('<div class="blue-params"></div>');
+				el.append(paramEl);
+			}
+			paramEl.text(el.attr('data-axes'));
+		}
 	}
 
 	function slidersToElement(options) {
