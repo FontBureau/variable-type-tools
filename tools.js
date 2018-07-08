@@ -167,6 +167,28 @@
 		$('#css-output').text(styletext.trim());
 	}
 
+	//override Amstelvar Parametric sliders
+	function fake64() {
+		if ($('#select-font').val() === 'Amstelvar-Roman-parametric-VF' && $('#edit-size').val() == 64) {
+			$.each({
+				'XOPQ': 85, 
+				'XTRA': 365, 
+				'YOPQ': 46, 
+				'YTLC': 484, 
+				'YTUC': 750, 
+				'YTFG': 750, 
+				'YTDE': -240, 
+				'YTAS': 750, 
+				'YTSE': 18, 
+				'PWHT': 85, 
+				'PWTH': 465
+			}, function(a, v) {
+				$("input[name=" + a + "]").val(v);
+			});
+			$('input[type=range][name=XOPQ]').trigger('change');
+		}
+	}
+
 	function populateAxisSliders(font, registeredOnly) {
 		var axisInputs = $('#axis-inputs');
 		$.each(fontInfo[font].axisOrder, function(i, axis) {
@@ -208,6 +230,8 @@
 			
 			axisInputs.append(li);
 		});
+		
+		fake64();
 	}
 
 	function handleSlider(evt) {
@@ -245,6 +269,8 @@
 			TNTools.compositeToParametric(el.name, constrained);
 		} else if (el.name in axisDeltas) {
 			//when adjusting parametric axes, reset composites to their defaults
+			console.log(axisDefaults);
+			console.log(axisDeltas);
 			$.each(axisDeltas[el.name], function(caxis, cdelta) {
 				$('input[name="' + caxis + '"]').val(axisDefaults[caxis].default);
 			})
@@ -417,6 +443,8 @@
 		$('#edit-size').data('oldval', parseInt(testEl.css('font-size')));
 		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
+
+		fake64();
 		
 		$('#foreground').spectrum('set', testEl.css('color'));
 
@@ -449,6 +477,12 @@
 		composites = fontInfo[font].composites;
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
+		
+		$('style[data-axis-deltas][data-slider-values]').attr({
+			'data-axis-deltas': '{}',
+			'data-slider-values': '{}'
+		});
+
 		
 		$('head style[id^="style-"]').empty().removeData();
 		$('input[type=checkbox]').each(function() {
