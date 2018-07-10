@@ -14,7 +14,7 @@ class TypeTools {
 	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
-	private $excludeFonts = array('Segoe', 'Roboto(?!.*Delta)', 'Benton', 'Agency.*with-slant');
+	private $excludeFonts = array('Escrow', 'Segoe', 'Roboto(?!.*Delta)', 'Benton', 'Agency.*with-slant');
 	
 	private $customSettings = array(
 		'Amstelvar Alpha' => array(
