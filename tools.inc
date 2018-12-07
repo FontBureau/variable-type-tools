@@ -14,7 +14,7 @@ class TypeTools {
 	);
 	
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
-	private $excludeFonts = array('Escrow', 'Segoe', 'Roboto(?!.*Delta)', 'Benton', 'Agency.*with-slant');
+	private $excludeFonts = array('Escrow', 'Segoe', /* 'Roboto(?!.*Delta)', */ 'Benton', 'Agency.*with-slant');
 	
 	private $customSettings = array(
 		'Amstelvar Alpha' => array(
@@ -104,7 +104,8 @@ class TypeTools {
 	
 			#take off dev stuff from the end of the filename
 			//$fontname = preg_replace('/(?:[Vv]\d+|[Aa]lpha|[Bb]eta)?-VF$/', '', $filebase);
-			$fontname = preg_replace('/(?:[Vv]\d+)?-VF$/', '', $filebase);
+			//$fontname = preg_replace('/(?:[Vv]\d+)?-VF$/', '', $filebase);
+			$fontname = preg_replace('/-VF$/', '', $filebase);
 			
 			#separate into words
 			$fontname = preg_replace('/(?<=[a-z])[_-]?(?=[A-Z])/', ' ', $fontname);
