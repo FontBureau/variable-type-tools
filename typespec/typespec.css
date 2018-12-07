@@ -67,6 +67,7 @@
 #typespec article p {
 	font-size: inherit;
 	line-height: inherit;
+	font-variation-settings: inherit;
 }
 
 #typespec article .current {
