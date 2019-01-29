@@ -59,6 +59,30 @@ class TypeTools {
 				),
 			),
 		),
+		'Amstelvar Alpha Blended' => array(
+			'composites' => array(
+				'wght' => array(
+					'100' => array('PWGT' => 38),
+					'900' => array('PWGT' => 250),
+				),
+				'wdth' => array(
+					'35' => array('PWDT' => 60),
+					'100' => array('PWDT' => 402),
+				),
+			),
+		),
+		'Momentum Sans Blended' => array(
+			'composites' => array(
+				'wght' => array(
+					'100' => array('PWHT' => 10),
+					'900' => array('PWHT' => 220),
+				),
+				'wdth' => array(
+					'70' => array('PWTH' => 310),
+					'100' => array('PWTH' => 468),
+				),
+			),
+		),
 	);
 	
 	public static function requireLogin($user, $password) {
