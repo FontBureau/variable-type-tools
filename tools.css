@@ -81,7 +81,7 @@ body.dropzone::after {
 
 #controls #size-leading {
 	display: grid;
-	grid-template-columns: min-content 2.5em min-content 2.5em auto 2.5em;
+	grid-template-columns: min-content 3.5em min-content 3.5em auto 3.5em;
 	grid-template-rows: auto;
 	align-items: center;
 	grid-gap: 0.3em;
@@ -89,7 +89,7 @@ body.dropzone::after {
 
 #controls #size-leading input {
 	font-size: 85%;
-	max-width: 3em;
+	width: 4em;
 }
 
 #controls #size-leading label[for="edit-leading"] {
