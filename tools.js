@@ -392,6 +392,14 @@
 			}
 		});
 
+		//SAFARI BUG: if default opsz is specified on font-variation-settings, the browser sets it to match the font size
+		if ('opsz' in fvs && 'opsz' in axisDefaults && fvs.opsz == axisDefaults.opsz.default) {
+			fvs.opsz = parseFloat(fvs.opsz) + 0.01;
+		}
+		if ('opsz' in fvsv && 'opsz' in axisDefaults && fvsv.opsz == axisDefaults.opsz.default) {
+			fvsv.opsz = parseFloat(fvsv.opsz) + 0.01;
+		}
+
 		var fvsa = [];
 		$.each(fvs, function(k,v) {
 			fvsa.push('"' + k + '" ' + v);
