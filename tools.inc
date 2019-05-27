@@ -416,8 +416,8 @@ class TypeTools {
 		<div id='size-leading'>
 			<label for='edit-size'>Size:</label>
 			<input type="number" name='size' id='edit-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
-			<label for='edit-to-size'>to</label>
-			<input type="number" name='to-size' id='edit-to-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
+			<label for='edit-to-size' style='display:none'>to</label>
+			<input type="number" name='to-size' style='display:none' id='edit-to-size' min='<?= $min ?>' max='<?= $max ?>' value='<?= $size ?>'>
 			<label for='edit-leading'>Leading:</label>
 			<input type="number" name='leading' id='edit-leading' min='<?= $min ?>' max='<?= ($max*2) ?>' value='<?= $leading ?>'>
 		</div>

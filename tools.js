@@ -688,6 +688,7 @@
 		$('#select-mode').on('change', function(evt) {
 			$('#mode-sections > section').hide();
 			$('#mode-sections > #' + this.value).show();
+			$('label[for="edit-to-size"], #edit-to-size')[this.value === 'waterfall' ? 'show' : 'hide']();
 			fire.call(this, 'modeChange', evt);
 		});
 
