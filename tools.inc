@@ -57,6 +57,18 @@ class TypeTools {
 						'PWGT' => 250,
 					),
 				),
+				'GRAD' => array(
+					'88' => array(
+						'YOPQ' => 25,
+						'XOPQ' => 25,
+						'XTRA' => 490,
+					),
+					'150' => array(
+						'YOPQ' => 62,
+						'XOPQ' => 250,
+						'XTRA' => 460,
+					),
+				),
 			),
 		),
 		'Amstelvar Alpha Blended' => array(
@@ -372,7 +384,7 @@ class TypeTools {
 			<h3 class="inline"><label for="select-font">Family:</label></h3>
 			<select name="font" id='select-font'>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
-				<option value="<?= $filebase ?>"<?php if (strpos($info->name, 'Amstelvar')===0) print " selected"; ?>><?= $info->name ?></option>
+				<option value="<?= $filebase ?>"<?php if ($info->name === 'Amstelvar Alpha') print " selected"; ?>><?= $info->name ?></option>
 <?php endforeach ?>
 			</select>
 			<input type='file' name='custom-fonts' id='custom-fonts'>

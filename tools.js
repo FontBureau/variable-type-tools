@@ -228,6 +228,13 @@
 			li.appendChild(editvalue);
 			li.appendChild(slider);
 			
+			if (axis === 'opsz') {
+				//add option to disconnect size adjustments from ops
+				var extraLabel = document.createElement('label');
+				extraLabel.innerHTML = "<input type='checkbox' id='match-opsz' checked> Mirror size changes";
+				li.appendChild(extraLabel);
+			}
+			
 			axisInputs.append(li);
 		});
 		
@@ -261,7 +268,11 @@
 			$('#edit-size').data('oldval', constrained);
 
 			//auto-match optical size
-			setTimeout(function() { $('input[name="opsz"]').val(el.value).trigger(evt.type); });
+			try {
+				if (document.getElementById('match-opsz').checked) {
+					setTimeout(function() { $('input[name="opsz"]').val(el.value).trigger(evt.type); });
+				}
+			} catch (e) {} 
 		}
 
 		if (el.name in composites) {
@@ -331,11 +342,11 @@
 		rules.push('font-family: "' + fontInfo[$('#select-font').val()].name + ' Demo"');
 		
 		if (size) {
-			rules.push("font-size: " + size + 'px');
+			rules.push("font-size: " + size + 'pt');
 		}
 		
 		if (leading) {
-			rules.push("line-height: " + leading + 'px');
+			rules.push("line-height: " + leading + 'pt');
 		}
 		
 		if (background) {
@@ -439,9 +450,9 @@
 				break;
 		}
 				
-		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size')));
-		$('#edit-size').data('oldval', parseInt(testEl.css('font-size')));
-		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height')));
+		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size'))*3/4);
+		$('#edit-size').data('oldval', parseInt(testEl.css('font-size'))*3/4);
+		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height'))*3/4);
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 
 		fake64();
