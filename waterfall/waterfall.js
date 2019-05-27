@@ -53,7 +53,7 @@ $(function() {
 		for (i=parseInt(size.val()), l=parseInt(toSize.val()); i<=l; i++) {
 			li = document.createElement('li');
 			li.textContent = sentence;
-			li.style.fontSize = i + 'px';
+			li.style.fontSize = i + 'pt';
 
 			li.setAttribute('data-size', i);
 			li.contentEditable = 'true';

@@ -78,31 +78,31 @@
 
 #typespec article {
 	max-width: 40em;
-	font-size: 14px;
+	font-size: 14pt;
 }
 
 #typespec article h1 {
-	font-size: 64px;
-	line-height: 60px;
+	font-size: 64pt;
+	line-height: 60pt;
 }
 
 #typespec article h2 {
-	font-size: 36px;
-	line-height: 36px;
+	font-size: 36pt;
+	line-height: 36pt;
 }
 
 #typespec article h3 {
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 18pt;
+	line-height: 24pt;
 }
 
 #typespec article .T1-target {
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 18pt;
+	line-height: 24pt;
 }
 
 #typespec article .T2-target {
-	font-size: 100%;
-	line-height: 20px;
+	font-size: inherit;
+	line-height: 20pt;
 }
 

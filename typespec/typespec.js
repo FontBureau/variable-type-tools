@@ -84,7 +84,7 @@ $(function() {
 				$('input[name="column-width"]').val(parseFloat(articleStyles['max-width'])*oldval/constrained).trigger(evt.type);
 			}
 			if (this.name === 'size') {
-				updateArticleStyle('font-size', constrained + 'px');
+				updateArticleStyle('font-size', constrained + 'pt');
 			}
 		}
 
@@ -119,8 +119,8 @@ $(function() {
 			$.each(['H1', 'H2', 'H3', 'T1', 'T2'], function(i, stylename) {
 				activeStyle = stylename;
 				var testEl = styleElements.filter('.' + activeStyle).find('.' + stylename + '-target');
-				var fontsize = parseInt(testEl.css('font-size'));
-				var leading = parseInt(testEl.css('line-height'));
+				var fontsize = parseInt(testEl.css('font-size'))*3/4;
+				var leading = parseInt(testEl.css('line-height'))*3/4;
 				$('#edit-leading').val(leading);
 				$('#edit-size').val(fontsize).data('oldval', fontsize);
 				$('input[name="opsz"]').val(fontsize).trigger('change');

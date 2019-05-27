@@ -229,7 +229,7 @@
 			li.appendChild(slider);
 			
 			if (axis === 'opsz') {
-				//add option to disconnect size adjustments from ops
+				//add option to disconnect size adjustments from opsz
 				var extraLabel = document.createElement('label');
 				extraLabel.innerHTML = "<input type='checkbox' id='match-opsz' checked> Mirror size changes";
 				li.appendChild(extraLabel);
@@ -292,8 +292,8 @@
 
 	function updateParameters(el) {
 		el = $(el);
-		var size = parseInt($('#edit-size').val());
-		var leading = parseInt($('#edit-leading').val());
+		var size = Math.round($('#edit-size').val());
+		var leading = Math.round($('#edit-leading').val());
 		var fvs = el.css('font-variation-settings') || '';
 
 		var paramText = fvs.replace(/['"]\s+/g, ' ').replace(/['"]/g, '');
@@ -334,8 +334,8 @@
 		var rules = [];
 		var vrules = [];
 		
-		var size = parseInt($('#edit-size').val());
-		var leading = parseInt($('#edit-leading').val());
+		var size = Math.round($('#edit-size').val());
+		var leading = Math.round($('#edit-leading').val());
 		var foreground = $('#foreground').length && $('#foreground').spectrum('get').toString();
 		var background = $('#background').length && $('#background').spectrum('get').toString();
 
@@ -457,10 +457,10 @@
 				align='left';
 				break;
 		}
-				
-		controls.find('input[name=size], input[name=opsz]').val(parseInt(testEl.css('font-size'))*3/4);
-		$('#edit-size').data('oldval', parseInt(testEl.css('font-size'))*3/4);
-		controls.find('input[name=leading]').val(parseInt(testEl.css('line-height'))*3/4);
+		
+		controls.find('input[name=size], input[name=opsz]').val(parseFloat(testEl.css('font-size'))*3/4);
+		$('#edit-size').data('oldval', parseFloat(testEl.css('font-size'))*3/4);
+		controls.find('input[name=leading]').val(parseFloat(testEl.css('line-height'))*3/4);
 		controls.find('input[name=alignment][value="' + align + '"]').prop('checked', true);
 
 		fake64();
