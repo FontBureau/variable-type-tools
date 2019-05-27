@@ -235,6 +235,7 @@ class TypeTools {
 			}
 <?php endforeach; ?>
 			<?php readfile("tools.css"); ?>
+			<?php readfile("form-controls.css"); ?>
 <?php foreach ($this->tools as $tool => $name): ?>
 			<?php readfile("$tool/$tool.css"); ?>
 <?php endforeach; ?>
