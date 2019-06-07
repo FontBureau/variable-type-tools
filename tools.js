@@ -328,6 +328,8 @@
 			slidersToElement();
 		}
 
+		roundInputs();
+
 		var styleEl = $(options.styleElement || '#style-general');
 		var selector = options.selector || '.variable-demo-target';
 		
@@ -437,6 +439,12 @@
 		updateCSSOutput();
 	}
 	
+	function roundInputs() {
+		controls.find('#edit-size, #edit-to-size, #edit-leading').each(function() {
+			this.value = Math.round(parseFloat(this.value) * 1000) / 1000;
+		});
+	}
+	
 	function elementToSliders(testEl) {
 		var align;
 		
@@ -469,6 +477,8 @@
 
 		var temp = testEl.css('background-color');
 		$('#background').spectrum('set', (temp === 'transparent' || temp.match(/rgba\(.+,\s*0(\.0)?/)) ? 'white' : temp);
+		
+		roundInputs();
 	}
 	
 	function handleFontChange(font) {
