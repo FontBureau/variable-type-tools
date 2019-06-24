@@ -1,6 +1,6 @@
-# varfonts-web-demos
+# variable-type-tools
 
-Minisites that demonstrate various aspects of variable fonts
+A set of layout tools for exerimenting with variable fonts in various ways. Requires a PHP 7.x server.
 
 ## Installation
 
