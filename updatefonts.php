@@ -3,7 +3,7 @@ set_time_limit(60);
 
 $start = microtime(true);
 
-exec("/home/typenetwork/varfonts/update-fonts.sh", $output, $err);
+exec("python3.6 ~/ttf3web/ttf3web.py --no-munge --axes --formats=woff,woff2 fonts/*.?tf fonts", $output, $err);
 
 if ($err > 0) {
 	header("HTTP/1.1 500 Internal Server Error");
