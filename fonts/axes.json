@@ -1,4 +1,518 @@
 {
+  "Zycon": {
+    "T1  ": {
+      "name": "Toggle 1",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "T2  ": {
+      "name": "Toggle 2",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "T3  ": {
+      "name": "Toggle 3",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "T4  ": {
+      "name": "Toggle 4",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "M1  ": {
+      "name": "Motion 1",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "M2  ": {
+      "name": "Motion 2",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "RobotoDelta-VF": {
+    "order": [
+      "XTRA",
+      "XOPQ",
+      "YOPQ",
+      "YTLC",
+      "YTUC",
+      "YTAS",
+      "YTDE",
+      "YTAD",
+      "YTDD",
+      "UDLN",
+      "wght",
+      "wdth",
+      "opsz",
+      "PWGT",
+      "PWDT",
+      "POPS",
+      "GRAD",
+      "YTRA"
+    ],
+    "XTRA": {
+      "name": "XTRA",
+      "min": 210.0,
+      "max": 513.0,
+      "default": 359.0
+    },
+    "XOPQ": {
+      "name": "XOPQ",
+      "min": 26.0,
+      "max": 171.0,
+      "default": 94.0
+    },
+    "YOPQ": {
+      "name": "YOPQ",
+      "min": 26.0,
+      "max": 132.0,
+      "default": 77.0
+    },
+    "YTLC": {
+      "name": "YTLC",
+      "min": 416.0,
+      "max": 570.0,
+      "default": 514.0
+    },
+    "YTUC": {
+      "name": "YTUC",
+      "min": 528.0,
+      "max": 760.0,
+      "default": 712.0
+    },
+    "YTAS": {
+      "name": "YTAS",
+      "min": 649.0,
+      "max": 854.0,
+      "default": 750.0
+    },
+    "YTDE": {
+      "name": "YTDE",
+      "min": -305.0,
+      "max": -98.0,
+      "default": -203.0
+    },
+    "YTAD": {
+      "name": "YTAD",
+      "min": 460.0,
+      "max": 600.0,
+      "default": 563.0
+    },
+    "YTDD": {
+      "name": "YTDD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "UDLN": {
+      "name": "UDLN",
+      "min": -195.0,
+      "max": 0.0,
+      "default": -49.0
+    },
+    "wght": {
+      "name": "wght",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "wdth",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "opsz",
+      "min": 8.0,
+      "max": 144.0,
+      "default": 12.0
+    },
+    "PWGT": {
+      "name": "PWGT",
+      "min": 44.0,
+      "max": 150.0,
+      "default": 94.0
+    },
+    "PWDT": {
+      "name": "PWDT",
+      "min": 560.0,
+      "max": 867.0,
+      "default": 712.0
+    },
+    "POPS": {
+      "name": "POPS",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "GRAD": {
+      "name": "GRAD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "YTRA": {
+      "name": "YTRA",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "Amstelvar-VF": {
+    "order": [
+      "opsz"
+    ],
+    "opsz": {
+      "name": "Optical Size",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "Roboto-VF": {
+    "order": [
+      "wght",
+      "wdth",
+      "slnt"
+    ],
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 75.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "slnt": {
+      "name": "Slant",
+      "min": 0.0,
+      "max": 12.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
+  "Roboto-min-VF": {
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 75.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "slnt": {
+      "name": "Slant",
+      "min": -12.0,
+      "max": 0.0,
+      "default": 0.0
+    },
+    "instances": [
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Thin"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Light"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Regular"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Medium"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Bold"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 100.0,
+          "slnt": 0.0
+        },
+        "name": "Black"
+      },
+      {
+        "axes": {
+          "wght": 100.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Thin Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Italic"
+      },
+      {
+        "axes": {
+          "wght": 500.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 700.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Bold Italic"
+      },
+      {
+        "axes": {
+          "wght": 900.0,
+          "wdth": 100.0,
+          "slnt": -12.0
+        },
+        "name": "Black Italic"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Light"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Regular"
+      },
+      {
+        "axes": {
+          "wght": 526.3158,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Medium"
+      },
+      {
+        "axes": {
+          "wght": 710.12659,
+          "wdth": 75.0,
+          "slnt": 0.0
+        },
+        "name": "Condensed Bold"
+      },
+      {
+        "axes": {
+          "wght": 300.0,
+          "wdth": 75.0,
+          "slnt": -12.0
+        },
+        "name": "Condensed Light Italic"
+      },
+      {
+        "axes": {
+          "wght": 400.0,
+          "wdth": 75.0,
+          "slnt": -12.0
+        },
+        "name": "Condensed Italic"
+      },
+      {
+        "axes": {
+          "wght": 526.3158,
+          "wdth": 75.0,
+          "slnt": -12.0
+        },
+        "name": "Condensed Medium Italic"
+      },
+      {
+        "axes": {
+          "wght": 710.12659,
+          "wdth": 75.0,
+          "slnt": -12.0
+        },
+        "name": "Condensed Bold Italic"
+      }
+    ]
+  },
+  "AmstelvarAlpha-VF": {
+    "order": [
+      "wght",
+      "wdth",
+      "opsz",
+      "XOPQ",
+      "XTRA",
+      "YOPQ",
+      "YTLC",
+      "YTSE",
+      "GRAD",
+      "XTCH",
+      "YTCH",
+      "YTAS",
+      "YTDE",
+      "YTUC",
+      "YTRA",
+      "PWGT",
+      "PWDT"
+    ],
+    "wght": {
+      "name": "Weight",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "Width",
+      "min": 35.0,
+      "max": 100.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "Optical Size",
+      "min": 10.0,
+      "max": 72.0,
+      "default": 14.0
+    },
+    "XOPQ": {
+      "name": "x opaque",
+      "min": 5.0,
+      "max": 500.0,
+      "default": 88.0
+    },
+    "XTRA": {
+      "name": "x transparent",
+      "min": 42.0,
+      "max": 402.0,
+      "default": 402.0
+    },
+    "YOPQ": {
+      "name": "y opaque",
+      "min": 4.0,
+      "max": 85.0,
+      "default": 50.0
+    },
+    "YTLC": {
+      "name": "lc y transparent",
+      "min": 445.0,
+      "max": 600.0,
+      "default": 500.0
+    },
+    "YTSE": {
+      "name": "Serif height",
+      "min": 0.0,
+      "max": 48.0,
+      "default": 18.0
+    },
+    "GRAD": {
+      "name": "Grade",
+      "min": 88.0,
+      "max": 150.0,
+      "default": 88.0
+    },
+    "XTCH": {
+      "name": "x transparent Chinese",
+      "min": 736.0,
+      "max": 1082.0,
+      "default": 911.0
+    },
+    "YTCH": {
+      "name": "y transparent Chinese",
+      "min": 736.0,
+      "max": 1082.0,
+      "default": 907.0
+    },
+    "YTAS": {
+      "name": "y transparent ascender",
+      "min": 650.0,
+      "max": 850.0,
+      "default": 750.0
+    },
+    "YTDE": {
+      "name": "y transparent descender",
+      "min": 150.0,
+      "max": 350.0,
+      "default": 250.0
+    },
+    "YTUC": {
+      "name": "y transparent uppercase",
+      "min": 650.0,
+      "max": 950.0,
+      "default": 750.0
+    },
+    "YTRA": {
+      "name": "y transparent",
+      "min": 800.0,
+      "max": 1200.0,
+      "default": 1000.0
+    },
+    "PWGT": {
+      "name": "Para Weight",
+      "min": 38.0,
+      "max": 250.0,
+      "default": 88.0
+    },
+    "PWDT": {
+      "name": "Para Width",
+      "min": 60.0,
+      "max": 402.0,
+      "default": 402.0
+    },
+    "instances": []
+  },
   "Decovar-VF": {
     "order": [
       "wght",
@@ -449,141 +963,5 @@
         "name": "Mayhem"
       }
     ]
-  },
-  "Amstelvar-VF": {
-    "order": [
-      "opsz"
-    ],
-    "opsz": {
-      "name": "Optical Size",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "instances": []
-  },
-  "AmstelvarAlpha-VF": {
-    "order": [
-      "wght",
-      "wdth",
-      "opsz",
-      "XOPQ",
-      "XTRA",
-      "YOPQ",
-      "YTLC",
-      "YTSE",
-      "GRAD",
-      "XTCH",
-      "YTCH",
-      "YTAS",
-      "YTDE",
-      "YTUC",
-      "YTRA",
-      "PWGT",
-      "PWDT"
-    ],
-    "wght": {
-      "name": "Weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 35.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "opsz": {
-      "name": "Optical Size",
-      "min": 10.0,
-      "max": 72.0,
-      "default": 14.0
-    },
-    "XOPQ": {
-      "name": "x opaque",
-      "min": 5.0,
-      "max": 500.0,
-      "default": 88.0
-    },
-    "XTRA": {
-      "name": "x transparent",
-      "min": 42.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "YOPQ": {
-      "name": "y opaque",
-      "min": 4.0,
-      "max": 85.0,
-      "default": 50.0
-    },
-    "YTLC": {
-      "name": "lc y transparent",
-      "min": 445.0,
-      "max": 600.0,
-      "default": 500.0
-    },
-    "YTSE": {
-      "name": "Serif height",
-      "min": 0.0,
-      "max": 48.0,
-      "default": 18.0
-    },
-    "GRAD": {
-      "name": "Grade",
-      "min": 88.0,
-      "max": 150.0,
-      "default": 88.0
-    },
-    "XTCH": {
-      "name": "x transparent Chinese",
-      "min": 736.0,
-      "max": 1082.0,
-      "default": 911.0
-    },
-    "YTCH": {
-      "name": "y transparent Chinese",
-      "min": 736.0,
-      "max": 1082.0,
-      "default": 907.0
-    },
-    "YTAS": {
-      "name": "y transparent ascender",
-      "min": 650.0,
-      "max": 850.0,
-      "default": 750.0
-    },
-    "YTDE": {
-      "name": "y transparent descender",
-      "min": 150.0,
-      "max": 350.0,
-      "default": 250.0
-    },
-    "YTUC": {
-      "name": "y transparent uppercase",
-      "min": 650.0,
-      "max": 950.0,
-      "default": 750.0
-    },
-    "YTRA": {
-      "name": "y transparent",
-      "min": 800.0,
-      "max": 1200.0,
-      "default": 1000.0
-    },
-    "PWGT": {
-      "name": "Para Weight",
-      "min": 38.0,
-      "max": 250.0,
-      "default": 88.0
-    },
-    "PWDT": {
-      "name": "Para Width",
-      "min": 60.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "instances": []
   }
 }
