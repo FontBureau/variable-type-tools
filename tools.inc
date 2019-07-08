@@ -270,19 +270,23 @@ class TypeTools {
 			<nav class="nav-global">
 				<a class="nav-global-reveal" href="#">Menu</a>
 				<ul>
+<!--
 					<li><a class="nav-home-link" href="https://www.typenetwork.com/">Home</a></li>
 					<li><a href="http://store.typenetwork.com">Fonts</a></li>
 					<li><a href="https://www.typenetwork.com/news" >News</a></li>
 					<li><a href="https://www.typenetwork.com/gallery" >Gallery</a></li>
+-->
 				</ul>
 			</nav>
 			
 			<nav class="nav-user">
 				<a class="nav-user-reveal" href="#">Menu</a>
 				<ul>
+<!--
 					<li><a href="http://store.typenetwork.com/account/licenses" class="nav-user-account"></a></li>
 					<li><a href="http://store.typenetwork.com/account/favorites" class="nav-user-favorites"></a></li>
 					<li><a href="http://store.typenetwork.com/cart" class="nav-user-cart"></a></li>
+-->
 				</ul>
 			</nav>
 			
