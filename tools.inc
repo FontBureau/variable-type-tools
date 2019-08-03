@@ -355,10 +355,9 @@ class TypeTools {
 				<footer class="footer-global">
 					<ul>
 						<li><a href="//www.typenetwork.com/about">About Type Network</a></li>
-						<li><a href="//www.typenetwork.com/about#subscribe">Subscribe to the Newsletter</a></li>
-						<li><a href="//www.typenetwork.com/support">Help and Support</a></li>
+						<li><a href="https://github.com/TypeNetwork/variable-type-tools">Source code on GitHub</a></li>
+						<li><a href="https://github.com/TypeNetwork/variable-type-tools/issues">Bug reports &amp; feature&nbsp;requests</a></li>
 					</ul>
-					<p>&copy; Type Network <?= date("Y") ?>. All rights reserved.</p>
 				</footer>
 			</div> <!-- content-main -->
 		</div> <!-- wrapper -->
@@ -493,8 +492,6 @@ class TypeTools {
 			<!-- <p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
 			<li><a href="/" id='reset'>Reset to font defaults</a></li>
 			<li><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $this->lastFontUpdate() ?>">Grab latest font files</a></li>
-			<li><a href="https://github.com/TypeNetwork/variable-type-tools">Source code on GitHub</a></li>
-			<li><a href="https://github.com/TypeNetwork/variable-type-tools/issues">Bug reports &amp; feature&nbsp;requests</a></li>
 		</ul>
 	<?php
 		return "";
