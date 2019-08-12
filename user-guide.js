@@ -22,30 +22,38 @@ window.addEventListener('load', function() {
 	}
 
 	function setup() {
-		return new Promise(function(resolve, reject) {
-			if (viewedAlready()) {
-				return reject();
-			}
+		if (viewedAlready()) {
+			return Promise.reject();
+		}
 
-			if ('introJs' in window) {
-				return resolve();
-			}
+		if ('introJs' in window) {
+			return Promise.resolve();
+		}
 
-			var link = document.createElement('link');
-			link.rel = "stylesheet";
-			link.href = "/intro.js/introjs.css";
-			document.head.insertBefore(link, document.getElementById('typetools-main-css'))
-
-			var ugcss = document.createElement('link');
-			ugcss.rel = "stylesheet";
-			ugcss.href = "/user-guide.css";
-			document.head.insertBefore(ugcss, document.getElementById('typetools-main-css'))
-		
-			var script = document.createElement('script');
-			script.src="/intro.js/intro.js";
-			script.addEventListener('load', resolve);
-			document.head.appendChild(script);
-		});
+		return Promise.all([
+			new Promise(function(r1) {
+				var link = document.createElement('link');
+				link.rel = "stylesheet";
+				link.href = "/intro.js/introjs.css";
+				link.addEventListener('load', r1);
+				document.head.insertBefore(link, document.getElementById('typetools-main-css'))
+			}),
+	
+			new Promise(function(r2) {
+				var link = document.createElement('link');
+				link.rel = "stylesheet";
+				link.href = "/user-guide.css";
+				link.addEventListener('load', r2);
+				document.head.insertBefore(link, document.getElementById('typetools-main-css'))
+			}),
+	
+			new Promise(function(r3) {
+				var script = document.createElement('script');
+				script.src="/intro.js/intro.js";
+				script.addEventListener('load', r3);
+				document.head.appendChild(script);
+			})
+		]);
 	}
 	
 	setup().then(function() {
