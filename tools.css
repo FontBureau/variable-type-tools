@@ -29,7 +29,7 @@ body.dropzone::after {
 	padding-top: 2.625rem;
 }
 
-#controls > * {
+#controls > *, #controls > div > div {
 	margin: 1em 0;
 }
 
@@ -107,7 +107,7 @@ body.dropzone::after {
 	width: 100%;
 	padding: 0;
 	text-indent: 0;
-	margin: 1em 0;
+	margin: 1em 0 2em;
 }
 
 #controls label {

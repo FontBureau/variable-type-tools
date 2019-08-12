@@ -235,11 +235,16 @@ class TypeTools {
 		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/fonts-momentum-sans.css">
 		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/style.css">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="/opentype.js/dist/opentype.min.js"></script>
+
 		<script src="/spectrum/spectrum.js"></script>
 		<link rel="stylesheet" href="/spectrum/spectrum.css">
-		<style>
+
+		<script src="/opentype.js/dist/opentype.min.js"></script>
+		<script src="/user-guide.js" async defer></script>
+
+		<style id='typetools-main-css'>
 <?php foreach ($this->fontinfo as $filebase => $info): ?>
 			@font-face {
 				font-family: "<?= $info->name ?> Demo";
@@ -306,25 +311,31 @@ class TypeTools {
 				<form id='controls'>
 					<?= $this->selectMode() ?>
 					<?= $this->selectFont() ?>
+					<div id='column-width-container'>
 					<?= $this->slider([
 						'id' => 'column-width', 'name' => 'column-width', 'unit' => 'em', 'label' => 'Column width',
 						'min' => 10, 'max' => 80, 'default' => 40, 'step' => 0.1,
 					]) ?>
-					<?= $this->sizeLeading(12, 14, 8, 288); ?>
-					<div id='alignment-color'>
-						<label>Alignment</label>
-						<input id='align-left' type='radio' checked name='alignment' value='left'>
-						<label for='align-left'>L</label>
-						<input id='align-center' type='radio' name='alignment' value='center'>
-						<label for='align-center'>C</label>
-						<input id='align-right' type='radio' name='alignment' value='right'>
-						<label for='align-right'>R</label>
-						<input id='align-justify' type='radio' name='alignment' value='justify'>
-						<label for='align-justify'>J</label>
-						<label for='foreground'>FG</label>
-						<div class='color'><input type='color' id='foreground' name='foreground' value='black'></div>
-						<label for='background'>BG</label>
-						<div class='color'><input type='color' id='background' name='background' value='white'></div>
+					</div>
+					<div id='typography-container'>
+						<div id='size-leading-container'>
+							<?= $this->sizeLeading(12, 14, 8, 288); ?>
+						</div>
+						<div id='alignment-color'>
+							<label>Alignment</label>
+							<input id='align-left' type='radio' checked name='alignment' value='left'>
+							<label for='align-left'>L</label>
+							<input id='align-center' type='radio' name='alignment' value='center'>
+							<label for='align-center'>C</label>
+							<input id='align-right' type='radio' name='alignment' value='right'>
+							<label for='align-right'>R</label>
+							<input id='align-justify' type='radio' name='alignment' value='justify'>
+							<label for='align-justify'>J</label>
+							<label for='foreground'>FG</label>
+							<div class='color'><input type='color' id='foreground' name='foreground' value='black'></div>
+							<label for='background'>BG</label>
+							<div class='color'><input type='color' id='background' name='background' value='white'></div>
+						</div>
 					</div>
 					
 					<div><input id="everybox" type="checkbox" name="show" value="everything"> <h3 class='inline'><label for="everybox">View all axes</label></h3></div>
@@ -369,7 +380,7 @@ class TypeTools {
 	
 	public function selectMode() {
 	?>
-		<div>
+		<div id='select-layout-container'>
 			<h3 class="inline"><label for="select-mode">Layout:</label></h3>
 			<select name="font" id='select-mode'>
 <?php foreach ($this->tools as $tool => $name): ?>
@@ -383,20 +394,22 @@ class TypeTools {
 	
 	public function selectFont($label="Font") {
 	?>
-		<div>
-			<h3 class="inline"><label for="select-font">Family:</label></h3>
-			<select name="font" id='select-font'>
-<?php foreach ($this->fontinfo as $filebase => $info): ?>
-				<option value="<?= $filebase ?>"<?php if ($info->name === 'Amstelvar Alpha') print " selected"; ?>><?= $info->name ?></option>
-<?php endforeach ?>
-			</select>
-			<input type='file' name='custom-fonts' id='custom-fonts'>
-			<a id='add-your-own-button' href='#add-your-own' style='white-space:nowrap' title="…or drag a font file onto the window">+ Add your own</a>
-		</div>
-		<div>
-			<h3 class="inline"><label for="select-instance">Style:</label></h3>
-			<select name="instance" id='select-instance' aria-label="Instance">
-			</select>
+		<div id='select-font-container'>
+			<div>
+				<h3 class="inline"><label for="select-font">Family:</label></h3>
+				<select name="font" id='select-font'>
+	<?php foreach ($this->fontinfo as $filebase => $info): ?>
+					<option value="<?= $filebase ?>"<?php if ($info->name === 'Amstelvar Alpha') print " selected"; ?>><?= $info->name ?></option>
+	<?php endforeach ?>
+				</select>
+				<input type='file' name='custom-fonts' id='custom-fonts'>
+				<a id='add-your-own-button' href='#add-your-own' style='white-space:nowrap' title="…or drag a font file onto the window">+ Add your own</a>
+			</div>
+			<div>
+				<h3 class="inline"><label for="select-instance">Style:</label></h3>
+				<select name="instance" id='select-instance' aria-label="Instance">
+				</select>
+			</div>
 		</div>
 	<?php
 		return "";
@@ -481,14 +494,14 @@ class TypeTools {
 	public function metaLinks() {
 	?>
 		<h3>Show</h3>
-		<ul>
+		<ul id='show-stuff-container'>
 			<li><label><input id="verbose-fvs" type="checkbox" name="verbose-fvs" value="1" checked> Verbose font-variation-settings</label></li>
 			<li><label style="color:#09f"><input id="show-parameters" type="checkbox" name="show-parameters" value="1"> Parameters</label></li>
 			<li><label><input id="show-css" type="checkbox" name="show-css" value="1"> CSS</label></li>
 		</ul>
 
 		<h3>Meta</h3>
-		<ul>
+		<ul id='meta-stuff-container'>
 			<!-- <p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
 			<li><a href="/" id='reset'>Reset to font defaults</a></li>
 			<li><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $this->lastFontUpdate() ?>">Grab latest font files</a></li>

@@ -7,3 +7,6 @@
 [submodule "knuth"]
 	path = knuth
 	url = https://github.com/bramstein/typeset.git
+[submodule "intro.js"]
+	path = intro.js
+	url = https://github.com/usablica/intro.js

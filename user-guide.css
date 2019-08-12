@@ -1,0 +1,35 @@
+/* fix for tooltip overlay obscuring the target element */
+/* https://github.com/usablica/intro.js/issues/109#issuecomment-512441508 */
+
+.introjs-helperLayer {
+  background: transparent;
+}
+
+.introjs-overlay {
+  opacity: 0 !important;
+  z-index: 99999999!important;
+}
+
+.introjs-helperLayer::before {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+/*
+  border-radius: 0.5em;
+  border: .2em solid rgba(255, 217, 68, 0.8);
+*/
+  box-shadow: 0 0 0 1000em rgba(0,0,0, .7);
+  opacity: 1;
+}
+
+.introjs-helperLayer::after {
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1000;
+}

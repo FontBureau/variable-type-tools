@@ -6,7 +6,7 @@ input[type='range'] {
 	$gnubbel-border: .125rem solid white;
 
 	-webkit-appearance: none;
-	margin: 8px 0;
+	margin: initial;
 	width: 2in;
 
 	&:focus {
