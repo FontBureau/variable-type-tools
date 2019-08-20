@@ -551,8 +551,10 @@
 				selectInstance.prepend("<option></option>");
 			}
 		} else {
-			selectInstance.append("<option	>No named instances</option>");
+			selectInstance.append("<option>No named instances</option>");
 		}
+		
+		$(document).trigger('typetools:fontChange');
 	}
 
 	function handleInstanceChange() {

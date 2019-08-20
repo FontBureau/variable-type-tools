@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+(function() {
 	"use strict";
 	
 	function viewedAlready() {
@@ -19,10 +19,13 @@ window.addEventListener('load', function() {
 		} catch (e) {
 			document.cookie = "userguide=viewed;max-age=31536000;path=/";
 		}
+		if (window.location.hash === '#view-intro') {
+			window.location.hash = '';
+		}
 	}
 
-	function setup() {
-		if (viewedAlready()) {
+	function setup(force) {
+		if (viewedAlready() && force !== true) {
 			return Promise.reject();
 		}
 
@@ -56,39 +59,46 @@ window.addEventListener('load', function() {
 		]);
 	}
 	
-	setup().then(function() {
-		var intro = introJs();
-		intro.setOptions({
-			'tooltipPosition': 'right',
-			'steps': [
-			{
-				'intro': "Welcome to Type Tools! This is a playground for experimenting with <a href='https://medium.com/variable-fonts/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369'>OpenType variable fonts</a> in a variety of ways."
-			}, {
-				'element': document.getElementById('select-layout-container'),
-				'intro': "Pick a page layout! Each layout allows you to examine different aspects of the variable font design space."
-			}, {
-				'element': document.getElementById('select-font-container'),
-				'intro': "Choose from a selection of Type Network-affiliated fonts, or drag-and-drop your own TTF, OTF, or WOFF file onto the window to load your own variable font."
-			}, {
-				'element': document.getElementById('typography-container'),
-				'intro': "Standard typographic controls include size, leading, alignment and color. Font sizes are measured in CSS points."
-			}, {
-				'element': document.getElementById('axis-inputs'),
-				'intro': "Sliders for variable font axes will appear here. Click the “View All Axes” checkbox to show extra design dimensions beyond the standard weight/width/slant/italic/optical-size space."
-			}, {
-				'element': document.getElementById('show-stuff-container'),
-				'intro': "Options to show various output information about the currently configured axes."
-/*
-			}, {
-				'element': document.getElementById('meta-stuff-container'),
-				'intro': "Options to show various output information about the currently configured axes."
-*/
-			}]
+	function viewHints(force) {
+		setup(force).then(function() {
+			var intro = introJs();
+			intro.setOptions({
+				'tooltipPosition': 'right',
+				'steps': [
+				{
+					'intro': "Welcome to Type Tools! This is a playground for experimenting with <a href='https://medium.com/variable-fonts/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369'>OpenType variable fonts</a> in a variety of ways."
+				}, {
+					'element': document.getElementById('select-layout-container'),
+					'intro': "Pick a page layout! Each layout allows you to examine different aspects of the variable font design space."
+				}, {
+					'element': document.getElementById('select-font-container'),
+					'intro': "Choose from a selection of Type Network-affiliated fonts, or drag-and-drop your own TTF, OTF, or WOFF file onto the window to load your own variable font."
+				}, {
+					'element': document.getElementById('typography-container'),
+					'intro': "Standard typographic controls include size, leading, alignment and color. Font sizes are measured in CSS points."
+				}, {
+					'element': document.getElementById('axis-inputs'),
+					'intro': "Sliders for variable font axes will appear here. Click the “View All Axes” checkbox to show extra design dimensions beyond the standard weight/width/slant/italic/optical-size space."
+				}, {
+					'element': document.getElementById('show-stuff-container'),
+					'intro': "Options to show various output information about the currently configured axes."
+	/*
+				}, {
+					'element': document.getElementById('meta-stuff-container'),
+					'intro': "Options to show various output information about the currently configured axes."
+	*/
+				}]
+			});
+			intro.start();
+			setViewed();
+		}).catch(function() {
+			//already viewed
 		});
-		intro.start();
-		setViewed();
-	}).catch(function() {
-		//already viewed
-	});
+	}
+
+	window.typetoolsViewIntroHints = function() {
+		viewHints(true);
+	}
 	
-});
+	$(document).on('typetools:fontChange', viewHints);
+})();
