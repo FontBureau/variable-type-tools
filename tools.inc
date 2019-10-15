@@ -505,6 +505,7 @@ class TypeTools {
 			<!-- <p><a id="bookmark" href="?">Bookmark these settings</a></p> -->
 			<li><a href="/" id='reset'>Reset to font defaults</a></li>
 			<li><a href="/updatefonts.php" id='grab-new-fonts' title="Last updated <?= $this->lastFontUpdate() ?>">Grab latest font files</a></li>
+			<li><a href="#view-intro" onclick="typetoolsViewIntroHints(); return false;" title="Show the interactive introduction guide">Show introduction</a></li>
 		</ul>
 	<?php
 		return "";
