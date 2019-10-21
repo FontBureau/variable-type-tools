@@ -66,7 +66,7 @@
 				'tooltipPosition': 'right',
 				'steps': [
 				{
-					'intro': "Welcome to Type Tools! This is a playground for experimenting with <a href='https://medium.com/variable-fonts/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369'>OpenType variable fonts</a> in a variety of ways."
+					'intro': "Welcome to Type Tools! This is a playground for experimenting with <a href='https://variablefonts.typenetwork.com/'>OpenType variable fonts</a> in a variety of ways."
 				}, {
 					'element': document.getElementById('select-layout-container'),
 					'intro': "Pick a page layout! Each layout allows you to examine different aspects of the variable font design space."
