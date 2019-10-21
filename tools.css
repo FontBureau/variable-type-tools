@@ -192,7 +192,7 @@ input[type=range][disabled] {
 
 #alignment-color label[for=background] {
 	grid-row: 1;
-	grid-column: 6;
+	grid-column: 7;
 }
 
 #alignment-color > * {
@@ -262,6 +262,19 @@ input[type=range][disabled] {
 
 #alignment-color .color .sp-dd {
 	display: none;
+}
+
+#fg-bg-invert {
+	background: transparent;
+	padding: 0;
+	font-size: 0.8rem;
+	width: 1.5em;
+	height: 2em;
+	line-height: 1;
+	text-align: center;
+	color: black;
+	border: 0;
+	box-shadow: none;
 }
 
 

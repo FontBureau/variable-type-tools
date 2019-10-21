@@ -796,6 +796,18 @@
 			return false;
 		});
 		
+		$('#fg-bg-invert').on('click', function() {
+			var fg = $('#foreground');
+			var bg = $('#background');
+			var fgcolor = fg.spectrum('get');
+			var bgcolor = bg.spectrum('get');
+			fg.spectrum('set', bgcolor);
+			bg.spectrum('set', fgcolor);
+			fg.trigger('change');
+			bg.trigger('change');
+// 			updateURL();
+		});
+
 		$('#bookmark').on('click', function() {
 			var data = {};
 			$('style[id^="style-"]').each(function() {
