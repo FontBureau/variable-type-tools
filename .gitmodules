@@ -10,3 +10,18 @@
 [submodule "intro.js"]
 	path = intro.js
 	url = https://github.com/usablica/intro.js
+[submodule "fonts/src/Amstelvar"]
+	path = fonts/src/AmstelvarAlpha
+	url = https://github.com/TypeNetwork/Amstelvar.git
+[submodule "fonts/src/Decovar"]
+	path = fonts/src/Decovar
+	url = https://github.com/TypeNetwork/fb-Decovar.git
+[submodule "fonts/src/Roboto-Delta"]
+	path = fonts/src/Roboto-Delta
+	url = https://github.com/TypeNetwork/Roboto-Delta.git
+[submodule "fonts/src/Roboto-Extremo"]
+	path = fonts/src/Roboto-Extremo
+	url = https://github.com/TypeNetwork/Roboto-Extremo.git
+[submodule "fonts/src/UnicodeTests"]
+	path = fonts/src/UnicodeTests
+	url = https://github.com/unicode-org/text-rendering-tests.git
