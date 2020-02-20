@@ -1,338 +1,97 @@
 {
-  "Amstelvar-Roman-VF": {
-    "order": [
-      "wght",
-      "opsz",
-      "wdth",
-      "XTRA",
-      "XOPQ",
-      "YOPQ",
-      "YTAS",
-      "YTDE",
-      "YTUC",
-      "YTLC"
-    ],
-    "wght": {
-      "name": "weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "opsz": {
-      "name": "opsize",
-      "min": 8.0,
-      "max": 144.0,
-      "default": 14.0
-    },
-    "wdth": {
-      "name": "width",
-      "min": 50.0,
-      "max": 125.0,
-      "default": 100.0
-    },
-    "XTRA": {
-      "name": "XTRA",
-      "min": 444.0,
-      "max": 1104.0,
-      "default": 980.0
-    },
-    "XOPQ": {
-      "name": "XOPQ",
-      "min": 36.0,
-      "max": 526.0,
-      "default": 176.0
-    },
-    "YOPQ": {
-      "name": "YOPQ",
-      "min": 29.0,
-      "max": 224.0,
-      "default": 124.0
-    },
-    "YTAS": {
-      "name": "y transparent ascender",
-      "min": 667.0,
-      "max": 867.0,
-      "default": 767.0
-    },
-    "YTDE": {
-      "name": "y transparent descender",
-      "min": 140.0,
-      "max": 340.0,
-      "default": 240.0
-    },
-    "YTUC": {
-      "name": "y transparent uppercase",
-      "min": 550.0,
-      "max": 850.0,
-      "default": 750.0
-    },
-    "YTLC": {
-      "name": "y transparent lowercase",
-      "min": 445.0,
-      "max": 600.0,
-      "default": 500.0
-    },
-    "instances": []
-  },
-  "AmstelvarAlphaBlended-VF": {
+  "RobotoExtremo-VF": {
     "order": [
       "wght",
       "wdth",
       "opsz",
       "GRAD",
-      "PWHT",
-      "PWTH"
+      "slnt",
+      "XTRA",
+      "XOPQ",
+      "YOPQ",
+      "YTLC",
+      "YTUC",
+      "YTAS",
+      "YTDE",
+      "YTFI"
     ],
     "wght": {
-      "name": "Weight",
+      "default": 400.0,
       "min": 100.0,
       "max": 900.0,
-      "default": 400.0
+      "name": "wght"
     },
     "wdth": {
-      "name": "Width",
-      "min": 35.0,
-      "max": 100.0,
-      "default": 100.0
+      "default": 100.0,
+      "min": 25.0,
+      "max": 151.0,
+      "name": "wdth"
     },
     "opsz": {
-      "name": "Optical Size",
-      "min": 10.0,
-      "max": 72.0,
-      "default": 14.0
-    },
-    "GRAD": {
-      "name": "Grade",
-      "min": 88.0,
-      "max": 150.0,
-      "default": 88.0
-    },
-    "PWHT": {
-      "name": "Para Weight",
-      "min": 38.0,
-      "max": 250.0,
-      "default": 88.0
-    },
-    "PWTH": {
-      "name": "Para Width",
-      "min": 60.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "instances": []
-  },
-  "Roboto-min-VF": {
-    "wght": {
-      "name": "Weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 75.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "slnt": {
-      "name": "Slant",
-      "min": -12.0,
-      "max": 0.0,
-      "default": 0.0
-    },
-    "instances": [
-      {
-        "axes": {
-          "wght": 100.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Thin"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Light"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Regular"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Medium"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Bold"
-      },
-      {
-        "axes": {
-          "wght": 900.0,
-          "wdth": 100.0,
-          "slnt": 0.0
-        },
-        "name": "Black"
-      },
-      {
-        "axes": {
-          "wght": 100.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Thin Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Italic"
-      },
-      {
-        "axes": {
-          "wght": 500.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 700.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Bold Italic"
-      },
-      {
-        "axes": {
-          "wght": 900.0,
-          "wdth": 100.0,
-          "slnt": -12.0
-        },
-        "name": "Black Italic"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 75.0,
-          "slnt": 0.0
-        },
-        "name": "Condensed Light"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 75.0,
-          "slnt": 0.0
-        },
-        "name": "Condensed Regular"
-      },
-      {
-        "axes": {
-          "wght": 526.3158,
-          "wdth": 75.0,
-          "slnt": 0.0
-        },
-        "name": "Condensed Medium"
-      },
-      {
-        "axes": {
-          "wght": 710.12659,
-          "wdth": 75.0,
-          "slnt": 0.0
-        },
-        "name": "Condensed Bold"
-      },
-      {
-        "axes": {
-          "wght": 300.0,
-          "wdth": 75.0,
-          "slnt": -12.0
-        },
-        "name": "Condensed Light Italic"
-      },
-      {
-        "axes": {
-          "wght": 400.0,
-          "wdth": 75.0,
-          "slnt": -12.0
-        },
-        "name": "Condensed Italic"
-      },
-      {
-        "axes": {
-          "wght": 526.3158,
-          "wdth": 75.0,
-          "slnt": -12.0
-        },
-        "name": "Condensed Medium Italic"
-      },
-      {
-        "axes": {
-          "wght": 710.12659,
-          "wdth": 75.0,
-          "slnt": -12.0
-        },
-        "name": "Condensed Bold Italic"
-      }
-    ]
-  },
-  "Amstelvar-Italic-VF": {
-    "order": [
-      "wght",
-      "opsz",
-      "wdth",
-      "YOPQ"
-    ],
-    "wght": {
-      "name": "weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "opsz": {
-      "name": "opsize",
+      "default": 14.0,
       "min": 8.0,
       "max": 144.0,
-      "default": 14.0
+      "name": "opsz"
     },
-    "wdth": {
-      "name": "width",
-      "min": 25.0,
-      "max": 140.0,
-      "default": 100.0
+    "GRAD": {
+      "default": 0.0,
+      "min": -1.0,
+      "max": 1.0,
+      "name": "GRAD"
+    },
+    "slnt": {
+      "default": 0.0,
+      "min": -10.0,
+      "max": 0.0,
+      "name": "slnt"
+    },
+    "XTRA": {
+      "default": 468.0,
+      "min": 323.0,
+      "max": 603.0,
+      "name": "XTRA"
+    },
+    "XOPQ": {
+      "default": 96.0,
+      "min": 27.0,
+      "max": 175.0,
+      "name": "XOPQ"
     },
     "YOPQ": {
-      "name": "YOPQ",
-      "min": 14.0,
-      "max": 125.0,
-      "default": 54.0
+      "default": 79.0,
+      "min": 25.0,
+      "max": 135.0,
+      "name": "YOPQ"
+    },
+    "YTLC": {
+      "default": 514.0,
+      "min": 416.0,
+      "max": 570.0,
+      "name": "YTLC"
+    },
+    "YTUC": {
+      "default": 712.0,
+      "min": 528.0,
+      "max": 760.0,
+      "name": "YTUC"
+    },
+    "YTAS": {
+      "default": 750.0,
+      "min": 649.0,
+      "max": 854.0,
+      "name": "YTAS"
+    },
+    "YTDE": {
+      "default": -203.0,
+      "min": -305.0,
+      "max": -98.0,
+      "name": "YTDE"
+    },
+    "YTFI": {
+      "default": 738.0,
+      "min": 560.0,
+      "max": 788.0,
+      "name": "YTFI"
     },
     "instances": []
   },
@@ -355,639 +114,536 @@
       "TRSB"
     ],
     "BLDA": {
-      "name": "Inline",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Inline"
     },
     "TRMD": {
-      "name": "Shearded",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Shearded"
     },
     "TRMC": {
-      "name": "Rounded Slab",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Rounded Slab"
     },
     "SKLD": {
-      "name": "Stripes",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Stripes"
     },
     "TRML": {
-      "name": "Worm Terminal",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Worm Terminal"
     },
     "SKLA": {
-      "name": "Inline Skeleton",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Inline Skeleton"
     },
     "TRMF": {
-      "name": "Open Inline Terminal",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Open Inline Terminal"
     },
     "TRMK": {
-      "name": "Inline Terminal",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Inline Terminal"
     },
     "BLDB": {
-      "name": "Worm",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Worm"
     },
     "WMX2": {
-      "name": "Weight",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Weight"
     },
     "TRMB": {
-      "name": "Flared",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Flared"
     },
     "TRMA": {
-      "name": "Rounded",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Rounded"
     },
     "SKLB": {
-      "name": "Worm Skeleton",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Worm Skeleton"
     },
     "TRMG": {
-      "name": "Slab",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Slab"
     },
     "TRME": {
-      "name": "Bifurcated",
+      "default": 0.0,
       "min": 0.0,
       "max": 1000.0,
-      "default": 0.0
+      "name": "Bifurcated"
     },
     "instances": [
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Default"
       },
       {
         "axes": {
-          "BLDA": 1000.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 1000.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Open"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 1000.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Worm"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 1000.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Checkered"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 1000.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Checkered Reverse"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 500.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 500.0
         },
         "name": "Striped"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 1000.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 1000.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Rounded"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 1000.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Flared"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 1000.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 1000.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Flared Open"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 1000.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 1000.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Rounded Slab"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 1000.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 1000.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Sheared"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 1000.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 1000.0
+          "SKLD": 0.0
         },
         "name": "Bifurcated"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 500.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 500.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Inline"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 1000.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 0.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 1000.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Slab"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 0.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 1000.0,
+          "TRMD": 0.0,
           "TRMB": 0.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Contrast"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 0.0,
-          "SKLD": 0.0,
-          "TRML": 0.0,
           "SKLA": 1000.0,
+          "BLDA": 0.0,
+          "TRMG": 0.0,
           "TRMF": 0.0,
+          "SKLB": 0.0,
+          "TRME": 0.0,
+          "TRMA": 0.0,
+          "TRMC": 0.0,
           "TRMK": 0.0,
+          "TRML": 0.0,
           "BLDB": 0.0,
           "WMX2": 1000.0,
+          "TRMD": 0.0,
           "TRMB": 1000.0,
-          "TRMA": 0.0,
-          "SKLB": 0.0,
-          "TRMG": 0.0,
-          "TRME": 0.0
+          "SKLD": 0.0
         },
         "name": "Fancy"
       },
       {
         "axes": {
-          "BLDA": 0.0,
-          "TRMD": 0.0,
-          "TRMC": 750.0,
-          "SKLD": 0.0,
-          "TRML": 250.0,
           "SKLA": 1000.0,
+          "BLDA": 0.0,
+          "TRMG": 750.0,
           "TRMF": 250.0,
+          "SKLB": 1000.0,
+          "TRME": 500.0,
+          "TRMA": 500.0,
+          "TRMC": 750.0,
           "TRMK": 250.0,
+          "TRML": 250.0,
           "BLDB": 1000.0,
           "WMX2": 750.0,
+          "TRMD": 0.0,
           "TRMB": 500.0,
-          "TRMA": 500.0,
-          "SKLB": 1000.0,
-          "TRMG": 750.0,
-          "TRME": 500.0
+          "SKLD": 0.0
         },
         "name": "Mayhem"
       }
     ]
   },
-  "RobotoExtremo-VF": {
+  "RobotoDelta_v2-VF": {
     "order": [
       "wght",
       "wdth",
       "opsz",
-      "GRAD",
-      "XTRA",
-      "XOPQ",
-      "YOPQ"
+      "GRAD"
     ],
     "wght": {
-      "name": "wght",
+      "default": 400.0,
       "min": 100.0,
       "max": 900.0,
-      "default": 400.0
+      "name": "wght"
     },
     "wdth": {
-      "name": "wdth",
-      "min": 25.0,
-      "max": 151.0,
-      "default": 100.0
+      "default": 100.0,
+      "min": 75.0,
+      "max": 125.0,
+      "name": "wdth"
     },
     "opsz": {
-      "name": "opsz",
+      "default": 12.0,
       "min": 8.0,
       "max": 144.0,
-      "default": 14.0
+      "name": "opsz"
     },
     "GRAD": {
-      "name": "GRAD",
+      "default": 0.0,
       "min": -1.0,
       "max": 1.0,
-      "default": 0.0
-    },
-    "XTRA": {
-      "name": "XTRA",
-      "min": 323.0,
-      "max": 603.0,
-      "default": 468.0
-    },
-    "XOPQ": {
-      "name": "XOPQ",
-      "min": 27.0,
-      "max": 175.0,
-      "default": 96.0
-    },
-    "YOPQ": {
-      "name": "YOPQ",
-      "min": 25.0,
-      "max": 135.0,
-      "default": 79.0
+      "name": "GRAD"
     },
     "instances": []
   },
-  "AmstelvarAlpha-VF": {
+  "Amstelvar-Italic-VF": {
     "order": [
       "wght",
       "wdth",
       "opsz",
-      "XOPQ",
-      "XTRA",
+      "GRAD",
       "YOPQ",
       "YTLC",
-      "YTSE",
-      "GRAD",
-      "XTCH",
-      "YTCH",
-      "YTAS",
-      "YTDE",
       "YTUC",
-      "YTRA",
-      "PWGT",
-      "PWDT"
+      "YTAS",
+      "YTDE"
     ],
     "wght": {
-      "name": "Weight",
+      "default": 400.0,
       "min": 100.0,
       "max": 900.0,
-      "default": 400.0
+      "name": "wght"
     },
     "wdth": {
-      "name": "Width",
-      "min": 35.0,
-      "max": 100.0,
-      "default": 100.0
+      "default": 100.0,
+      "min": 50.0,
+      "max": 125.0,
+      "name": "wdth"
     },
     "opsz": {
-      "name": "Optical Size",
-      "min": 10.0,
-      "max": 72.0,
-      "default": 14.0
-    },
-    "XOPQ": {
-      "name": "x opaque",
-      "min": 5.0,
-      "max": 500.0,
-      "default": 88.0
-    },
-    "XTRA": {
-      "name": "x transparent",
-      "min": 42.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "YOPQ": {
-      "name": "y opaque",
-      "min": 4.0,
-      "max": 85.0,
-      "default": 50.0
-    },
-    "YTLC": {
-      "name": "lc y transparent",
-      "min": 445.0,
-      "max": 600.0,
-      "default": 500.0
-    },
-    "YTSE": {
-      "name": "Serif height",
-      "min": 0.0,
-      "max": 48.0,
-      "default": 18.0
+      "default": 14.0,
+      "min": 8.0,
+      "max": 144.0,
+      "name": "opsz"
     },
     "GRAD": {
-      "name": "Grade",
-      "min": 88.0,
-      "max": 150.0,
-      "default": 88.0
+      "default": 0.0,
+      "min": -1.0,
+      "max": 1.0,
+      "name": "GRAD"
     },
-    "XTCH": {
-      "name": "x transparent Chinese",
-      "min": 736.0,
-      "max": 1082.0,
-      "default": 911.0
+    "YOPQ": {
+      "default": 54.0,
+      "min": 18.0,
+      "max": 263.0,
+      "name": "YOPQ"
     },
-    "YTCH": {
-      "name": "y transparent Chinese",
-      "min": 736.0,
-      "max": 1082.0,
-      "default": 907.0
-    },
-    "YTAS": {
-      "name": "y transparent ascender",
-      "min": 650.0,
-      "max": 850.0,
-      "default": 750.0
-    },
-    "YTDE": {
-      "name": "y transparent descender",
-      "min": 150.0,
-      "max": 350.0,
-      "default": 250.0
+    "YTLC": {
+      "default": 500.0,
+      "min": 420.0,
+      "max": 570.0,
+      "name": "YTLC"
     },
     "YTUC": {
-      "name": "y transparent uppercase",
-      "min": 650.0,
-      "max": 950.0,
-      "default": 750.0
+      "default": 750.0,
+      "min": 500.0,
+      "max": 1000.0,
+      "name": "YTUC"
     },
-    "YTRA": {
-      "name": "y transparent",
-      "min": 800.0,
-      "max": 1200.0,
-      "default": 1000.0
+    "YTAS": {
+      "default": 767.0,
+      "min": 500.0,
+      "max": 983.0,
+      "name": "YTAS"
     },
-    "PWGT": {
-      "name": "Para Weight",
-      "min": 38.0,
-      "max": 250.0,
-      "default": 88.0
-    },
-    "PWDT": {
-      "name": "Para Width",
-      "min": 60.0,
-      "max": 402.0,
-      "default": 402.0
-    },
-    "instances": []
-  },
-  "Roboto-VF": {
-    "order": [
-      "wght",
-      "wdth",
-      "slnt"
-    ],
-    "wght": {
-      "name": "Weight",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "Width",
-      "min": 75.0,
-      "max": 100.0,
-      "default": 100.0
-    },
-    "slnt": {
-      "name": "Slant",
-      "min": 0.0,
-      "max": 12.0,
-      "default": 0.0
+    "YTDE": {
+      "default": -240.0,
+      "min": -500.0,
+      "max": -138.0,
+      "name": "YTDE"
     },
     "instances": []
   },
@@ -1013,112 +669,240 @@
       "YTRA"
     ],
     "XTRA": {
-      "name": "XTRA",
+      "default": 359.0,
       "min": 210.0,
       "max": 513.0,
-      "default": 359.0
+      "name": "XTRA"
     },
     "XOPQ": {
-      "name": "XOPQ",
+      "default": 94.0,
       "min": 26.0,
       "max": 171.0,
-      "default": 94.0
+      "name": "XOPQ"
     },
     "YOPQ": {
-      "name": "YOPQ",
+      "default": 77.0,
       "min": 26.0,
       "max": 132.0,
-      "default": 77.0
+      "name": "YOPQ"
     },
     "YTLC": {
-      "name": "YTLC",
+      "default": 514.0,
       "min": 416.0,
       "max": 570.0,
-      "default": 514.0
+      "name": "YTLC"
     },
     "YTUC": {
-      "name": "YTUC",
+      "default": 712.0,
       "min": 528.0,
       "max": 760.0,
-      "default": 712.0
+      "name": "YTUC"
     },
     "YTAS": {
-      "name": "YTAS",
+      "default": 750.0,
       "min": 649.0,
       "max": 854.0,
-      "default": 750.0
+      "name": "YTAS"
     },
     "YTDE": {
-      "name": "YTDE",
+      "default": -203.0,
       "min": -305.0,
       "max": -98.0,
-      "default": -203.0
+      "name": "YTDE"
     },
     "YTAD": {
-      "name": "YTAD",
+      "default": 563.0,
       "min": 460.0,
       "max": 600.0,
-      "default": 563.0
+      "name": "YTAD"
     },
     "YTDD": {
-      "name": "YTDD",
+      "default": 0.0,
       "min": -1.0,
       "max": 1.0,
-      "default": 0.0
+      "name": "YTDD"
     },
     "UDLN": {
-      "name": "UDLN",
+      "default": -49.0,
       "min": -195.0,
       "max": 0.0,
-      "default": -49.0
+      "name": "UDLN"
     },
     "wght": {
-      "name": "wght",
+      "default": 400.0,
       "min": 100.0,
       "max": 900.0,
-      "default": 400.0
+      "name": "wght"
     },
     "wdth": {
-      "name": "wdth",
+      "default": 100.0,
       "min": 75.0,
       "max": 125.0,
-      "default": 100.0
+      "name": "wdth"
     },
     "opsz": {
-      "name": "opsz",
+      "default": 12.0,
       "min": 8.0,
       "max": 144.0,
-      "default": 12.0
+      "name": "opsz"
     },
     "PWGT": {
-      "name": "PWGT",
+      "default": 94.0,
       "min": 44.0,
       "max": 150.0,
-      "default": 94.0
+      "name": "PWGT"
     },
     "PWDT": {
-      "name": "PWDT",
+      "default": 712.0,
       "min": 560.0,
       "max": 867.0,
-      "default": 712.0
+      "name": "PWDT"
     },
     "POPS": {
-      "name": "POPS",
+      "default": 0.0,
       "min": -1.0,
       "max": 1.0,
-      "default": 0.0
+      "name": "POPS"
     },
     "GRAD": {
-      "name": "GRAD",
+      "default": 0.0,
       "min": -1.0,
       "max": 1.0,
-      "default": 0.0
+      "name": "GRAD"
     },
     "YTRA": {
-      "name": "YTRA",
+      "default": 0.0,
       "min": -1.0,
       "max": 1.0,
-      "default": 0.0
+      "name": "YTRA"
+    },
+    "instances": []
+  },
+  "Amstelvar-Roman-VF": {
+    "order": [
+      "wght",
+      "wdth",
+      "opsz",
+      "GRAD",
+      "XTRA",
+      "XOPQ",
+      "YOPQ",
+      "YTLC",
+      "YTUC",
+      "YTAS",
+      "YTDE",
+      "YTFI"
+    ],
+    "wght": {
+      "default": 400.0,
+      "min": 100.0,
+      "max": 900.0,
+      "name": "wght"
+    },
+    "wdth": {
+      "default": 100.0,
+      "min": 50.0,
+      "max": 125.0,
+      "name": "wdth"
+    },
+    "opsz": {
+      "default": 14.0,
+      "min": 8.0,
+      "max": 144.0,
+      "name": "opsz"
+    },
+    "GRAD": {
+      "default": 0.0,
+      "min": -1.0,
+      "max": 1.0,
+      "name": "GRAD"
+    },
+    "XTRA": {
+      "default": 562.0,
+      "min": 324.0,
+      "max": 640.0,
+      "name": "XTRA"
+    },
+    "XOPQ": {
+      "default": 176.0,
+      "min": 18.0,
+      "max": 263.0,
+      "name": "XOPQ"
+    },
+    "YOPQ": {
+      "default": 124.0,
+      "min": 15.0,
+      "max": 132.0,
+      "name": "YOPQ"
+    },
+    "YTLC": {
+      "default": 500.0,
+      "min": 420.0,
+      "max": 570.0,
+      "name": "YTLC"
+    },
+    "YTUC": {
+      "default": 750.0,
+      "min": 500.0,
+      "max": 1000.0,
+      "name": "YTUC"
+    },
+    "YTAS": {
+      "default": 767.0,
+      "min": 500.0,
+      "max": 983.0,
+      "name": "YTAS"
+    },
+    "YTDE": {
+      "default": -240.0,
+      "min": -500.0,
+      "max": -138.0,
+      "name": "YTDE"
+    },
+    "YTFI": {
+      "default": 760.0,
+      "min": 425.0,
+      "max": 1000.0,
+      "name": "YTFI"
+    },
+    "instances": []
+  },
+  "Zycon": {
+    "T1  ": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "name": "Toggle 1"
+    },
+    "T2  ": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "name": "Toggle 2"
+    },
+    "T3  ": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "name": "Toggle 3"
+    },
+    "T4  ": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "name": "Toggle 4"
+    },
+    "M1  ": {
+      "default": 0.0,
+      "min": -1.0,
+      "max": 1.0,
+      "name": "Motion 1"
+    },
+    "M2  ": {
+      "default": 0.0,
+      "min": -1.0,
+      "max": 1.0,
+      "name": "Motion 2"
     },
     "instances": []
   }

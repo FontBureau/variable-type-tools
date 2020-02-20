@@ -1,9 +1,9 @@
 <?php
-set_time_limit(60);
+set_time_limit(300);
 
 $start = microtime(true);
 
-exec("python3.6 ~/ttf3web/ttf3web.py --no-munge --axes --formats=woff,woff2 fonts/*.?tf fonts", $output, $err);
+exec("python3 fonts/ttf2woff.py", $output, $err);
 
 if ($err > 0) {
 	header("HTTP/1.1 500 Internal Server Error");
@@ -12,5 +12,6 @@ if ($err > 0) {
 } else {
 	$end = microtime(true);
 	header("Content-type: text/plain; charset=utf-8");
-	print "Run time: " . round($end - $start, 2) . "s";
+	print implode("\n", $output);
+	print "Run time: " . round($end - $start, 2) . "s\n";
 }

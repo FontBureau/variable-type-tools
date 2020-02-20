@@ -11,7 +11,7 @@
 	path = intro.js
 	url = https://github.com/usablica/intro.js
 [submodule "fonts/src/Amstelvar"]
-	path = fonts/src/AmstelvarAlpha
+	path = fonts/src/Amstelvar
 	url = https://github.com/TypeNetwork/Amstelvar.git
 [submodule "fonts/src/Decovar"]
 	path = fonts/src/Decovar
