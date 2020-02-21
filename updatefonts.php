@@ -3,7 +3,7 @@ set_time_limit(300);
 
 $start = microtime(true);
 
-exec("python3 fonts/ttf2woff.py", $output, $err);
+exec("git submodule update --init; python3 fonts/ttf2woff.py", $output, $err);
 
 if ($err > 0) {
 	header("HTTP/1.1 500 Internal Server Error");
