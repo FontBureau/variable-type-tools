@@ -332,10 +332,10 @@ class TypeTools {
 							<input id='align-justify' type='radio' name='alignment' value='justify'>
 							<label for='align-justify'>J</label>
 							<label for='foreground'>FG</label>
-							<div class='color'><input type='color' id='foreground' name='foreground' value='black'></div>
+							<div class='color'><input type='color' id='foreground' name='foreground' value='#000000'></div>
 							<div class='color-swap'><button type="button" id="fg-bg-invert">⇄</button></div>
 							<label for='background'>BG</label>
-							<div class='color'><input type='color' id='background' name='background' value='white'></div>
+							<div class='color'><input type='color' id='background' name='background' value='#FFFFFF'></div>
 						</div>
 					</div>
 					

@@ -1,4 +1,8 @@
 
+#typetools body {
+    color: black;
+}
+
 body.dropzone::after {
 	position: fixed;
 	top: 0;
