@@ -785,6 +785,18 @@
 			$('#custom-fonts')[0].click();
 			return false;
 		});
+		
+		$('#add-your-own-container .tooltip-container button').on('click', function(evt) {
+			var content = $(this).next('.tooltip-content');
+			if (!content.is(':visible')) {
+				content.text(this.getAttribute('data-tooltip')).show();
+				$(document).on('click.tooltip', function() {
+					content.text('').hide();
+					$(document).off('.tooltip');
+				});
+				return false;
+			}
+		});
 
 		$('#custom-fonts').on('change', function() {
 			addCustomFonts(this.files);
