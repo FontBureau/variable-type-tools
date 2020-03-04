@@ -407,8 +407,7 @@ class TypeTools {
 				<div id='add-your-own-container'>
 					<a id='add-your-own-button' href='#add-your-own' style='white-space:nowrap' title="…or drag a font file onto the window">+ Add your own</a>
 					<div class='tooltip-container'>
-						<button type='button' data-tooltip="Fonts are not uploaded to any server. Font data stays on your computer and is processed in your browser." aria-label="More info about testing your own fonts">?</button>
-						<span class='tooltip-content'></span>
+						<button type='button' data-tooltip="Fonts are not uploaded to any server. Font data stays on your computer and is processed in your browser.">?</button>
 					</div>
 				</div>
 			</div>

@@ -786,12 +786,21 @@
 			return false;
 		});
 		
+		var addYourOwnTooltip;
 		$('#add-your-own-container .tooltip-container button').on('click', function(evt) {
-			var content = $(this).next('.tooltip-content');
-			if (!content.is(':visible')) {
-				content.text(this.getAttribute('data-tooltip')).show();
+			if (!addYourOwnTooltip) {
+				addYourOwnTooltip = document.createElement('span');
+				addYourOwnTooltip.className = 'tooltip-content';
+				addYourOwnTooltip.id = 'tooltip-' + Math.floor(Math.random() * 1000000) + '-' + Date.now();
+				addYourOwnTooltip.textContent = this.getAttribute('data-tooltip');
+				addYourOwnTooltip.setAttribute('role', 'tooltip');
+				addYourOwnTooltip.style.top = evt.clientY + 'px';
+				addYourOwnTooltip.style.left = (evt.clientX + this.getBoundingClientRect().width) + 'px';
+				this.setAttribute('aria-labelledby', addYourOwnTooltip.id);
+				document.body.appendChild(addYourOwnTooltip);
 				$(document).on('click.tooltip', function() {
-					content.text('').hide();
+					addYourOwnTooltip.remove();
+					addYourOwnTooltip = null;
 					$(document).off('.tooltip');
 				});
 				return false;
