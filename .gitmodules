@@ -16,12 +16,12 @@
 [submodule "fonts/src/Decovar"]
 	path = fonts/src/Decovar
 	url = https://github.com/TypeNetwork/fb-Decovar.git
-[submodule "fonts/src/Roboto-Delta"]
-	path = fonts/src/Roboto-Delta
-	url = https://github.com/TypeNetwork/Roboto-Delta.git
 [submodule "fonts/src/Roboto-Extremo"]
 	path = fonts/src/Roboto-Extremo
 	url = https://github.com/TypeNetwork/Roboto-Extremo.git
 [submodule "fonts/src/UnicodeTests"]
 	path = fonts/src/UnicodeTests
 	url = https://github.com/unicode-org/text-rendering-tests.git
+[submodule "fonts/src/Roboto-Flex"]
+	path = fonts/src/Roboto-Flex
+	url = https://github.com/TypeNetwork/Roboto-Flex.git
