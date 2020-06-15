@@ -400,7 +400,7 @@ class TypeTools {
 				<h3 class="inline"><label for="select-font">Family:</label></h3>
 				<select name="font" id='select-font'>
 	<?php foreach ($this->fontinfo as $filebase => $info): ?>
-					<option value="<?= $filebase ?>"<?php if ($info->name === 'Amstelvar Alpha') print " selected"; ?>><?= $info->name ?></option>
+					<option value="<?= $filebase ?>"<?php if ($info->name === 'Amstelvar Roman') print " selected"; ?>><?= $info->name ?></option>
 	<?php endforeach ?>
 				</select>
 				<input type='file' name='custom-fonts' id='custom-fonts'>
