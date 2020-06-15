@@ -1,100 +1,4 @@
 {
-  "RobotoExtremo-VF": {
-    "order": [
-      "wght",
-      "wdth",
-      "opsz",
-      "GRAD",
-      "slnt",
-      "XTRA",
-      "XOPQ",
-      "YOPQ",
-      "YTLC",
-      "YTUC",
-      "YTAS",
-      "YTDE",
-      "YTFI"
-    ],
-    "wght": {
-      "name": "wght",
-      "min": 100.0,
-      "max": 900.0,
-      "default": 400.0
-    },
-    "wdth": {
-      "name": "wdth",
-      "min": 25.0,
-      "max": 151.0,
-      "default": 100.0
-    },
-    "opsz": {
-      "name": "opsz",
-      "min": 8.0,
-      "max": 144.0,
-      "default": 14.0
-    },
-    "GRAD": {
-      "name": "GRAD",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "slnt": {
-      "name": "slnt",
-      "min": -10.0,
-      "max": 0.0,
-      "default": 0.0
-    },
-    "XTRA": {
-      "name": "XTRA",
-      "min": 323.0,
-      "max": 603.0,
-      "default": 468.0
-    },
-    "XOPQ": {
-      "name": "XOPQ",
-      "min": 27.0,
-      "max": 175.0,
-      "default": 96.0
-    },
-    "YOPQ": {
-      "name": "YOPQ",
-      "min": 25.0,
-      "max": 135.0,
-      "default": 79.0
-    },
-    "YTLC": {
-      "name": "YTLC",
-      "min": 416.0,
-      "max": 570.0,
-      "default": 514.0
-    },
-    "YTUC": {
-      "name": "YTUC",
-      "min": 528.0,
-      "max": 760.0,
-      "default": 712.0
-    },
-    "YTAS": {
-      "name": "YTAS",
-      "min": 649.0,
-      "max": 854.0,
-      "default": 750.0
-    },
-    "YTDE": {
-      "name": "YTDE",
-      "min": -305.0,
-      "max": -98.0,
-      "default": -203.0
-    },
-    "YTFI": {
-      "name": "YTFI",
-      "min": 560.0,
-      "max": 788.0,
-      "default": 738.0
-    },
-    "instances": []
-  },
   "DecovarAlpha-VF": {
     "order": [
       "wght",
@@ -546,6 +450,137 @@
       }
     ]
   },
+  "RobotoDelta-VF": {
+    "order": [
+      "XTRA",
+      "XOPQ",
+      "YOPQ",
+      "YTLC",
+      "YTUC",
+      "YTAS",
+      "YTDE",
+      "YTAD",
+      "YTDD",
+      "UDLN",
+      "wght",
+      "wdth",
+      "opsz",
+      "PWGT",
+      "PWDT",
+      "POPS",
+      "GRAD",
+      "YTRA"
+    ],
+    "XTRA": {
+      "name": "XTRA",
+      "min": 210.0,
+      "max": 513.0,
+      "default": 359.0
+    },
+    "XOPQ": {
+      "name": "XOPQ",
+      "min": 26.0,
+      "max": 171.0,
+      "default": 94.0
+    },
+    "YOPQ": {
+      "name": "YOPQ",
+      "min": 26.0,
+      "max": 132.0,
+      "default": 77.0
+    },
+    "YTLC": {
+      "name": "YTLC",
+      "min": 416.0,
+      "max": 570.0,
+      "default": 514.0
+    },
+    "YTUC": {
+      "name": "YTUC",
+      "min": 528.0,
+      "max": 760.0,
+      "default": 712.0
+    },
+    "YTAS": {
+      "name": "YTAS",
+      "min": 649.0,
+      "max": 854.0,
+      "default": 750.0
+    },
+    "YTDE": {
+      "name": "YTDE",
+      "min": -305.0,
+      "max": -98.0,
+      "default": -203.0
+    },
+    "YTAD": {
+      "name": "YTAD",
+      "min": 460.0,
+      "max": 600.0,
+      "default": 563.0
+    },
+    "YTDD": {
+      "name": "YTDD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "UDLN": {
+      "name": "UDLN",
+      "min": -195.0,
+      "max": 0.0,
+      "default": -49.0
+    },
+    "wght": {
+      "name": "wght",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "wdth",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "opsz",
+      "min": 8.0,
+      "max": 144.0,
+      "default": 12.0
+    },
+    "PWGT": {
+      "name": "PWGT",
+      "min": 44.0,
+      "max": 150.0,
+      "default": 94.0
+    },
+    "PWDT": {
+      "name": "PWDT",
+      "min": 560.0,
+      "max": 867.0,
+      "default": 712.0
+    },
+    "POPS": {
+      "name": "POPS",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "GRAD": {
+      "name": "GRAD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "YTRA": {
+      "name": "YTRA",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
+    },
+    "instances": []
+  },
   "Amstelvar-Roman-VF": {
     "order": [
       "wght",
@@ -835,6 +870,39 @@
       "min": 560.0,
       "max": 788.0,
       "default": 738.0
+    },
+    "instances": []
+  },
+  "RobotoDelta_v2-VF": {
+    "order": [
+      "wght",
+      "wdth",
+      "opsz",
+      "GRAD"
+    ],
+    "wght": {
+      "name": "wght",
+      "min": 100.0,
+      "max": 900.0,
+      "default": 400.0
+    },
+    "wdth": {
+      "name": "wdth",
+      "min": 75.0,
+      "max": 125.0,
+      "default": 100.0
+    },
+    "opsz": {
+      "name": "opsz",
+      "min": 8.0,
+      "max": 144.0,
+      "default": 12.0
+    },
+    "GRAD": {
+      "name": "GRAD",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0
     },
     "instances": []
   }
