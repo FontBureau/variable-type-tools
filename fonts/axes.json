@@ -738,45 +738,6 @@
     },
     "instances": []
   },
-  "Zycon": {
-    "T1  ": {
-      "name": "Toggle 1",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "T2  ": {
-      "name": "Toggle 2",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "T3  ": {
-      "name": "Toggle 3",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "T4  ": {
-      "name": "Toggle 4",
-      "min": 0.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "M1  ": {
-      "name": "Motion 1",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "M2  ": {
-      "name": "Motion 2",
-      "min": -1.0,
-      "max": 1.0,
-      "default": 0.0
-    },
-    "instances": []
-  },
   "RobotoFlex[slnt,wdth,wght,opsz]": {
     "order": [
       "wght",
