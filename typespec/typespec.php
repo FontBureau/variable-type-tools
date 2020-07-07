@@ -31,9 +31,35 @@ $tools = new TypeTools();
 		<div class="T2-target" contenteditable>
 			<p>Johannes Gutenberg’s work on the printing press began in approximately 1436 when he partnered with Andreas Heilmann, owner of a paper mill. Having previously worked as a goldsmith, Gutenberg made skillful use of the knowledge of metals he had learned as a craftsman. He was the first to make type from an alloy of lead, tin, and antimony, which was critical for producing durable type that produced high-quality printed books and proved to be much better suited for printing than all other known materials.
 			</p>
-			<p>The introduction of mechanical movable type printing led to a huge increase of printing activities across Europe within only a few decades. From a single print shop in Mainz, Germany, printing had spread to no less than around 270 cities in Central, Western and Eastern Europe by the end of the 15th century. As early as 1480, there were printers active in 110 different places in Germany, Italy, France, Spain, the Netherlands, Belgium, Switzerland, England, Bohemia and Poland. From that time on, it is assumed that “the printed book was in universal use in Europe.”
+			<p>Επειδη δε κοινη το των Αρκαδων εθνος
+εχει τινα παρα πασι τοις Ελλησιν επ αρετη
+φημην, ου μονον δια ρην εν τοις ηθεσι και βιοις
+φιλοξενιαν και φιλανθρωπιαν, μαλιστα δε δια
+την εις το θειον ευσεβειαν, αξιον βραχυ διαπορησαι
+περι της Κυναιθεων αγριοτητος, πως οντες
+ομολογουμενως Αρκαδες τοσουτο κατ εκεινους
+τοθς καιπους διηνεγκαν των αλλων Ελληνων
+ωμοτητι και παρανομια. δοκαυσι δε μοι, διοτι
+τα καλως υπο των αρχαιων επινενοημενα και
+φυσικως συντεθεωρημενα περι παντας τους
+κατοικουντας την Αρκαδιαν, ταυτα δη πρωτοι και
+μονοι Αρκαδων εγκατελιπον. μουσικην γαρ, την
+γ αληθως μουσικην, πασι μεν ανθρωποις οφελος
+ασκειν Αρκασι δε και αναγκαιον. ου γαρ ηγητεον
+μουσικην, ως Εφορος φησιν εν τω προοιμιω της
+ολης προγματειας, ουδαμως αρμοζοντα λογον
+αυτω πιψας, επ απατη και γοητεια παραισηχθαι
+τοις ανθρωποις, ουδε τους παλαιοθς Κρητων
+και Λακεδαιμονιων αυλον και ρυθμον εις
+τον πολεμον αντι σαλπιγγος εικη νομιστεον
+εισαγαγειν, ουδε τους πρωτους Αρκαδων εις την
+ολην πολιτειαν την μοθσικην παραλαβειν επι
+τοσουτον ωστε μη μονον παισιν ουσιν, αλλα ακι
+νεανισκοις γενομενοις εως τριακοντ ετων κατ
+αναγκην ουντροφον ποιειν αυτην, ταλλα τοις
+βιοις οντας αυστηροτατους.
 			</p>
-			<p>Two ideas altered the design of the printing press radically: First, the use of steam power for running the machinery, and second the replacement of the printing flatbed with the rotary motion of cylinders. Both elements were first successfully implemented by the German printer Friedrich Koenig in a series of press designs devised between 1802 and 1818, with assistance from engineer Andreas Friedrich Bauer. Koenig and Bauer sold two of their first models to The Times in London in 1814, capable of 1,100 impressions per hour. The first edition so printed was on 28 November 1814.
+			<p>В глубоких и темных водах Антарктики ученые обнаружили невероятное изобилие до сих пор неизвестных видов морской жизни. Исследователи открыли более 700 новых видов морских существ в морях, которые раньше считались слишком неблагоприятными для существования большого биологического разнообразия. Эти темные воды буквально кишат стаями хищных губок, свободноплавающих червей, ракообразных и моллюсков. Доклад о новых видах фауны был опубликован в журнале Nature. “То, что раньше считалось пустой бездной, на поверку оказалось динамичной, меняющейся и биологически богатой средой”, - сказала одна из соавторов документа, морской биолог Британского общества исследования Антарктики доктор Кэтрин Линс. “Находка этой сокровищницы морской живности - наш первый шаг на пути к пониманию сложного взаимоотношения глубоких океанов и распределения морской жизни”, - добавила она. Науке это пока неизвестно. Исследование антарктических вод было проведено в рамках проекта Andeep, изучающего биологическое разнообразие глубоководного антарктического дна. Один из ранее неизвестных ракообразных (Cylindrarcturus), найденных в Антарктитке Исследователи не ожидали обнаружить такого разнобразия морской жизни Проект призван заполнить “вакуум знаний” о фауне, населяющей самые глубокие воды Южного океана.
 			</p>
 			<p>我的征途是星辰大海 "My Conquest is the Sea of Stars", a famous sentence in Legend Of The Galactic Heroes
 			</p>
