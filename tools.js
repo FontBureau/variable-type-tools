@@ -341,7 +341,7 @@
 		var foreground = $('#foreground').length && $('#foreground').spectrum('get').toString();
 		var background = $('#background').length && $('#background').spectrum('get').toString();
 
-		rules.push('font-family: "' + fontInfo[$('#select-font').val()].name + ' Demo"');
+		rules.push('font-family: "' + fontInfo[$('#select-font').val()].name + ' Demo", "Adobe Blank", "Comic Sans MS"');
 		
 		if (size) {
 			rules.push("font-size: " + size + 'pt');
