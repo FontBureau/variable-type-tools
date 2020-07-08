@@ -21,7 +21,11 @@ for infont in os.listdir(os.getcwd()):
     print(infont)
     outwoff = fontExtension.sub('.woff', infont)
     outwoff2 = fontExtension.sub('.woff2', infont)
-    ttf = TTFont(infont)
+    try:
+        ttf = TTFont(infont)
+    except:
+        print("Error opening {}".format(infont))
+        continue
     ttf.flavor='woff'
     ttf.save(outwoff)
     ttf.flavor='woff2'
