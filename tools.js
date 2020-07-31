@@ -33,7 +33,58 @@
 			} 
 		}
 	}
+/*
+-                       'composites' => array(
+-                               'opsz' => array(
+-                                       '10' => array(
+-                                               'XOPQ' => 110,
+-                                               'YOPQ' => 75,
+-                                               'YTLC' => 525,
+-                                       ),
+-                                       '14' => array(),
+-                                       '72' => array(
+-                                               'XTRA' => 300,
+-                                               'YOPQ' => 12,
+-                                               'YTLC' => 475,
+-                                       ),
+-                               ),
+*/
 	
+	//load composites / paramaroundups
+	$.each(window.fontInfo, function(fontfile) {
+		var fontAxes = window.fontInfo[fontfile].axes;
+		$.ajax("fonts/" + fontfile + ".composites.txt", {
+			success: function(tsvurl) {
+				$.ajax(tsvurl, {
+					dataType: 'text/plain',
+					success: function(tsv) {
+						var data = d3.tsvParse(tsv);
+						var composites = {};
+						$.each(data, function(i, axes) {
+							var comp = axes.Source.match(/-([a-z]{4})(\d+)\.ufo/);
+							if (!comp) { return; }
+							var compAxis = comp[1];
+							var compValue = comp[2];
+							if (compValue > fontAxes[compAxis].default) {
+								composites[compAxis][fontAxes[compAxis].default] = {};
+							}
+							if (!(compAxis in composites)) {
+								composites[compAxis] = {};
+							}
+							composites[compAxis][compValue] = {};
+							$.each(fontAxes, function(axis) {
+								if (axis in axes) {
+									composites[compAxis][compValue][axis] = parseFloat(axes[axis]);
+								}
+							});
+						});
+						window.fontInfo[fontfile].composites = composites;
+					}
+				});
+			}
+		});
+	});
+
 	//composite axis and value
 	window.c2p = compositeToParametric;
 	function compositeToParametric(caxis, cvalue) {
@@ -503,7 +554,7 @@
 		spectropts.color = $('#background').attr('value');
 		$('#background').spectrum(spectropts);
 		
-		composites = fontInfo[font].composites;
+		composites = fontInfo[font].composites || {};
 		axisDefaults = fontInfo[font].axes;
 		axisDeltas = {};
 		

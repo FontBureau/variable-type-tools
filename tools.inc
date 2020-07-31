@@ -16,87 +16,6 @@ class TypeTools {
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
 	private $excludeFonts = array('Escrow', 'Segoe', /* 'Roboto(?!.*Delta)', */ 'Benton', 'Agency.*with-slant');
 	
-	private $customSettings = array(
-		'Amstelvar Alpha' => array(
-			'composites' => array(
-				'opsz' => array(
-					'10' => array(
-						'XOPQ' => 110,
-						'YOPQ' => 75,
-						'YTLC' => 525,
-					),
-					'14' => array(),
-					'72' => array(
-						'XTRA' => 300,
-						'YOPQ' => 12,
-						'YTLC' => 475,
-					),
-				),
-				'wdth' => array(
-					'35' => array(
-						'XTRA' => 42,
-						'XOPQ' => 70,
-						'YOPQ' => 45,
-						'PWDT' => 60,
-					),
-					'100' => array(),
-				),
-				'wght' => array(
-					'100' => array(
-						'XOPQ' => 38,
-						'YOPQ' => 25,
-						'XTRA' => 375,
-						'YTSE' => 8,
-						'PWGT' => 38,
-					),
-					'400' => array(),
-					'900' => array(
-						'XOPQ' => 250,
-						'XTRA' => 250,
-						'YTLC' => 525,
-						'PWGT' => 250,
-					),
-				),
-				'GRAD' => array(
-					'88' => array(
-						'YOPQ' => 25,
-						'XOPQ' => 25,
-						'XTRA' => 490,
-					),
-					'150' => array(
-						'YOPQ' => 62,
-						'XOPQ' => 250,
-						'XTRA' => 460,
-					),
-				),
-			),
-		),
-		'Amstelvar Alpha Blended' => array(
-			'composites' => array(
-				'wght' => array(
-					'100' => array('PWGT' => 38),
-					'900' => array('PWGT' => 250),
-				),
-				'wdth' => array(
-					'35' => array('PWDT' => 60),
-					'100' => array('PWDT' => 402),
-				),
-			),
-		),
-		'Momentum Sans Blended' => array(
-			'composites' => array(
-				'wght' => array(
-					'100' => array('PWHT' => 10),
-					'900' => array('PWHT' => 220),
-				),
-				'wdth' => array(
-					'70' => array('PWTH' => 310),
-					'100' => array('PWTH' => 468),
-				),
-			),
-		),
-	);
-	
 	public static function requireLogin($user, $password) {
 		if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] !== $user || $_SERVER['PHP_AUTH_PW'] !== $password) {
 			header('HTTP/1.1 401 Unauthorized');
@@ -149,9 +68,6 @@ class TypeTools {
 			//figure out axis order
 			$order = array();
 			
-			if (isset($this->customSettings[$fontname]['order'])) {
-				$order = $this->customSettings[$fontname]['order'];
-			}
 			if (isset($axes->order)) {
 				if (!$order) {
 					$order = $axes->order;
@@ -169,20 +85,6 @@ class TypeTools {
 					if (!in_array($k, $order)) {
 						$order = array();
 						break;
-					}
-				}
-			}
-
-			//reality check on composite axes
-			if (isset($this->customSettings[$fontname]['composites'])) {
-				foreach ($this->customSettings[$fontname]['composites'] as $composite => $numbers) {
-					foreach ($numbers as $pivot => $paxes) {
-						foreach ($paxes as $paxis => $number) {
-							if (!isset($axes->$paxis)) {
-								unset($this->customSettings[$fontname]['composites']);
-								break 3;
-							}
-						}
 					}
 				}
 			}
@@ -217,7 +119,6 @@ class TypeTools {
 				'axes' => $axes,
 				'instances' => $instances,
 				'axisOrder' => $order,
-				'composites' => isset($this->customSettings[$fontname]['composites']) ? $this->customSettings[$fontname]['composites'] : array(),
 			);
 		}
 	}
@@ -241,6 +142,7 @@ class TypeTools {
 		<script src="/spectrum/spectrum.js"></script>
 		<link rel="stylesheet" href="/spectrum/spectrum.css">
 
+		<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 		<script src="/opentype.js/dist/opentype.min.js"></script>
 		<script src="/user-guide.js" async defer></script>
 
