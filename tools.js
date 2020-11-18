@@ -53,34 +53,41 @@
 	//load composites / paramaroundups
 	$.each(window.fontInfo, function(fontfile) {
 		var fontAxes = window.fontInfo[fontfile].axes;
-		$.ajax("fonts/" + fontfile + ".composites.txt", {
-			success: function(tsvurl) {
-				$.ajax(tsvurl, {
-					dataType: 'text/plain',
-					success: function(tsv) {
-						var data = d3.tsvParse(tsv);
-						var composites = {};
-						$.each(data, function(i, axes) {
-							var comp = axes.Source.match(/-([a-z]{4})(\d+)\.ufo/);
-							if (!comp) { return; }
-							var compAxis = comp[1];
-							var compValue = comp[2];
-							if (compValue > fontAxes[compAxis].default) {
-								composites[compAxis][fontAxes[compAxis].default] = {};
-							}
-							if (!(compAxis in composites)) {
-								composites[compAxis] = {};
-							}
-							composites[compAxis][compValue] = {};
-							$.each(fontAxes, function(axis) {
-								if (axis in axes) {
-									composites[compAxis][compValue][axis] = parseFloat(axes[axis]);
-								}
-							});
+		// <axis name="opsz">
+		//   <location value="8">
+		//   	<dimension name="XTRA" xvalue="402"/>
+		//     <dimension name="XOPQ" xvalue="110"/>
+		//     <dimension name="YOPQ" xvalue="87"/>
+		//   </location>
+
+		$.ajax("fonts/" + fontfile + ".truevalues", {
+			dataType: "xml",
+			success: function(xml) {
+				if (!(xml instanceof Document)) {
+					return;
+				}
+				var composites = {};
+				$(xml).find('axis').each(function() {
+					var compAxis = $(this);
+					var ctag = compAxis.attr('name');
+					composites[ctag] = {};
+					compAxis.find('location').each(function() {
+						var location = $(this);
+						var compValue = parseFloat(location.attr('value'));
+						
+						//insert default value with empty sub-axes
+						if (compValue > fontAxes[ctag].default) {
+							composites[ctag][fontAxes[ctag].default] = {};
+						}
+						
+						composites[ctag][compValue] = {};
+						location.find('dimension').each(function() {
+							var dim = $(this);
+							composites[ctag][compValue][dim.attr('name')] = parseFloat(dim.attr('xvalue'));
 						});
-						window.fontInfo[fontfile].composites = composites;
-					}
+					});
 				});
+				window.fontInfo[fontfile].composites = composites;
 			}
 		});
 	});
