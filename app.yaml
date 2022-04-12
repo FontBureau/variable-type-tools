@@ -1,0 +1,38 @@
+runtime: php74
+
+handlers:
+# Serve a directory as a static resource.
+- url: /images
+  static_dir: images
+- url: /fonts
+  static_dir: fonts
+- url: /intro.js
+  static_dir: intro.js
+- url: /opentype.js
+  static_dir: opentype.js
+- url: /spectrum
+  static_dir: spectrum
+- url: /grid
+  static_dir: grid
+- url: /knuth
+  static_dir: knuth
+- url: /logopogo
+  static_dir: logopogo
+- url: /problem-solving
+  static_dir: problem-solving
+- url: /proof
+  static_dir: proof
+- url: /typespec
+  static_dir: typespec
+- url: /waterfall
+  static_dir: waterfall
+
+# Serve files as static resources.
+- url: /(.+\.(gif|png|jpg|svg|js|pdf|css|map|scss|yaml|json))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|svg|js|pdf|css|map|scss|yaml|json)$
+
+# Serve your app through a front controller at index.php or public/index.php.
+- url: .*
+  script: auto
+  secure: always
