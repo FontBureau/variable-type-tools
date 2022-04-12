@@ -60,9 +60,14 @@
 		//     <dimension name="YOPQ" xvalue="87"/>
 		//   </location>
 
-		$.ajax("fonts/" + fontfile + ".truevalues", {
-			dataType: "xml",
-			success: function(xml) {
+                let file = "fonts/" + fontfile + ".truevalues";
+		$.ajax(file, {
+			//dataType: "xml", Can't catch parser errors when using this.
+                        error: function(response){console.warn(`FAILED loading xml file ${file} code:${response.status} - ${response.statusText}`)},
+			success: function(data) {
+                                let domparser = new DOMParser()
+                                  ,  xml = domparser.parseFromString(data, 'application/xml')
+                                  ;
 				if (!(xml instanceof Document)) {
 					return;
 				}
