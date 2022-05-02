@@ -4,41 +4,41 @@ namespace TypeNetwork\TypeTools;
 class TypeTools {
 	public $fontinfo;
 	private $slidercount = 0;
-	
+
 	private $tools = array(
-		'typespec' => "Ramp", 
+		'typespec' => "Ramp",
 		'proof' => "Glyphs",
 		'waterfall' => "Waterfall",
 		'grid' => "Grid",
-		'logopogo' => "Logo Pogo", 
+		'logopogo' => "Logo Pogo",
 	);
-	
+
 	private $registeredAxes = array('opsz', 'wght', 'wdth', 'ital', 'slnt', 'grad', 'GRAD');
 	private $excludeFonts = array('Escrow', 'Segoe', /* 'Roboto(?!.*Delta)', */ 'Benton', 'Agency.*with-slant');
-	
+
 	public static function requireLogin($user, $password) {
 		if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] !== $user || $_SERVER['PHP_AUTH_PW'] !== $password) {
 			header('HTTP/1.1 401 Unauthorized');
 			header('WWW-Authenticate: Basic realm="TN Type Tools"');
 			echo 'Varfontnügen';
 			exit;
-		}	
+		}
 	}
 
 	function __construct() {
 		$this->fontinfo = json_decode(file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/fonts/axes.json"));
 		$this->fontinfo = get_object_vars($this->fontinfo);
 		ksort($this->fontinfo);
-			
+
 		$specific_font = false;
 		if (preg_match('/^(.+)-var\./', $_SERVER['HTTP_HOST'], $matches)) {
 			$specific_font = strtolower($matches[1]);
 		}
-		
+
 		if (preg_match('/^([^=]+)(&|$)/', $_SERVER['QUERY_STRING'], $m)) {
 			$specific_font = strtolower($m[1]);
 		}
-	
+
 		foreach ($this->fontinfo as $filebase => $axes) {
 			if ($specific_font) {
 				if (strpos(strtolower($filebase), $specific_font) !== 0) {
@@ -49,32 +49,32 @@ class TypeTools {
 				unset($this->fontinfo[$filebase]);
 				continue;
 			}
-			
+
 /*
 			if (!isset($axes->wght) || !isset($axes->wdth)) {
 				unset($this->fontinfo[$filebase]);
 				continue;
 			}
 */
-	
+
 			#take off dev stuff from the end of the filename
 			//$fontname = preg_replace('/(?:[Vv]\d+|[Aa]lpha|[Bb]eta)?-VF$/', '', $filebase);
 			//$fontname = preg_replace('/(?:[Vv]\d+)?-VF$/', '', $filebase);
 			$fontname = preg_replace('/-VF$/', '', $filebase);
-			
+
 			#separate into words
 			$fontname = preg_replace('/(?<=[a-z])[_-]?(?=[A-Z])/', ' ', $fontname);
 
 			//figure out axis order
 			$order = array();
-			
+
 			if (isset($axes->order)) {
 				if (!$order) {
 					$order = $axes->order;
 				}
 				unset($axes->order);
 			}
-			
+
 			//sanity check on axis order
 			foreach ($order as $oaxis) {
 				if (!isset($axes->$oaxis)) {
@@ -173,7 +173,7 @@ class TypeTools {
 			<header class="header-global">
 				<h1><a href="https://www.typenetwork.com/">Type Network</a></h1>
 			</header>
-		
+
 			<nav class="nav-global">
 				<a class="nav-global-reveal" href="#">Menu</a>
 				<ul>
@@ -185,7 +185,7 @@ class TypeTools {
 -->
 				</ul>
 			</nav>
-			
+
 			<nav class="nav-user">
 				<a class="nav-user-reveal" href="#">Menu</a>
 				<ul>
@@ -196,9 +196,9 @@ class TypeTools {
 -->
 				</ul>
 			</nav>
-			
+
 			<?= $this->pageSidebar() ?>
-			
+
 			<div class="content-main">
 				<a class="content-options-show-filters" href="#">Sidebar</a>
 <?php
@@ -240,7 +240,7 @@ class TypeTools {
 							<div class='color'><input type='color' id='background' name='background' value='#FFFFFF'></div>
 						</div>
 					</div>
-					
+
 					<div><input id="everybox" type="checkbox" name="show" value="everything"> <h3 class='inline'><label for="everybox">View all axes</label></h3></div>
 					<ul id='axis-inputs'>
 					</ul>
@@ -251,7 +251,7 @@ class TypeTools {
 <?php
 		return "";
 	}
-	
+
 	public function pageSections() {
 		print "<div id='mode-sections'>";
 		foreach ($this->tools as $tool => $name) {
@@ -263,7 +263,7 @@ class TypeTools {
 		print "</div>";
 		return "";
 	}
-	
+
 	public function pageFoot() {
 ?>
 				<footer class="footer-global">
@@ -280,7 +280,7 @@ class TypeTools {
 <?php
 		return "";
 	}
-	
+
 	public function selectMode() {
 	?>
 		<div id='select-layout-container'>
@@ -294,7 +294,7 @@ class TypeTools {
 	<?php
 		return "";
 	}
-	
+
 	public function selectFont($label="Font") {
 	?>
 		<div id='select-font-container'>
@@ -322,7 +322,7 @@ class TypeTools {
 	<?php
 		return "";
 	}
-	
+
 	public function color($name='color', $color='black', $label='') {
 		if (!$label) {
 			$label = ucfirst($name);
@@ -334,7 +334,7 @@ class TypeTools {
 	<?php
 		return "";
 	}
-	
+
 	public function sizeLeading($size, $leading, $min=8, $max=96) {
 	?>
 		<div id='size-leading'>
@@ -348,7 +348,7 @@ class TypeTools {
 	<?php
 		return "";
 	}
-	
+
 	public function slider($options=array()) {
 		if (!is_array($options)) {
 			$options = array(
@@ -375,7 +375,7 @@ class TypeTools {
 	<?php
 		return "";
 	}
-	
+
 	public function lastFontUpdate() {
 		$now = time();
 		$then = filemtime("{$_SERVER['DOCUMENT_ROOT']}/fonts/axes.json");
@@ -398,7 +398,7 @@ class TypeTools {
 		}
 		return "$date $time";
 	}
-	
+
 	public function metaLinks() {
 	?>
 		<h3>Show</h3>
