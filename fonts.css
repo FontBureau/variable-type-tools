@@ -1,0 +1,37 @@
+
+@font-face {
+  font-family:'AdobeBlank';
+  src:url("old_tn_assets/assets_content/css/fonts/AdobeBlank.woff2") format("woff2"),
+      url("old_tn_assets/assets_content/css/fonts/AdobeBlank.woff") format("woff"),
+      url("old_tn_assets/assets_content/css/fonts/AdobeBlank.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family:'AdobeBlank';
+  src:url("old_tn_assets/assets_content/css/fonts/AdobeBlank.woff2") format("woff2"),
+      url("old_tn_assets/assets_content/css/fonts/AdobeBlank.woff") format("woff"),
+      url("old_tn_assets/assets_content/css/fonts/AdobeBlank.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+}
+
+
+@font-face {
+  font-family: RobotoFlex;
+  src:url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff2") format("woff2"),
+      url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff") format("woff"),
+      url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype");
+  font-weight:100 900;
+}
+@font-face {
+  font-family: RobotoFlex;
+  src:url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff") format("woff"),
+      url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff") format("woff"),
+      url("fonts/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf") format("truetype");
+  font-style:italic;
+  font-weight:100 900;
+}
+
+

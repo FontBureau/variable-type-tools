@@ -131,10 +131,10 @@ class TypeTools {
 		<meta charset="utf-8">
 		<title><?= $title ?></title>
 		<meta name="viewport" content="initial-scale=1,shrink-to-fit=no">
-		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/reset.css">
-		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/adobe-blank.css">
-		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/fonts-momentum-sans.css">
-		<link rel="stylesheet" href="https://www.typenetwork.com/assets_content/css/style.css">
+		<link rel="stylesheet" href="old_tn_assets/assets_content/css/reset.css">
+		<link rel="stylesheet" href="old_tn_assets/assets_content/css/adobe-blank.css">
+		<link rel="stylesheet" href="fonts.css">
+		<link rel="stylesheet" href="old_tn_assets/assets_content/css/style.css">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -162,7 +162,7 @@ class TypeTools {
 		<script>
 			var fontInfo = <?= json_encode($this->fontinfo) ?>;
 		</script>
-		<script src="https://www.typenetwork.com/assets_content/js/functions.js"></script>
+		<script src="old_tn_assets/assets_content/js/functions.js"></script>
 		<script><?php readfile('tools.js'); ?></script>
 <?php foreach ($this->tools as $tool => $name): ?>
 		<script><?php readfile("$tool/$tool.js"); ?></script>
